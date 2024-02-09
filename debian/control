@@ -1,0 +1,54 @@
+Source: dde-control-center
+Section: admin
+Priority: optional
+Maintainer: Deepin Sysdev <sysdev@deepin.com>
+Build-Depends: debhelper (>= 9),
+ pkg-config,
+ dpkg-dev,
+ libx11-dev,
+ cmake,
+ qt5-default,
+ qtdeclarative5-dev,
+ libqt5svg5-dev,
+ libdtkcore-dev,
+ libdtkwidget-dev,
+ libdframeworkdbus-dev,
+ libgsettings-qt-dev,
+ qttools5-dev-tools,
+ clang [amd64],
+ deepin-desktop-base,
+ libdde-network-utils-dev (>= 0.1.4),
+ libdde-network-utils-dev (<< 0.1.5),
+ libdtkcore-bin,
+ libkf5networkmanagerqt-dev,
+ qtbase5-private-dev,
+ libxrandr-dev,
+ libmtdev-dev,
+ libfontconfig1-dev,
+ libfreetype6-dev,
+ libegl1-mesa-dev,
+ libxcb-ewmh-dev
+Standards-Version: 3.9.5
+Homepage: https://github.com/linuxdeepin/dde-control-center
+
+Package: dde-control-center
+Architecture: any
+Depends: ${shlibs:Depends},
+ ${misc:Depends},
+ ${dist:Depends},
+ dde-account-faces,
+ dde-daemon,
+ dde-api (>=2.92.1),
+ xkb-data,
+ deepin-installer-timezones,
+ passwd
+Recommends: netselect
+Suggests: redshift
+Conflicts:
+ dde-control-center-plugin-weather,
+ dde-control-center-plugin-notify
+Replaces:
+ dde-control-center-plugin-weather,
+ dde-control-center-plugin-notify
+Description: New control center for Deepin Desktop Environment
+ DDE Control Center is the control panel of Deepin Desktop Environment.
