@@ -23,6 +23,7 @@
 #include "navmodel.h"
 
 #include <QPainter>
+#include <QPainterPath>
 #include <QImageReader>
 #include <QApplication>
 #include <QScreen>

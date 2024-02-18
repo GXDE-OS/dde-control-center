@@ -32,6 +32,7 @@
 #include "widgets/settingsitem.h"
 #include "widgets/translucentframe.h"
 
+#include <QPainterPath>
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QEvent>

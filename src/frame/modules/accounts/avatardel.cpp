@@ -26,6 +26,7 @@
 #include "avatardel.h"
 #include "avatarwidget.h"
 #include <QPainter>
+#include <QPainterPath>
 #include <dimagebutton.h>
 #include <QVBoxLayout>
 

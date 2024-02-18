@@ -28,6 +28,7 @@
 #include <DHiDPIHelper>
 #include <QVBoxLayout>
 #include <QDebug>
+#include <QPainterPath>
 
 DWIDGET_USE_NAMESPACE
 

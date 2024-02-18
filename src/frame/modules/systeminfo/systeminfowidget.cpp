@@ -106,6 +106,14 @@ SystemInfoWidget::SystemInfoWidget(SystemInfoModel* model)
     m_disk->setTitle(tr("Disk:"));
     m_disk->setValue(m_model->disk());
 
+    m_kernelVersion = new TitleValueItem();
+    m_kernelVersion->setTitle(tr("Kernel:"));
+    m_kernelVersion->setValue(m_model->kernelVersion());
+
+    m_xdgSessionType = new TitleValueItem();
+    m_xdgSessionType->setTitle(tr("Session:"));
+    m_xdgSessionType->setValue(m_model->xdgSessionType());
+
     infoGroup->appendItem(logo);
     infoGroup->appendItem(m_distroid);
     infoGroup->appendItem(m_distrover);
@@ -114,6 +122,8 @@ SystemInfoWidget::SystemInfoWidget(SystemInfoModel* model)
     infoGroup->appendItem(m_processor);
     infoGroup->appendItem(m_memory);
     infoGroup->appendItem(m_disk);
+    infoGroup->appendItem(m_kernelVersion);
+    infoGroup->appendItem(m_xdgSessionType);
 
 #ifndef DCC_ENABLE_END_USER_LICENSE
     m_copyright = new NextPageWidget();
@@ -157,6 +167,8 @@ SystemInfoWidget::SystemInfoWidget(SystemInfoModel* model)
     connect(m_model, SIGNAL(processorChanged(QString)), this, SLOT(setProcessor(QString)));
     connect(m_model, SIGNAL(memoryChanged(QString)), this, SLOT(setMemory(QString)));
     connect(m_model, SIGNAL(diskChanged(QString)), this, SLOT(setDisk(QString)));
+    //connect(m_model, SIGNAL(kernelVersionChanged(QString)), this, SLOT(setKernelVersion(QString)));
+    //connect(m_model, SIGNAL(xdgSessionTypeChanged(QString)), this, SLOT(setXdgSessionType(QString)));
 
     setType(m_model->type());
 }
@@ -203,6 +215,14 @@ void SystemInfoWidget::setMemory(const QString &memory)
 void SystemInfoWidget::setDisk(const QString &disk)
 {
     m_disk->setValue(disk);
+}
+
+void SystemInfoWidget::setKernelVersion(const QString &kernelVersion){
+    m_kernelVersion->setValue(kernelVersion);
+}
+
+void SystemInfoWidget::setXdgSessionType(const QString &xdgSessionType){
+    m_xdgSessionType->setValue(xdgSessionType);
 }
 
 }

@@ -28,6 +28,7 @@
 #include "widgets/basiclistdelegate.h"
 
 #include <QPainter>
+#include <QPainterPath>
 #include <QDebug>
 
 namespace dcc {

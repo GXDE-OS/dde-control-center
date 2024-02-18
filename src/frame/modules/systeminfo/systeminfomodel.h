@@ -28,6 +28,7 @@
 
 #include <QObject>
 #include <QPixmap>
+#include <QProcess>
 
 namespace dcc{
 namespace systeminfo{
@@ -51,6 +52,18 @@ public:
     QString processor() const { return m_processor;}
     QString memory() const { return m_memory;}
     QString disk() const { return m_disk;}
+    QString kernelVersion() const {
+        QProcess process;
+        process.start("uname", QStringList() << "-r");
+        process.waitForStarted();
+        process.waitForFinished();
+        QString value = process.readAllStandardOutput();
+        process.close();
+        return value;
+    }
+    QString xdgSessionType() const {
+        return QProcessEnvironment::systemEnvironment().value("XDG_SESSION_TYPE");
+    }
 
 #ifndef DCC_DISABLE_GRUB
     bool bootDelay() const;
@@ -109,6 +122,7 @@ private:
     QString m_processor;
     QString m_memory;
     QString m_disk;
+    QString m_kernelVersion;
 };
 
 }

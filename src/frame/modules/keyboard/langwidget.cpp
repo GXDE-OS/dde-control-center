@@ -36,6 +36,7 @@
 #include <QLineEdit>
 #include <QDebug>
 #include <QEvent>
+#include <QPainterPath>
 
 using namespace dcc;
 

@@ -63,6 +63,8 @@ public Q_SLOTS:
     void setDistroID(const QString& distroid);
     void setDistroVer(const QString& distrover);
     void setDisk(const QString& disk);
+    void setKernelVersion(const QString &kernelVersion);
+    void setXdgSessionType(const QString &xdgSessionType);
 
 private:
     widgets::TitleValueItem* m_distroid;
@@ -72,6 +74,8 @@ private:
     widgets::TitleValueItem* m_processor;
     widgets::TitleValueItem* m_memory;
     widgets::TitleValueItem* m_disk;
+    widgets::TitleValueItem* m_kernelVersion;
+    widgets::TitleValueItem* m_xdgSessionType;
 
 #ifndef DCC_ENABLE_END_USER_LICENSE
     widgets::NextPageWidget* m_copyright;

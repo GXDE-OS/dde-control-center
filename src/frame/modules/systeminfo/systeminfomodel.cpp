@@ -181,5 +181,6 @@ void SystemInfoModel::setDisk(qulonglong disk)
     diskChanged(m_disk);
 }
 
+
 }
 }

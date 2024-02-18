@@ -28,6 +28,7 @@
 #include <QMouseEvent>
 #include <QHBoxLayout>
 #include <QPainter>
+#include <QPainterPath>
 
 namespace dcc{
 namespace update{
