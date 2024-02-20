@@ -67,12 +67,15 @@ PersonalizationWidget::PersonalizationWidget()
 
     m_wmSwitch = new SwitchWidget(tr("Window Effect"));
 
+    m_showTopPanel = new SwitchWidget(tr("Top Panel"));
+
     theme->setTitle(tr("Theme"));
     font->setTitle(tr("Font"));
 
     m_userGroup->appendItem(theme);
     m_userGroup->appendItem(font);
     m_userGroup->appendItem(m_wmSwitch);
+    m_userGroup->appendItem(m_showTopPanel);
 
     setTitle(tr("Personalization"));
     connect(theme, &NextPageWidget::clicked, this,
@@ -84,6 +87,13 @@ PersonalizationWidget::PersonalizationWidget()
     connect(m_wmSwitch, &SwitchWidget::checkedChanged, this, [=] {
         // reset switch state
         m_wmSwitch->setChecked(m_model->is3DWm());
+    });
+    //
+    /*connect(m_showTopPanel, &SwitchWidget::checkedChanged, this,
+            &PersonalizationWidget::setTopPanel);*/
+    connect(m_showTopPanel, &SwitchWidget::checkedChanged, this, [=] {
+        // reset top panel state
+        m_showTopPanel->setChecked(m_model->isOpenTopPanel());
     });
 
     connect(m_transparentSlider->slider(), &DCCSlider::valueChanged, this,

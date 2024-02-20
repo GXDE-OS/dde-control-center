@@ -61,6 +61,7 @@ private:
     PersonalizationModel *m_model;
     dcc::widgets::SettingsGroup* m_userGroup;
     dcc::widgets::SwitchWidget*  m_wmSwitch;
+    dcc::widgets::SwitchWidget*  m_showTopPanel;
     widgets::TitledSliderItem*   m_transparentSlider;
     dcc::widgets::SettingsGroup *m_trGrp;
 };

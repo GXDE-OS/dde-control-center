@@ -28,6 +28,9 @@
 #include "model/fontmodel.h"
 #include "model/fontsizemodel.h"
 
+#include <QFile>
+#include <QDir>
+
 using namespace dcc;
 using namespace dcc::personalization;
 
@@ -57,9 +60,25 @@ void PersonalizationModel::setIs3DWm(const bool is3d)
     }
 }
 
+void PersonalizationModel::setTopPanel(const bool isTopPanel)
+{
+    if(!QFile::exists("/usr/share/applications/dde-top-panel.desktop") || !QFile::exists("/usr/share/applications/dde-globalmenu-service.desktop")){
+        // Setting error
+        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/dde-top-panel.desktop or /usr/share/applications/gxde-globalmenu-service.desktop";
+        return;
+    }
+    QFile::copy("/usr/share/applications/dde-top-panel.desktop", QDir::homePath() + "/.config/autostart/gxde-top-panel.desktop");
+    QFile::copy("/usr/share/applications/dde-top-panel.desktop", QDir::homePath() + "/.config/autostart/gxde-globalmenu-service.desktop");
+}
+
 bool PersonalizationModel::is3DWm() const
 {
     return m_is3DWm;
+}
+
+bool PersonalizationModel::isOpenTopPanel() const
+{
+    return QFile::exists(QDir::homePath() + "/.config/autostart/gxde-top-panel.desktop");
 }
 
 void PersonalizationModel::setOpacity(std::pair<int, double> opacity)
