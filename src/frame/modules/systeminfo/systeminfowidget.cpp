@@ -33,6 +33,7 @@
 #include <QSettings>
 #include <QDebug>
 #include <QApplication>
+#include <QDateTime>
 
 const QString systemCopyright()
 {
@@ -40,7 +41,7 @@ const QString systemCopyright()
     const QString oem_copyright = settings.value("system_info_vendor_name").toString().toLatin1();
 
     if (oem_copyright.isEmpty())
-        return QString(QApplication::translate("dcc::systeminfo::SystemInfoWidget", "Copyright © 2011-%1 Wuhan Deepin Technology Co., Ltd.")).arg(2019);
+        return QString(QApplication::translate("dcc::systeminfo::SystemInfoWidget", "©2023-%1 GXDE")).arg(QDateTime::currentDateTime().toString("yyyy"));
     else
         return oem_copyright;
 }
