@@ -35,6 +35,7 @@
 
 #include <QDebug>
 #include <QPushButton>
+#include <QFile>
 
 using namespace dcc;
 using namespace dcc::personalization;
@@ -69,13 +70,21 @@ PersonalizationWidget::PersonalizationWidget()
 
     m_showTopPanel = new SwitchWidget(tr("Top Panel"));
 
+    m_showBottomPanel = new SwitchWidget(tr("Bottom Panel"));
+
     theme->setTitle(tr("Theme"));
     font->setTitle(tr("Font"));
 
     m_userGroup->appendItem(theme);
     m_userGroup->appendItem(font);
     m_userGroup->appendItem(m_wmSwitch);
-    m_userGroup->appendItem(m_showTopPanel);
+    // 判断指导程序是否存在，如果不存在则不显示
+    if(m_model->isInstallTopPanel()){
+        m_userGroup->appendItem(m_showTopPanel);
+    }
+    if(m_model->isInstallBottomPanel()){
+        m_userGroup->appendItem(m_showBottomPanel);
+    }
 
     setTitle(tr("Personalization"));
     connect(theme, &NextPageWidget::clicked, this,
@@ -89,11 +98,17 @@ PersonalizationWidget::PersonalizationWidget()
         m_wmSwitch->setChecked(m_model->is3DWm());
     });
     //
-    /*connect(m_showTopPanel, &SwitchWidget::checkedChanged, this,
-            &PersonalizationWidget::setTopPanel);*/
+    connect(m_showTopPanel, &SwitchWidget::checkedChanged, this,
+            &PersonalizationWidget::requestSetTopPanel);
     connect(m_showTopPanel, &SwitchWidget::checkedChanged, this, [=] {
         // reset top panel state
         m_showTopPanel->setChecked(m_model->isOpenTopPanel());
+    });
+    connect(m_showBottomPanel, &SwitchWidget::checkedChanged, this,
+            &PersonalizationWidget::requestSetBottomPanel);
+    connect(m_showBottomPanel, &SwitchWidget::checkedChanged, this, [=] {
+        // reset top panel state
+        m_showBottomPanel->setChecked(m_model->isOpenBottomPanel());
     });
 
     connect(m_transparentSlider->slider(), &DCCSlider::valueChanged, this,
@@ -113,6 +128,8 @@ void PersonalizationWidget::setModel(PersonalizationModel *const model)
             &SwitchWidget::setChecked);
 
     m_wmSwitch->setChecked(model->is3DWm());
+    m_showTopPanel->setChecked(model->isOpenTopPanel());
+    m_showBottomPanel->setChecked(model->isOpenBottomPanel());
     connect(model, &PersonalizationModel::onOpacityChanged, this,
             &PersonalizationWidget::onOpacityChanged);
 

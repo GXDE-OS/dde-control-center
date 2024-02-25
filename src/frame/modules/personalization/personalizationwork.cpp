@@ -383,6 +383,14 @@ void PersonalizationWork::setOpacity(int opacity)
     m_dbus->setOpacity(sliderValutToOpacity(opacity));
 }
 
+void PersonalizationWork::setTopPanel(const int value){
+    m_model->setTopPanel(value);
+}
+
+void PersonalizationWork::setBottomPanel(const int value){
+    m_model->setBottomPanel(value);
+}
+
 template<typename T>
 T PersonalizationWork::toSliderValue(std::vector<T> list, T value)
 {

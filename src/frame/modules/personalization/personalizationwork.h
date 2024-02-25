@@ -60,6 +60,8 @@ public Q_SLOTS:
     void setFontSize(const int value);
     void switchWM();
     void setOpacity(int opcaity);
+    void setTopPanel(int value);
+    void setBottomPanel(int value);
 
 private Q_SLOTS:
     void FontSizeChanged(const double value) const;

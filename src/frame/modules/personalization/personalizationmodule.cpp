@@ -79,6 +79,8 @@ ModuleWidget *PersonalizationModule::moduleWidget()
         connect(m_personalizationWidget, &PersonalizationWidget::showFontsWidget, this, &PersonalizationModule::showFontsWidget);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSwitchWM, m_work, &PersonalizationWork::switchWM);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetOpacity, m_work, &PersonalizationWork::setOpacity);
+        connect(m_personalizationWidget, &PersonalizationWidget::requestSetTopPanel, m_work, &PersonalizationWork::setTopPanel);
+        connect(m_personalizationWidget, &PersonalizationWidget::requestSetBottomPanel, m_work, &PersonalizationWork::setBottomPanel);
     }
     return m_personalizationWidget;
 }

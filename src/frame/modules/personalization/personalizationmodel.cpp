@@ -62,13 +62,36 @@ void PersonalizationModel::setIs3DWm(const bool is3d)
 
 void PersonalizationModel::setTopPanel(const bool isTopPanel)
 {
-    if(!QFile::exists("/usr/share/applications/dde-top-panel.desktop") || !QFile::exists("/usr/share/applications/dde-globalmenu-service.desktop")){
+    if(!QFile::exists("/usr/share/applications/gxde-top-panel.desktop") /*|| !QFile::exists("/usr/share/applications/gxde-globalmenu-service.desktop")*/){
         // Setting error
-        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/dde-top-panel.desktop or /usr/share/applications/gxde-globalmenu-service.desktop";
+        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/gxde-top-panel.desktop or /usr/share/applications/gxde-globalmenu-service.desktop";
         return;
     }
-    QFile::copy("/usr/share/applications/dde-top-panel.desktop", QDir::homePath() + "/.config/autostart/gxde-top-panel.desktop");
-    QFile::copy("/usr/share/applications/dde-top-panel.desktop", QDir::homePath() + "/.config/autostart/gxde-globalmenu-service.desktop");
+    if(isTopPanel){
+        QFile::copy("/usr/share/applications/gxde-top-panel.desktop",
+                    QDir::homePath() + "/.config/autostart/gxde-top-panel.desktop"); // 设置自动启动
+        system("setsid gxde-top-panel > /dev/null 2>&1 &");
+        return;
+    }
+    QFile::remove(QDir::homePath() + "/.config/autostart/gxde-top-panel.desktop"); // 移除自动启动
+    system("killall gxde-top-panel -9");
+}
+
+void PersonalizationModel::setBottomPanel(const bool value)
+{
+    if(!QFile::exists("/usr/share/applications/plank.desktop")){
+        // Setting error
+        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/plank.desktop";
+        return;
+    }
+    if(value){
+        QFile::copy("/usr/share/applications/plank.desktop",
+                    QDir::homePath() + "/.config/autostart/plank.desktop"); // 设置自动启动
+        system("setsid plank > /dev/null 2>&1 &");
+        return;
+    }
+    QFile::remove(QDir::homePath() + "/.config/autostart/plank.desktop"); // 移除自动启动
+    system("killall plank -9");
 }
 
 bool PersonalizationModel::is3DWm() const
@@ -79,6 +102,21 @@ bool PersonalizationModel::is3DWm() const
 bool PersonalizationModel::isOpenTopPanel() const
 {
     return QFile::exists(QDir::homePath() + "/.config/autostart/gxde-top-panel.desktop");
+}
+
+bool PersonalizationModel::isOpenBottomPanel() const
+{
+    return QFile::exists(QDir::homePath() + "/.config/autostart/plank.desktop");
+}
+
+bool PersonalizationModel::isInstallTopPanel() const
+{
+    return QFile::exists("/usr/bin/gxde-top-panel");
+}
+
+bool PersonalizationModel::isInstallBottomPanel() const
+{
+    return QFile::exists("/usr/bin/plank");
 }
 
 void PersonalizationModel::setOpacity(std::pair<int, double> opacity)
