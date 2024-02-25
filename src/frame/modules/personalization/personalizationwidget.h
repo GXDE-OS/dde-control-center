@@ -50,6 +50,7 @@ public Q_SLOTS:
 Q_SIGNALS:
     void showThemeWidget();
     void showFontsWidget();
+    void showVideoWallpaperWidget();
     void requestSwitchWM();
     void requestSetOpacity(int value);
     void requestSetTopPanel(int value);

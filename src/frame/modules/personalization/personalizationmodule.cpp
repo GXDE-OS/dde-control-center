@@ -115,6 +115,19 @@ void PersonalizationModule::showFontsWidget()
     m_frameProxy->pushWidget(this, fontsWidget);
 }
 
+void PersonalizationModule::showVideoWallpaperWidget()
+{
+    /*m_work->refreshFont();
+
+    FontsWidget *fontsWidget = new FontsWidget;
+    fontsWidget->setModel(m_model);
+    connect(fontsWidget, &FontsWidget::showStandardFont, this, &PersonalizationModule::showStanardFontsListWidget);
+    connect(fontsWidget, &FontsWidget::showMonoFont,    this, &PersonalizationModule::showMonoFontsListWidget);
+    connect(fontsWidget, &FontsWidget::requestSetFontSize, m_work, &PersonalizationWork::setFontSize);
+
+    m_frameProxy->pushWidget(this, fontsWidget);*/
+}
+
 void PersonalizationModule::showStanardFontsListWidget()
 {
     FontListWidget *StandardFontList = new FontListWidget(tr("Standard Font"));

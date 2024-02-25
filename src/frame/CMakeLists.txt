@@ -639,6 +639,8 @@ set(PERSONALIZATION_FILES
                 modules/personalization/module/themewidget/theme.cpp
                 modules/personalization/module/themewidget/theme.h
                 modules/personalization/module/themewidget/themewidget.h
+                modules/personalization/module/videowallpaper/videowallpaper.cpp
+                modules/personalization/module/videowallpaper/videowallpaper.h
                 modules/personalization/personalizationmodule.h
                 modules/personalization/widget/fontitem.cpp
                 modules/personalization/widget/fontitem.h

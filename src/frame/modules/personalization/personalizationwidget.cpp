@@ -65,6 +65,7 @@ PersonalizationWidget::PersonalizationWidget()
     m_centralLayout->addWidget(m_userGroup);
     NextPageWidget *theme = new NextPageWidget;
     NextPageWidget *font  = new NextPageWidget;
+    NextPageWidget *videoWallpaper  = new NextPageWidget;
 
     m_wmSwitch = new SwitchWidget(tr("Window Effect"));
 
@@ -74,6 +75,7 @@ PersonalizationWidget::PersonalizationWidget()
 
     theme->setTitle(tr("Theme"));
     font->setTitle(tr("Font"));
+    videoWallpaper->setTitle(tr("Video Wallpaper"));
 
     m_userGroup->appendItem(theme);
     m_userGroup->appendItem(font);
@@ -91,6 +93,8 @@ PersonalizationWidget::PersonalizationWidget()
             &PersonalizationWidget::showThemeWidget);
     connect(font, &NextPageWidget::clicked, this,
             &PersonalizationWidget::showFontsWidget);
+    connect(videoWallpaper, &NextPageWidget::clicked, this,
+            &PersonalizationWidget::showVideoWallpaperWidget);
     connect(m_wmSwitch, &SwitchWidget::checkedChanged, this,
             &PersonalizationWidget::requestSwitchWM);
     connect(m_wmSwitch, &SwitchWidget::checkedChanged, this, [=] {
