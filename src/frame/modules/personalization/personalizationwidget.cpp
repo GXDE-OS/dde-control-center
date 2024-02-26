@@ -79,8 +79,12 @@ PersonalizationWidget::PersonalizationWidget()
 
     m_userGroup->appendItem(theme);
     m_userGroup->appendItem(font);
+    // 判断系统有没有安装动态壁纸
+    if(true){
+        m_userGroup->appendItem(videoWallpaper);
+    }
     m_userGroup->appendItem(m_wmSwitch);
-    // 判断指导程序是否存在，如果不存在则不显示
+    // 判断指定程序是否存在，如果不存在则不显示
     if(m_model->isInstallTopPanel()){
         m_userGroup->appendItem(m_showTopPanel);
     }

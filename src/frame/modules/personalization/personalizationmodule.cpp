@@ -30,6 +30,7 @@
 #include "module/themewidget/themewidget.h"
 #include "module/fontswidget/fontswidget.h"
 #include "module/fontswidget/fontlistwidget.h"
+#include "module/videowallpaper/videowallpaper.h"
 
 #include <QElapsedTimer>
 
@@ -77,6 +78,7 @@ ModuleWidget *PersonalizationModule::moduleWidget()
         m_personalizationWidget->setModel(m_model);
         connect(m_personalizationWidget, &PersonalizationWidget::showThemeWidget, this, &PersonalizationModule::showThemeWidget);
         connect(m_personalizationWidget, &PersonalizationWidget::showFontsWidget, this, &PersonalizationModule::showFontsWidget);
+        connect(m_personalizationWidget, &PersonalizationWidget::showVideoWallpaperWidget, this, &PersonalizationModule::showVideoWallpaperWidget);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSwitchWM, m_work, &PersonalizationWork::switchWM);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetOpacity, m_work, &PersonalizationWork::setOpacity);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetTopPanel, m_work, &PersonalizationWork::setTopPanel);
@@ -117,15 +119,9 @@ void PersonalizationModule::showFontsWidget()
 
 void PersonalizationModule::showVideoWallpaperWidget()
 {
-    /*m_work->refreshFont();
-
-    FontsWidget *fontsWidget = new FontsWidget;
-    fontsWidget->setModel(m_model);
-    connect(fontsWidget, &FontsWidget::showStandardFont, this, &PersonalizationModule::showStanardFontsListWidget);
-    connect(fontsWidget, &FontsWidget::showMonoFont,    this, &PersonalizationModule::showMonoFontsListWidget);
-    connect(fontsWidget, &FontsWidget::requestSetFontSize, m_work, &PersonalizationWork::setFontSize);
-
-    m_frameProxy->pushWidget(this, fontsWidget);*/
+    VideoWallpaper *videoWallpaperWidget = new VideoWallpaper;
+    videoWallpaperWidget->setModel(m_model);
+    m_frameProxy->pushWidget(this, videoWallpaperWidget);
 }
 
 void PersonalizationModule::showStanardFontsListWidget()
