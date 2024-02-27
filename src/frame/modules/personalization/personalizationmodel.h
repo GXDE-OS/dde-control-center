@@ -57,6 +57,7 @@ public:
     bool isOpenBottomPanel() const;
     bool isInstallTopPanel() const;
     bool isInstallBottomPanel() const;
+    bool isInstallVideoWallpaper() const;
 
     inline std::pair<int, double> opacity() const { return m_opacity; }
     void setOpacity(std::pair<int, double> opacity);

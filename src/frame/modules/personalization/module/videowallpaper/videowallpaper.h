@@ -3,12 +3,14 @@
 
 #include "widgets/contentwidget.h"
 #include "widgets/translucentframe.h"
-#include "widgets/switchwidget.h"
+#include "widgets/filechoosewidget.h"
+#include "widgets/nextpagewidget.h"
 
 #include <QObject>
 #include <QVBoxLayout>
 #include <QDebug>
 #include <QPushButton>
+#include <QDBusMessage>
 
 namespace dcc
 {
@@ -34,8 +36,10 @@ private:
     widgets::TranslucentFrame   *m_widget;
     QPushButton *m_playButton;
     QPushButton *m_pauseButton;
-    QPushButton *m_moreSettingButton;
+    dcc::widgets::NextPageWidget *m_moreSettingButton;
+    dcc::widgets::FileChooseWidget *m_videoWallpaperChooseWidget;
     QHBoxLayout *mediaControl;
+
 
     void OpenMoreSettingsWindow();
 

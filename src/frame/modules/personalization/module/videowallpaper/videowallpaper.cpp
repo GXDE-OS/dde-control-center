@@ -1,7 +1,9 @@
 #include "videowallpaperchoose.h"
 #include "videowallpaper.h"
+#include "videowallpapermodel.h"
 #include "widgets/nextpagewidget.h"
 #include "widgets/buttontuple.h"
+#include "widgets/labels/tipslabel.h"
 #include "../../personalizationmodel.h"
 
 using namespace dcc;
@@ -14,19 +16,27 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     m_mainlayout         = new QVBoxLayout;
     m_widget             = new TranslucentFrame;
 
+    m_videoWallpaperChooseWidget = new FileChooseWidget();
     m_playButton = new QPushButton(tr("Play"));
     m_pauseButton = new QPushButton(tr("Pause"));
-    m_moreSettingButton = new QPushButton(tr("More Settings"));
+    m_moreSettingButton = new NextPageWidget();
 
-    connect(m_moreSettingButton, &QPushButton::clicked, this, &VideoWallpaper::OpenMoreSettingsWindow);
+    m_videoWallpaperChooseWidget->setTitle(tr("Choose wallpaper path:"));
+    m_moreSettingButton->setTitle(tr("More Settings"));
+
+    connect(m_playButton, &QPushButton::clicked, this, [](){VideoWallpaperModel().Play();});
+    connect(m_pauseButton, &QPushButton::clicked, this, [](){VideoWallpaperModel().Pause();});
+    connect(m_moreSettingButton, &NextPageWidget::clicked, this, [](){VideoWallpaperModel().ActiveWindow();});
 
     // 并列显示按钮
     mediaControl = new QHBoxLayout;
     mediaControl->addWidget(m_playButton);
     mediaControl->addWidget(m_pauseButton);
 
+    m_mainlayout->addWidget(m_videoWallpaperChooseWidget);
     m_mainlayout->addLayout(mediaControl);
     m_mainlayout->addWidget(m_moreSettingButton);
+    m_mainlayout->addWidget(new TipsLabel("Power by fantascene-dynamic-wallpaper"));
 
     m_mainlayout->addSpacing(10);
     m_mainlayout->setMargin(0);
@@ -35,6 +45,8 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     m_widget->setLayout(m_mainlayout);
     setTitle(tr("Video Wallpaper"));
     setContent(m_widget);
+
+
 }
 
 void VideoWallpaper::setModel(PersonalizationModel *const model)

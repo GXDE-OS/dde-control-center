@@ -643,6 +643,8 @@ set(PERSONALIZATION_FILES
                 modules/personalization/module/videowallpaper/videowallpaper.h
                 modules/personalization/module/videowallpaper/videowallpaperchoose.h
                 modules/personalization/module/videowallpaper/videowallpaperchoose.cpp
+                modules/personalization/module/videowallpaper/videowallpapermodel.h
+                modules/personalization/module/videowallpaper/videowallpapermodel.cpp
                 modules/personalization/personalizationmodule.h
                 modules/personalization/widget/fontitem.cpp
                 modules/personalization/widget/fontitem.h

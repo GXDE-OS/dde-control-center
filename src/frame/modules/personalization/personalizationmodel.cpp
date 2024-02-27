@@ -114,6 +114,11 @@ bool PersonalizationModel::isInstallTopPanel() const
     return QFile::exists("/usr/bin/gxde-top-panel");
 }
 
+bool PersonalizationModel::isInstallVideoWallpaper() const
+{
+    return QFile::exists("/usr/bin/fantascene-dynamic-wallpaper");
+}
+
 bool PersonalizationModel::isInstallBottomPanel() const
 {
     return QFile::exists("/usr/bin/plank");

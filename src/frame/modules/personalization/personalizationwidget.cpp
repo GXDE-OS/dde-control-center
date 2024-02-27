@@ -80,7 +80,7 @@ PersonalizationWidget::PersonalizationWidget()
     m_userGroup->appendItem(theme);
     m_userGroup->appendItem(font);
     // 判断系统有没有安装动态壁纸
-    if(true){
+    if(m_model->isInstallVideoWallpaper()){
         m_userGroup->appendItem(videoWallpaper);
     }
     m_userGroup->appendItem(m_wmSwitch);
