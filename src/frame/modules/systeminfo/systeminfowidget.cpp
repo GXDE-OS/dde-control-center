@@ -118,7 +118,7 @@ SystemInfoWidget::SystemInfoWidget(SystemInfoModel* model)
     m_xdgSessionType->setValue(m_model->xdgSessionType());
 
     m_sourceLink = new NextPageWidget();
-    m_sourceLink->setTitle("System website");
+    m_sourceLink->setTitle(tr("System website"));
 
     infoGroup->appendItem(logo);
     infoGroup->appendItem(m_distroid);

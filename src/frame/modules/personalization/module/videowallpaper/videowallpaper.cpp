@@ -24,7 +24,7 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     m_moreSettingButton = new NextPageWidget();
 
     m_videoWallpaperChooseWidget->setTitle(tr("Choose wallpaper path:"));
-    m_videoWallpaperChooseWidget->setType("视频文件(*.mp4);;所有文件(*.*)");
+    m_videoWallpaperChooseWidget->setType(tr("Video(*.mp4);;所有文件(*.*)"));
     m_volumeSetting->slider()->setRange(0, 100);
     m_moreSettingButton->setTitle(tr("More Settings"));
 
@@ -43,8 +43,8 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     m_mainlayout->addLayout(mediaControl);
     //m_mainlayout->addWidget(m_volumeSetting);  // 因为功能有问题，暂时屏蔽
     m_mainlayout->addWidget(m_moreSettingButton);
-    m_mainlayout->addWidget(new TipsLabel("Press \"Play\" button to set new wallpaper"));
-    m_mainlayout->addWidget(new TipsLabel("Power by fantascene-dynamic-wallpaper"));
+    m_mainlayout->addWidget(new TipsLabel(tr("Press \"Play\" button to set new wallpaper")));
+    m_mainlayout->addWidget(new TipsLabel(tr("Power by fantascene-dynamic-wallpaper")));
 
     m_mainlayout->addSpacing(10);
     m_mainlayout->setMargin(0);
