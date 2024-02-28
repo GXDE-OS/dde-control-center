@@ -10,12 +10,12 @@ class VideoWallpaperModel
 
 public:
     VideoWallpaperModel();
-    void Play();
+    void Play(const QString path = NULL);
     void ActiveWindow();
     void Clear();
     void Pause();
-    void SetFile(QString path);
-    void SetVolume(int volume);
+    void SetFile(const QString path);
+    void SetVolume(const int volume);
     void Stop();
 
 

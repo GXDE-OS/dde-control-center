@@ -5,6 +5,7 @@
 #include "widgets/translucentframe.h"
 #include "widgets/filechoosewidget.h"
 #include "widgets/nextpagewidget.h"
+#include "widgets/titledslideritem.h"
 
 #include <QObject>
 #include <QVBoxLayout>
@@ -38,10 +39,14 @@ private:
     QPushButton *m_pauseButton;
     dcc::widgets::NextPageWidget *m_moreSettingButton;
     dcc::widgets::FileChooseWidget *m_videoWallpaperChooseWidget;
+    dcc::widgets::TitledSliderItem *m_volumeSetting;
     QHBoxLayout *mediaControl;
 
 
     void OpenMoreSettingsWindow();
+    void SetVolumeTip(int volume);
+    void SetVolume(int volume);
+    void Play();
 
 };
 }

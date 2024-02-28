@@ -28,6 +28,7 @@
 
 #include "modules/modulewidget.h"
 #include "systeminfomodel.h"
+#include "widgets/nextpagewidget.h"
 
 using namespace dcc;
 
@@ -76,6 +77,9 @@ private:
     widgets::TitleValueItem* m_disk;
     widgets::TitleValueItem* m_kernelVersion;
     widgets::TitleValueItem* m_xdgSessionType;
+    widgets::NextPageWidget *m_sourceLink;
+
+    void OpenProgramWebsite();
 
 #ifndef DCC_ENABLE_END_USER_LICENSE
     widgets::NextPageWidget* m_copyright;

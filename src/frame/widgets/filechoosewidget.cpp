@@ -75,13 +75,20 @@ void FileChooseWidget::chooseFile()
     Q_EMIT requestFrameKeepAutoHide(false);
 
     QFileDialog fd;
+
     fd.setModal(true);
+    fd.setNameFilter(fileDialogType);
 
     if (fd.exec() == QFileDialog::Accepted) {
         m_edit->setText(fd.selectedFiles().first());
     }
 
     Q_EMIT requestFrameKeepAutoHide(true);
+}
+
+void FileChooseWidget::setType(const QString &type)
+{
+    fileDialogType = type;
 }
 
 }

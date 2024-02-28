@@ -8,8 +8,11 @@ VideoWallpaperModel::VideoWallpaperModel()
 
 }
 
-void VideoWallpaperModel::Play()
+void VideoWallpaperModel::Play(const QString path)
 {
+    if(path != NULL){
+        this->SetFile(path);
+    }
     QDBusMessage dbus = QDBusMessage::createMethodCall(m_videoDBusDestination,
                                                        m_videoDBusPath,
                                                        m_videoDBusinterface,
@@ -44,14 +47,24 @@ void VideoWallpaperModel::Pause()
     QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
-void VideoWallpaperModel::SetFile(QString path)
+void VideoWallpaperModel::SetFile(const QString path)
 {
-
+    QDBusMessage dbus = QDBusMessage::createMethodCall(m_videoDBusDestination,
+                                                       m_videoDBusPath,
+                                                       m_videoDBusinterface,
+                                                       "setFile");
+    dbus << path;
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
-void VideoWallpaperModel::SetVolume(int volume)
+void VideoWallpaperModel::SetVolume(const int volume)
 {
-
+    QDBusMessage dbus = QDBusMessage::createMethodCall(m_videoDBusDestination,
+                                                       m_videoDBusPath,
+                                                       m_videoDBusinterface,
+                                                       "setFile");
+    dbus << volume;
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
 void VideoWallpaperModel::Stop()

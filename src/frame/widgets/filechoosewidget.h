@@ -46,6 +46,7 @@ public:
 
     QLineEdit *edit() const { return m_edit; }
     void setTitle(const QString &title);
+    void setType(const QString &type);
 
 Q_SIGNALS:
     void requestFrameKeepAutoHide(const bool autoHide) const;
@@ -56,6 +57,7 @@ private Q_SLOTS:
 private:
     QLabel *m_title;
     QLineEdit *m_edit;
+    QString fileDialogType;
     Dtk::Widget::DImageButton *m_btn;
 };
 
