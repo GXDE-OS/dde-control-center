@@ -2,16 +2,18 @@
 
 #include <QDBusConnection>
 #include <QDebug>
+#include <QFile>
+#include <QDir>
 
 VideoWallpaperModel::VideoWallpaperModel()
 {
 
 }
 
-void VideoWallpaperModel::Play(const QString path)
+void VideoWallpaperModel::play(const QString path)
 {
     if(path != NULL){
-        this->SetFile(path);
+        this->setFile(path);
     }
     QDBusMessage dbus = QDBusMessage::createMethodCall(m_videoDBusDestination,
                                                        m_videoDBusPath,
@@ -20,7 +22,7 @@ void VideoWallpaperModel::Play(const QString path)
     QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
-void VideoWallpaperModel::ActiveWindow()
+void VideoWallpaperModel::activeWindow()
 {
     QDBusMessage dbus = QDBusMessage::createMethodCall(m_videoDBusDestination,
                                                        m_videoDBusPath,
@@ -29,7 +31,7 @@ void VideoWallpaperModel::ActiveWindow()
     QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
-void VideoWallpaperModel::Clear()
+void VideoWallpaperModel::clear()
 {
     QDBusMessage dbus = QDBusMessage::createMethodCall(m_videoDBusDestination,
                                                        m_videoDBusPath,
@@ -38,7 +40,7 @@ void VideoWallpaperModel::Clear()
     QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
-void VideoWallpaperModel::Pause()
+void VideoWallpaperModel::pause()
 {
     QDBusMessage dbus = QDBusMessage::createMethodCall(m_videoDBusDestination,
                                                        m_videoDBusPath,
@@ -47,7 +49,7 @@ void VideoWallpaperModel::Pause()
     QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
-void VideoWallpaperModel::SetFile(const QString path)
+void VideoWallpaperModel::setFile(const QString path)
 {
     QDBusMessage dbus = QDBusMessage::createMethodCall(m_videoDBusDestination,
                                                        m_videoDBusPath,
@@ -57,7 +59,7 @@ void VideoWallpaperModel::SetFile(const QString path)
     QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
-void VideoWallpaperModel::SetVolume(const int volume)
+void VideoWallpaperModel::setVolume(const int volume)
 {
     QDBusMessage dbus = QDBusMessage::createMethodCall(m_videoDBusDestination,
                                                        m_videoDBusPath,
@@ -67,11 +69,35 @@ void VideoWallpaperModel::SetVolume(const int volume)
     QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
-void VideoWallpaperModel::Stop()
+void VideoWallpaperModel::stop()
 {
     QDBusMessage dbus = QDBusMessage::createMethodCall(m_videoDBusDestination,
                                                        m_videoDBusPath,
                                                        m_videoDBusinterface,
                                                        "stop");
     QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
+}
+
+void VideoWallpaperModel::setVideoWallpaperEnabled(const bool value)
+{
+    if (value){
+        if(!QFile::exists("/usr/share/applications/gxde-fantascene-dynamic-wallpaper.desktop")){
+            // Setting error
+            qDebug() << "Can't find gxde top panel config file: /usr/share/applications/gxde-fantascene-dynamic-wallpaper.desktop";
+            return;
+        }
+        if(value){
+            QFile::copy("/usr/share/applications/gxde-fantascene-dynamic-wallpaper.desktop",
+                        QDir::homePath() + "/.config/autostart/gxde-fantascene-dynamic-wallpaper.desktop"); // 设置自动启动
+            system("setsid gxde-fantascene-dynamic-wallpaper > /dev/null 2>&1 &");
+            return;
+        }
+        QFile::remove(QDir::homePath() + "/.config/autostart/gxde-fantascene-dynamic-wallpaper.desktop"); // 移除自动启动
+        system("killall gxde-fantascene-dynamic-wallpaper -9");
+    }
+}
+
+bool VideoWallpaperModel::isVideoWallpaperEnabled() const
+{
+    return QFile::exists(QDir::homePath() + "/.config/autostart/gxde-fantascene-dynamic-wallpaper.desktop");
 }

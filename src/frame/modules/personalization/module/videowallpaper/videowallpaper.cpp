@@ -17,6 +17,7 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     m_mainlayout         = new QVBoxLayout;
     m_widget             = new TranslucentFrame;
 
+    m_enableSwitch = new SwitchWidget("Video Wallpaper");
     m_videoWallpaperChooseWidget = new FileChooseWidget();
     m_playButton = new QPushButton(tr("Play"));
     m_pauseButton = new QPushButton(tr("Pause"));
@@ -28,17 +29,19 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     m_volumeSetting->slider()->setRange(0, 100);
     m_moreSettingButton->setTitle(tr("More Settings"));
 
+    //connect(m_enableSwitch, &SwitchWidget::checkedChanged, this,);
     connect(m_playButton, &QPushButton::clicked, this, &VideoWallpaper::Play);
-    connect(m_pauseButton, &QPushButton::clicked, this, [](){VideoWallpaperModel().Pause();});
+    connect(m_pauseButton, &QPushButton::clicked, this, [](){VideoWallpaperModel().pause();});
     connect(m_volumeSetting->slider(), &QSlider::valueChanged, this, &VideoWallpaper::SetVolumeTip);
     connect(m_volumeSetting->slider(), &QSlider::valueChanged, this, &VideoWallpaper::SetVolume);
-    connect(m_moreSettingButton, &NextPageWidget::clicked, this, [](){VideoWallpaperModel().ActiveWindow();});
+    connect(m_moreSettingButton, &NextPageWidget::clicked, this, [](){VideoWallpaperModel().activeWindow();});
 
     // 并列显示按钮
     mediaControl = new QHBoxLayout;
     mediaControl->addWidget(m_playButton);
     mediaControl->addWidget(m_pauseButton);
 
+    m_mainlayout->addWidget(m_enableSwitch);
     m_mainlayout->addWidget(m_videoWallpaperChooseWidget);
     m_mainlayout->addLayout(mediaControl);
     //m_mainlayout->addWidget(m_volumeSetting);  // 因为功能有问题，暂时屏蔽
@@ -64,7 +67,7 @@ void VideoWallpaper::setModel(PersonalizationModel *const model)
 }
 
 void VideoWallpaper::OpenMoreSettingsWindow(){
-    VideoWallpaperModel().ActiveWindow();
+    VideoWallpaperModel().activeWindow();
 }
 
 void VideoWallpaper::SetVolumeTip(int volume)
@@ -75,7 +78,7 @@ void VideoWallpaper::SetVolumeTip(int volume)
 void VideoWallpaper::SetVolume(int volume)
 {
     VideoWallpaperModel volumeSetting;
-    volumeSetting.SetVolume(volume);
+    volumeSetting.setVolume(volume);
 }
 
 void VideoWallpaper::Play()
@@ -83,7 +86,7 @@ void VideoWallpaper::Play()
     QString videoPath = m_videoWallpaperChooseWidget->edit()->text();
     VideoWallpaperModel volumeSetting;
     if(videoPath != ""){
-        volumeSetting.SetFile(videoPath);
+        volumeSetting.setFile(videoPath);
     }
-    volumeSetting.Play();
+    volumeSetting.play();
 }

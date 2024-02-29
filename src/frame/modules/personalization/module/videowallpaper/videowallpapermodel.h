@@ -10,13 +10,15 @@ class VideoWallpaperModel
 
 public:
     VideoWallpaperModel();
-    void Play(const QString path = NULL);
-    void ActiveWindow();
-    void Clear();
-    void Pause();
-    void SetFile(const QString path);
-    void SetVolume(const int volume);
-    void Stop();
+    void play(const QString path = NULL);
+    void activeWindow();
+    void clear();
+    void pause();
+    void setFile(const QString path);
+    void setVolume(const int volume);
+    void stop();
+    void setVideoWallpaperEnabled(const bool value);
+    bool isVideoWallpaperEnabled() const;
 
 
 private:

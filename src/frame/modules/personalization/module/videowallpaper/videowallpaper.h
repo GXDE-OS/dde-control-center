@@ -6,6 +6,7 @@
 #include "widgets/filechoosewidget.h"
 #include "widgets/nextpagewidget.h"
 #include "widgets/titledslideritem.h"
+#include "widgets/switchwidget.h"
 
 #include <QObject>
 #include <QVBoxLayout>
@@ -35,6 +36,7 @@ public Q_SLOTS:
 private:
     QVBoxLayout        *m_mainlayout;
     widgets::TranslucentFrame   *m_widget;
+    dcc::widgets::SwitchWidget *m_enableSwitch;
     QPushButton *m_playButton;
     QPushButton *m_pauseButton;
     dcc::widgets::NextPageWidget *m_moreSettingButton;
