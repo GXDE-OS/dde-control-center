@@ -18,6 +18,8 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     m_widget             = new TranslucentFrame;
 
     m_enableSwitch = new SwitchWidget("Video Wallpaper");
+
+    m_videoWallpaperSettingGroup = new QFrame();
     m_videoWallpaperChooseWidget = new FileChooseWidget();
     m_playButton = new QPushButton(tr("Play"));
     m_pauseButton = new QPushButton(tr("Pause"));
@@ -29,7 +31,7 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     m_volumeSetting->slider()->setRange(0, 100);
     m_moreSettingButton->setTitle(tr("More Settings"));
 
-    //connect(m_enableSwitch, &SwitchWidget::checkedChanged, this,);
+    connect(m_enableSwitch, &SwitchWidget::checkedChanged, this, &VideoWallpaper::EnableOptionChange);
     connect(m_playButton, &QPushButton::clicked, this, &VideoWallpaper::Play);
     connect(m_pauseButton, &QPushButton::clicked, this, [](){VideoWallpaperModel().pause();});
     connect(m_volumeSetting->slider(), &QSlider::valueChanged, this, &VideoWallpaper::SetVolumeTip);
@@ -42,12 +44,15 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     mediaControl->addWidget(m_pauseButton);
 
     m_mainlayout->addWidget(m_enableSwitch);
-    m_mainlayout->addWidget(m_videoWallpaperChooseWidget);
-    m_mainlayout->addLayout(mediaControl);
-    //m_mainlayout->addWidget(m_volumeSetting);  // 因为功能有问题，暂时屏蔽
-    m_mainlayout->addWidget(m_moreSettingButton);
-    m_mainlayout->addWidget(new TipsLabel(tr("Press \"Play\" button to set new wallpaper")));
-    m_mainlayout->addWidget(new TipsLabel(tr("Power by fantascene-dynamic-wallpaper")));
+    m_mainlayout->addWidget(m_videoWallpaperSettingGroup);
+    QVBoxLayout *m_videoWallpaperSettingGroupLayout = new QVBoxLayout();
+    m_videoWallpaperSettingGroup->setLayout(m_videoWallpaperSettingGroupLayout);
+    m_mainlayout->addWidget(m_videoWallpaperSettingGroup);
+    m_videoWallpaperSettingGroupLayout->addWidget(m_videoWallpaperChooseWidget);
+    m_videoWallpaperSettingGroupLayout->addLayout(mediaControl);
+    //m_videoWallpaperSettingGroupLayout->addWidget(m_volumeSetting);  // 因为功能有问题，暂时屏蔽
+    m_videoWallpaperSettingGroupLayout->addWidget(m_moreSettingButton);
+    m_videoWallpaperSettingGroupLayout->addWidget(new TipsLabel(tr("Press \"Play\" button to set new wallpaper\nPower by fantascene-dynamic-wallpaper")));
 
     m_mainlayout->addSpacing(10);
     m_mainlayout->setMargin(0);
@@ -57,7 +62,16 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     setTitle(tr("Video Wallpaper"));
     setContent(m_widget);
 
+    // 加载设置
+    LoadSetting();
 
+}
+
+void VideoWallpaper::LoadSetting()
+{
+    VideoWallpaperModel setting;
+    m_videoWallpaperSettingGroup->setEnabled(setting.isVideoWallpaperEnabled());
+    m_enableSwitch->setChecked(setting.isVideoWallpaperEnabled());
 }
 
 void VideoWallpaper::setModel(PersonalizationModel *const model)
@@ -89,4 +103,13 @@ void VideoWallpaper::Play()
         volumeSetting.setFile(videoPath);
     }
     volumeSetting.play();
+}
+
+void VideoWallpaper::EnableOptionChange()
+{
+    VideoWallpaperModel setting;
+    setting.setVideoWallpaperEnabled(m_enableSwitch->checked());
+    m_enableSwitch->setChecked(setting.isVideoWallpaperEnabled());
+    m_videoWallpaperSettingGroup->setEnabled(setting.isVideoWallpaperEnabled());
+
 }

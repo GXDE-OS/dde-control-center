@@ -80,21 +80,19 @@ void VideoWallpaperModel::stop()
 
 void VideoWallpaperModel::setVideoWallpaperEnabled(const bool value)
 {
-    if (value){
-        if(!QFile::exists("/usr/share/applications/gxde-fantascene-dynamic-wallpaper.desktop")){
-            // Setting error
-            qDebug() << "Can't find gxde top panel config file: /usr/share/applications/gxde-fantascene-dynamic-wallpaper.desktop";
-            return;
-        }
-        if(value){
-            QFile::copy("/usr/share/applications/gxde-fantascene-dynamic-wallpaper.desktop",
-                        QDir::homePath() + "/.config/autostart/gxde-fantascene-dynamic-wallpaper.desktop"); // 设置自动启动
-            system("setsid gxde-fantascene-dynamic-wallpaper > /dev/null 2>&1 &");
-            return;
-        }
-        QFile::remove(QDir::homePath() + "/.config/autostart/gxde-fantascene-dynamic-wallpaper.desktop"); // 移除自动启动
-        system("killall gxde-fantascene-dynamic-wallpaper -9");
+    if(!QFile::exists("/usr/share/applications/gxde-fantascene-dynamic-wallpaper.desktop")){
+        // Setting error
+        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/gxde-fantascene-dynamic-wallpaper.desktop";
+        return;
     }
+    if(value){
+        QFile::copy("/usr/share/applications/gxde-fantascene-dynamic-wallpaper.desktop",
+                    QDir::homePath() + "/.config/autostart/gxde-fantascene-dynamic-wallpaper.desktop"); // 设置自动启动
+        system("setsid gxde-fantascene-dynamic-wallpaper > /dev/null 2>&1 &");
+        return;
+    }
+    QFile::remove(QDir::homePath() + "/.config/autostart/gxde-fantascene-dynamic-wallpaper.desktop"); // 移除自动启动
+    system("killall gxde-fantascene-dynamic-wallpaper -9");
 }
 
 bool VideoWallpaperModel::isVideoWallpaperEnabled() const

@@ -42,6 +42,7 @@ private:
     dcc::widgets::NextPageWidget *m_moreSettingButton;
     dcc::widgets::FileChooseWidget *m_videoWallpaperChooseWidget;
     dcc::widgets::TitledSliderItem *m_volumeSetting;
+    QFrame *m_videoWallpaperSettingGroup;
     QHBoxLayout *mediaControl;
 
 
@@ -49,6 +50,8 @@ private:
     void SetVolumeTip(int volume);
     void SetVolume(int volume);
     void Play();
+    void EnableOptionChange();
+    void LoadSetting();
 
 };
 }
