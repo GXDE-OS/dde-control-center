@@ -42,7 +42,9 @@ Depends: ${shlibs:Depends},
  deepin-installer-timezones,
  passwd,
  gxde-fantascene-dynamic-wallpaper,
- gxde-top-panel
+ gxde-top-panel,
+ ntp,
+ libkf5networkmanagerqt6
 Recommends: netselect
 Suggests: redshift
 Conflicts:
