@@ -61,19 +61,10 @@ DisplayWidget::DisplayWidget()
     m_brightnessSettings->setTitle(tr("Brightness"));
     m_scalingSettings->setTitle(tr("Scaling Settings"));
 
-    QStringList scaleList;
-    scaleList << "1.0"
-//              << "1.25"
-//              << "1.5"
-//              << "1.75"
-              << "2.0"
-//              << "2.25"
-//              << "2.5"
-//              << "2.75"
-              << "3.0";
+
 
     DCCSlider *slider = m_scaleWidget->slider();
-    slider->setRange(1, 3);
+    slider->setRange(1, scaleList.size());
     slider->setType(DCCSlider::Vernier);
     slider->setTickPosition(QSlider::TicksBelow);
     slider->setTickInterval(1);
@@ -135,9 +126,9 @@ DisplayWidget::DisplayWidget()
         }
     });
     connect(slider, &DCCSlider::valueChanged, this, [=](const int value) {
-        Q_EMIT requestUiScaleChanged(convertToScale(value));
+        Q_EMIT requestUiScaleChanged(scaleList.at(convertToScale(value) - 1).toDouble());
 
-        m_scaleWidget->setValueLiteral(QString::number(convertToScale(value)));
+        m_scaleWidget->setValueLiteral(scaleList.at(convertToScale(value) - 1));
     });
 
     connect(m_displayControlPage, &DisplayControlPage::requestDuplicateMode, this,

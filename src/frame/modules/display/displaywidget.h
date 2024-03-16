@@ -97,6 +97,18 @@ private:
     widgets::SettingsGroup *         m_resolutionsGrp;
     widgets::TitledSliderItem *      m_scaleWidget;
     widgets::NextPageWidget *        m_scalingSettings;
+
+    const QStringList scaleList =
+            QStringList() << "1.0"
+              << "1.25"
+              << "1.5"
+              << "1.75"
+              << "2.0"
+              << "2.25"
+              << "2.5"
+              << "2.75"
+              << "3.0";
+
 #ifndef DCC_DISABLE_MIRACAST
     widgets::SettingsGroup *m_miracastGrp;
 #endif
