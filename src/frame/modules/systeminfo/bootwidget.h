@@ -28,6 +28,7 @@
 
 #include "widgets/contentwidget.h"
 #include "widgets/switchwidget.h"
+#include "widgets/titledslideritem.h"
 #include "widgets/labels/tipslabel.h"
 
 #include <QListWidget>
@@ -66,6 +67,9 @@ private:
     QListWidget* m_bootList;
     TipsLabel *m_updatingLabel;
     GrubBackgroundItem *m_background;
+    TitledSliderItem *display;
+    QStringList scaleList = QStringList() << "1080p" << "ultrawide" << "2k"
+                                          << "ultrawide2k" << "4k";
 };
 
 }

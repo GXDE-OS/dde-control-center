@@ -75,13 +75,23 @@ BootWidget::BootWidget(QWidget *parent)
     m_theme = new SwitchWidget();
     m_theme->setTitle(tr("Theme"));
 
-    TipsLabel *label = new TipsLabel(tr("You can click the option in boot menu to set it as the first boot, and drag and drop a picture to replace the background."));
-    label->setWordWrap(true);
-    label->setContentsMargins(16, 0, 10, 0);
+    //TipsLabel *label = new TipsLabel(tr("You can click the option in boot menu to set it as the first boot, and drag and drop a picture to replace the background."));
+    //label->setWordWrap(true);
+    //label->setContentsMargins(16, 0, 10, 0);
 
     TipsLabel *themeLbl = new TipsLabel(tr("Switch theme on to view it in boot menu"));
     themeLbl->setWordWrap(true);
     themeLbl->setContentsMargins(16, 0, 10, 0);
+
+    display = new TitledSliderItem(tr("Display Scaling"));
+    DCCSlider *displaySlider = display->slider();
+    displaySlider->setRange(1, scaleList.size());
+    displaySlider->setType(DCCSlider::Vernier);
+    displaySlider->setTickPosition(QSlider::TicksBelow);
+    displaySlider->setTickInterval(1);
+    displaySlider->setPageStep(1);
+    displaySlider->blockSignals(true);
+    displaySlider->blockSignals(false);
 
     group->appendItem(m_background);
     group->appendItem(m_boot);
@@ -92,7 +102,7 @@ BootWidget::BootWidget(QWidget *parent)
     layout->addSpacing(10);
     layout->addWidget(group);
     layout->addSpacing(8);
-    layout->addWidget(label);
+    //layout->addWidget(label);
     layout->addWidget(themeLbl);
     layout->addStretch();
 
@@ -105,7 +115,7 @@ BootWidget::BootWidget(QWidget *parent)
     connect(m_boot, SIGNAL(checkedChanged(bool)), this, SIGNAL(bootdelay(bool)));
     connect(m_bootList, SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)),this, SLOT(onCurrentItem(QListWidgetItem*,QListWidgetItem*)));
     connect(m_background, &GrubBackgroundItem::requestEnableTheme, this, &BootWidget::enableTheme);
-    connect(m_background, &GrubBackgroundItem::requestSetBackground, this, &BootWidget::requestSetBackground);
+    //connect(m_background, &GrubBackgroundItem::requestSetBackground, this, &BootWidget::requestSetBackground);  // 禁用设置壁纸
 }
 
 void BootWidget::setDefaultEntry(const QString &value)

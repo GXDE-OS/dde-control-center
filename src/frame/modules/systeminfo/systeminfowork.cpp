@@ -140,7 +140,7 @@ void SystemInfoWork::setBootDelay(bool value)
 
 void SystemInfoWork::setEnableTheme(bool value)
 {
-    Q_EMIT requestSetAutoHideDCC(false);
+    /*Q_EMIT requestSetAutoHideDCC(false);
 
     QDBusPendingCall call = m_dbusGrub->SetEnableTheme(value);
     QDBusPendingCallWatcher *watcher = new QDBusPendingCallWatcher(call, this);
@@ -151,7 +151,15 @@ void SystemInfoWork::setEnableTheme(bool value)
 
         Q_EMIT requestSetAutoHideDCC(true);
         w->deleteLater();
-    });
+    });*/
+    // 使用 tela 设置
+    if(value) {
+        system("pkexec /usr/share/tela-grub2-themes/install.sh -b -t tela");
+    }
+    else {
+        system("pkexec /usr/share/tela-grub2-themes/install.sh -r -t tela");
+    }
+    Q_EMIT m_model->themeEnabledChanged(m_model->themeEnabled());
 }
 
 void SystemInfoWork::setDefaultEntry(const QString &entry)
