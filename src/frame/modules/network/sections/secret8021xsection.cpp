@@ -23,6 +23,8 @@
 #include "widgets/filechoosewidget.h"
 #include "widgets/contentwidget.h"
 
+#include <QDebug>
+
 using namespace dcc::network;
 using namespace NetworkManager;
 using namespace dcc::widgets;

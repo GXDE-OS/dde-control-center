@@ -31,6 +31,7 @@
 #include <QMap>
 #include <QString>
 #include <DDesktopServices>
+#include <DApplication>
 
 DWIDGET_USE_NAMESPACE
 

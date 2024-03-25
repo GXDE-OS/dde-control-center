@@ -37,6 +37,8 @@
 #include <QPushButton>
 #include <QFile>
 
+DGUI_USE_NAMESPACE
+
 using namespace dcc;
 using namespace dcc::personalization;
 using namespace dcc::widgets;

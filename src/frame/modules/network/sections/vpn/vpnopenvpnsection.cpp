@@ -23,6 +23,8 @@
 #include "widgets/passwdeditwidget.h"
 #include "widgets/switchwidget.h"
 
+#include <QDebug>
+
 using namespace dcc::network;
 using namespace dcc::widgets;
 using namespace NetworkManager;

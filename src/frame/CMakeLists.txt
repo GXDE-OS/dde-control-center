@@ -226,6 +226,13 @@ set(WIDGETS_FILES
                 widgets/titledslideritem.h
                 widgets/timeoutdialog.cpp
                 widgets/timeoutdialog.h
+		widgets/ddialog.h
+		widgets/ddialog.cpp
+		widgets/ddialog_p.h
+		widgets/dabstractdialogprivate_p.h
+		#widgets/DWindowManagerHelper
+		#widgets/dwindowmanagerhelper.h
+		#widgets/dwindowmanagerhelper.cpp
 )
 
 # load modules

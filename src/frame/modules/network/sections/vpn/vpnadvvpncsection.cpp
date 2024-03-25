@@ -22,6 +22,7 @@
 #include "vpnadvvpncsection.h"
 
 #include <dspinbox.h>
+#include <QDebug>
 
 using namespace dcc::network;
 using namespace dcc::widgets;

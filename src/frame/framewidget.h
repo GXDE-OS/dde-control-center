@@ -29,12 +29,14 @@
 #include <QWidget>
 #include <QPropertyAnimation>
 #include <QGraphicsOpacityEffect>
+#include <DApplication>
 
 #include <DWindowManagerHelper>
 
 #include "widgets/translucentframe.h"
 
 DWIDGET_USE_NAMESPACE
+DGUI_USE_NAMESPACE
 
 ///
 /// FrameWidget can auto adjust size to fit parent Frame

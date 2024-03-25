@@ -34,6 +34,9 @@
 #include "systeminfomodel.h"
 #include "widgets/basiclistdelegate.h"
 
+
+using namespace dcc::widgets;
+
 namespace dcc{
 namespace systeminfo{
 
@@ -83,7 +86,7 @@ BootWidget::BootWidget(QWidget *parent)
     themeLbl->setWordWrap(true);
     themeLbl->setContentsMargins(16, 0, 10, 0);
 
-    display = new TitledSliderItem(tr("Display Scaling"));
+    /*display = new TitledSliderItem(tr("Display Scaling"));
     DCCSlider *displaySlider = display->slider();
     displaySlider->setRange(1, scaleList.size());
     displaySlider->setType(DCCSlider::Vernier);
@@ -91,7 +94,7 @@ BootWidget::BootWidget(QWidget *parent)
     displaySlider->setTickInterval(1);
     displaySlider->setPageStep(1);
     displaySlider->blockSignals(true);
-    displaySlider->blockSignals(false);
+    displaySlider->blockSignals(false);*/
 
     group->appendItem(m_background);
     group->appendItem(m_boot);

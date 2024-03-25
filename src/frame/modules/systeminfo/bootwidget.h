@@ -36,6 +36,7 @@
 using namespace dcc::widgets;
 
 namespace dcc{
+
 namespace systeminfo{
 
 class SystemInfoModel;
