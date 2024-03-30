@@ -44,7 +44,8 @@ Depends: ${shlibs:Depends},
  gxde-fantascene-dynamic-wallpaper,
  gxde-top-panel,
  ntp,
- libkf5networkmanagerqt6
+ libkf5networkmanagerqt6,
+ libdde-network-utils
 Recommends: netselect
 Suggests: redshift
 Conflicts:
