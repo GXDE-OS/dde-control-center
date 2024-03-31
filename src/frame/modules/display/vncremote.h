@@ -39,6 +39,7 @@ private:
     dcc::widgets::TipsLabel *passwordTips;
     dcc::widgets::TipsLabel *passwordSettingStatus;
     QPushButton *setPasswordButton;
+    QPushButton *removePasswordButton;
 
 
 
@@ -47,6 +48,7 @@ private:
     void SetVNCPassword();
     void SetVNCEnabled();
     void RestartX11VNC();
+    void RemovePassword();
 
 
 };

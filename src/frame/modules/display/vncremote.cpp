@@ -32,6 +32,7 @@ dcc::display::VNCRemote::VNCRemote(QWidget *parent)
     passwordFirst->setTitle(tr("New Password"));
     passwordAgain->setTitle("Repeat Password");
 
+    removePasswordButton = new QPushButton(tr("Remove Password"));
     setPasswordButton = new QPushButton(tr("Set"));
 
     passwordSettingStatus = new TipsLabel("");
@@ -40,6 +41,7 @@ dcc::display::VNCRemote::VNCRemote(QWidget *parent)
     passwordControlLayout->addWidget(passwordFirst);
     passwordControlLayout->addWidget(passwordAgain);
     passwordControlLayout->addWidget(setPasswordButton);
+    passwordControlLayout->addWidget(removePasswordButton);
     passwordControlLayout->addWidget(passwordSettingStatus);
 
     // 加载设置
@@ -48,6 +50,7 @@ dcc::display::VNCRemote::VNCRemote(QWidget *parent)
     //connect(m_enableSwitch, &SwitchWidget::checkedChanged, this, &VNCRemote::EnableOptionChange);
     connect(m_enableSwitch, &SwitchWidget::checkedChanged, this, &VNCRemote::SetVNCEnabled);
     connect(setPasswordButton, &QPushButton::clicked, this, &VNCRemote::SetVNCPassword);
+    connect(removePasswordButton, &QPushButton::clicked, this, &VNCRemote::RemovePassword);
 
 
     group->appendItem(m_enableSwitch);
@@ -70,7 +73,19 @@ dcc::display::VNCRemote::VNCRemote(QWidget *parent)
 void VNCRemote::RestartX11VNC()
 {
     system("killall x11vnc -9");
-    system("setsid x11vnc --forever -rfbauth ~/.vnc/passwd &");
+    if(QFile::exists(QDir::homePath() + "/.vnc/passwd")) {
+        system("setsid x11vnc --forever -rfbauth ~/.vnc/passwd &");
+    }
+    else {
+        system("setsid x11vnc --forever &");
+    }
+}
+
+void VNCRemote::RemovePassword()
+{
+    QFile::remove(QDir::homePath() + "/.vnc/passwd");
+    passwordSettingStatus->setText("Removed");
+    RestartX11VNC();
 }
 
 void VNCRemote::SetVNCEnabled()
@@ -111,10 +126,10 @@ void VNCRemote::SetVNCPassword()
     process.write((passwordFirst->text() + "\n" + passwordAgain->text() + "\ny\n").toUtf8());
     process.waitForFinished();
     if(process.exitCode() != 0) {
-        passwordSettingStatus->setText("设置出现错误！");
+        passwordSettingStatus->setText("Setting Error!");
     }
     else {
-        passwordSettingStatus->setText("已修改");
+        passwordSettingStatus->setText("Done");
         RestartX11VNC();
     }
     process.close();
@@ -126,11 +141,15 @@ void VNCRemote::EnableOptionChange()
         passwordFirst->setEnabled(true);
         passwordAgain->setEnabled(true);
         setPasswordButton->setEnabled(true);
+        removePasswordButton->setEnabled(true);
+        passwordSettingStatus->setEnabled(true);
     }
     else {
         passwordFirst->setDisabled(true);
         passwordAgain->setDisabled(true);
         setPasswordButton->setDisabled(true);
+        removePasswordButton->setDisabled(true);
+        passwordSettingStatus->setDisabled(true);
     }
 }
 
