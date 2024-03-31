@@ -54,7 +54,7 @@ dcc::display::VNCRemote::VNCRemote(QWidget *parent)
 
     m_mainlayout->addWidget(group);
     m_mainlayout->addLayout(passwordControlLayout);
-    m_mainlayout->addWidget(new TipsLabel(tr("You can use IP address and VNC View to connect.\nPower by x11vnc")));
+    m_mainlayout->addWidget(new TipsLabel(tr("You can use IP address and VNC View to connect.\nPort: 5900\nPower by x11vnc")));
     m_mainlayout->addSpacing(10);
     m_mainlayout->setMargin(0);
     m_mainlayout->setSpacing(10);

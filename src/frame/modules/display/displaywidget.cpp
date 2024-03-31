@@ -36,6 +36,7 @@
 #include "widgets/translucentframe.h"
 #include <cmath>
 #include <functional>
+#include <modules/personalization/personalizationmodel.h>
 
 using namespace dcc::widgets;
 using namespace dcc::display;
@@ -95,6 +96,11 @@ DisplayWidget::DisplayWidget()
 
     SettingsGroup *vncRemoteGrp = new SettingsGroup();
     vncRemoteGrp->appendItem(m_vncRemote);
+
+    // 如果是 Wayland 则需要禁用部分组件
+    if(dcc::personalization::PersonalizationModel().isWayland()) {
+        vncRemoteGrp->setHidden(true);
+    }
 
     m_centralLayout->addWidget(m_displayControlPageGrp);
     m_centralLayout->addWidget(scaleGrp);
