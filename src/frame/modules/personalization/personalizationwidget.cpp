@@ -82,16 +82,22 @@ PersonalizationWidget::PersonalizationWidget()
     m_userGroup->appendItem(theme);
     m_userGroup->appendItem(font);
     // 判断系统有没有安装动态壁纸
-    if(m_model->isInstallVideoWallpaper()){
+    if(m_model->isInstallVideoWallpaper()) {
         m_userGroup->appendItem(videoWallpaper);
     }
     m_userGroup->appendItem(m_wmSwitch);
     // 判断指定程序是否存在，如果不存在则不显示
-    if(m_model->isInstallTopPanel()){
+    if(m_model->isInstallTopPanel()) {
         m_userGroup->appendItem(m_showTopPanel);
     }
-    if(m_model->isInstallBottomPanel()){
+    if(m_model->isInstallBottomPanel()) {
         m_userGroup->appendItem(m_showBottomPanel);
+    }
+    // 如果是 Wayland，则禁用以下内容
+    if(m_model->isWayland()) {
+        m_showTopPanel->setHidden(true);
+        m_showBottomPanel->setHidden(true);
+        m_wmSwitch->setHidden(true);
     }
 
     setTitle(tr("Personalization"));

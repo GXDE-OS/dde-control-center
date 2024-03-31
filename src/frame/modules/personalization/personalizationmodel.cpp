@@ -30,6 +30,7 @@
 
 #include <QFile>
 #include <QDir>
+#include <QProcessEnvironment>
 
 using namespace dcc;
 using namespace dcc::personalization;
@@ -122,6 +123,13 @@ bool PersonalizationModel::isInstallVideoWallpaper() const
 bool PersonalizationModel::isInstallBottomPanel() const
 {
     return QFile::exists("/usr/bin/plank");
+}
+
+bool PersonalizationModel::isWayland() const
+{
+    QString XDG_SESSION_TYPE = QProcessEnvironment::systemEnvironment().value("XDG_SESSION_TYPE");
+    QString WAYLAND_DISPLAY = QProcessEnvironment::systemEnvironment().value("WAYLAND_DISPLAY");
+    return XDG_SESSION_TYPE == "wayland" || WAYLAND_DISPLAY != "";
 }
 
 void PersonalizationModel::setOpacity(std::pair<int, double> opacity)

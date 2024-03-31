@@ -145,10 +145,10 @@ static void onFontSizeChanged(const float pointSizeF) {
 
 int main(int argc, char *argv[])
 {
-    DApplication::loadDXcbPlugin();
+    //DApplication::loadDXcbPlugin();
 
     DApplication app(argc, argv);
-    app.setOrganizationName("deepin");
+    app.setOrganizationName("GXDE");
     app.setApplicationName("dde-control-center");
     app.setApplicationVersion("4.0");
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);

@@ -45,7 +45,8 @@ Depends: ${shlibs:Depends},
  ntp,
  libkf5networkmanagerqt6,
  libdde-network-utils
-Recommends: netselect
+Recommends: netselect,
+ x11vnc
 Suggests: redshift
 Conflicts:
  dde-control-center-plugin-weather,
