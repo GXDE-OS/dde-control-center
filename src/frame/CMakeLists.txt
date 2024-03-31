@@ -443,6 +443,8 @@ set(DISPLAY_FILES
                 modules/display/settingsoptionitem.h
                 modules/display/scalingpage.h
                 modules/display/scalingpage.cpp
+                modules/display/vncremote.h
+                modules/display/vncremote.cpp
 )
 
 # load keyboard

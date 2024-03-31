@@ -45,6 +45,7 @@ DisplayWidget::DisplayWidget()
     , m_displayControlPage(new DisplayControlPage)
     , m_resolution(new NextPageWidget)
     , m_brightnessSettings(new NextPageWidget)
+    , m_vncRemote(new NextPageWidget)
     , m_scalingSettings(new NextPageWidget)
     , m_scaleWidget(new TitledSliderItem(tr("Display Scaling")))
 #ifndef DCC_DISABLE_ROTATE
@@ -60,6 +61,7 @@ DisplayWidget::DisplayWidget()
     m_resolution->setTitle(tr("Resolution"));
     m_brightnessSettings->setTitle(tr("Brightness"));
     m_scalingSettings->setTitle(tr("Scaling Settings"));
+    m_vncRemote->setTitle(tr("VNC Remote"));
 
 
 
@@ -91,8 +93,12 @@ DisplayWidget::DisplayWidget()
     SettingsGroup *brightnessGrp = new SettingsGroup;
     brightnessGrp->appendItem(m_brightnessSettings);
 
+    SettingsGroup *vncRemoteGrp = new SettingsGroup();
+    vncRemoteGrp->appendItem(m_vncRemote);
+
     m_centralLayout->addWidget(m_displayControlPageGrp);
     m_centralLayout->addWidget(scaleGrp);
+    m_centralLayout->addWidget(vncRemoteGrp);
     m_centralLayout->addWidget(m_resolutionsGrp);
 #ifndef DCC_DISABLE_MIRACAST
     m_centralLayout->addWidget(m_miracastGrp);
@@ -109,6 +115,7 @@ DisplayWidget::DisplayWidget()
             &DisplayWidget::showBrightnessPage);
     connect(m_scalingSettings, &NextPageWidget::clicked, this, &DisplayWidget::showScalingPage);
     connect(m_resolution, &NextPageWidget::clicked, this, &DisplayWidget::showResolutionPage);
+    connect(m_vncRemote, &NextPageWidget::clicked, this, &DisplayWidget::showVNCRemotePage);
 #ifndef DCC_DISABLE_ROTATE
     connect(m_rotate, &QPushButton::clicked, this, &DisplayWidget::requestRotate);
 #endif

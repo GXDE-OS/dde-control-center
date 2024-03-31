@@ -57,6 +57,7 @@ private Q_SLOTS:
     void showCustomSettings();
     void showScalingPage();
     void showRecognize();
+    void showVNCRemotePage();
 #ifndef DCC_DISABLE_ROTATE
     void showRotate(Monitor *mon = nullptr);
 #endif

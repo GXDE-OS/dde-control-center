@@ -58,6 +58,8 @@ Q_SIGNALS:
     void showResolutionPage() const;
     void showBrightnessPage() const;
     void showScalingPage() const;
+    void showVNCRemotePage() const;
+
 #ifndef DCC_DISABLE_ROTATE
     void requestRotate() const;
 #endif
@@ -97,6 +99,7 @@ private:
     widgets::SettingsGroup *         m_resolutionsGrp;
     widgets::TitledSliderItem *      m_scaleWidget;
     widgets::NextPageWidget *        m_scalingSettings;
+    widgets::NextPageWidget *        m_vncRemote;
 
     const QStringList scaleList =
             QStringList() << "1.0"

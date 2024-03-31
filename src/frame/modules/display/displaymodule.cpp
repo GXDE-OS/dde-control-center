@@ -35,6 +35,7 @@
 #include "brightnesspage.h"
 #include "scalingpage.h"
 #include "customconfigpage.h"
+#include "vncremote.h"
 #include "widgets/timeoutdialog.h"
 
 #ifndef DCC_DISABLE_MIRACAST
@@ -94,6 +95,13 @@ void DisplayModule::showResolutionDetailPage()
     page->setModel(m_displayModel);
     connect(page, &ResolutionDetailPage::requestSetResolution, this, &DisplayModule::onDetailPageRequestSetResolution);
 
+    m_frameProxy->pushWidget(this, page);
+}
+
+void DisplayModule::showVNCRemotePage()
+{
+    VNCRemote *page = new VNCRemote();
+    page->setModel(m_displayModel);
     m_frameProxy->pushWidget(this, page);
 }
 
@@ -173,6 +181,7 @@ ModuleWidget *DisplayModule::moduleWidget()
     connect(m_displayWidget, &DisplayWidget::requestModifyConfigName, m_displayWorker, &DisplayWorker::modifyConfigName);
     connect(m_displayWidget, &DisplayWidget::requestRecordCurrentState, m_displayWorker, &DisplayWorker::record);
     connect(m_displayWidget, &DisplayWidget::showResolutionPage, this, &DisplayModule::showResolutionDetailPage);
+    connect(m_displayWidget, &DisplayWidget::showVNCRemotePage, this, &DisplayModule::showVNCRemotePage);
     connect(m_displayWidget, &DisplayWidget::showBrightnessPage, this, &DisplayModule::showBrightnessPage);
     connect(m_displayWidget, &DisplayWidget::showScalingPage, this, &DisplayModule::showScalingPage);
 #ifndef DCC_DISABLE_MIRACAST
