@@ -27,6 +27,8 @@
 
 #include <QVBoxLayout>
 #include <QScrollBar>
+#include <QFile>
+#include <iostream>
 
 #include "widgets/settingsgroup.h"
 #include "grubbackgrounditem.h"
@@ -78,6 +80,12 @@ BootWidget::BootWidget(QWidget *parent)
     m_theme = new SwitchWidget();
     m_theme->setTitle(tr("Theme"));
 
+    m_liveCDEnabled = new SwitchWidget();
+    m_liveCDEnabled->setTitle(tr("Enable Live Mode"));
+
+    // 检查是否开启 Live CD
+    m_liveCDEnabled->setChecked(QFile::exists("/recovery_live/filesystem.squashfs") && !QFile::exists("/etc/disabled_livecd"));
+
     //TipsLabel *label = new TipsLabel(tr("You can click the option in boot menu to set it as the first boot, and drag and drop a picture to replace the background."));
     //label->setWordWrap(true);
     //label->setContentsMargins(16, 0, 10, 0);
@@ -100,6 +108,11 @@ BootWidget::BootWidget(QWidget *parent)
     group->appendItem(m_boot);
     group->appendItem(m_theme);
 
+#ifdef __x86_64__
+    // X86 下才显示该选项
+    group->appendItem(m_liveCDEnabled);
+#endif
+
     layout->setMargin(0);
     layout->setSpacing(0);
     layout->addSpacing(10);
@@ -114,12 +127,33 @@ BootWidget::BootWidget(QWidget *parent)
     setContent(widget);
     setTitle(tr("Boot Menu"));
 
+    connect(m_liveCDEnabled, &SwitchWidget::checkedChanged, this, &BootWidget::EnabledLiveCD);
     connect(m_theme, SIGNAL(checkedChanged(bool)), this, SIGNAL(enableTheme(bool)));
     connect(m_boot, SIGNAL(checkedChanged(bool)), this, SIGNAL(bootdelay(bool)));
     connect(m_bootList, SIGNAL(currentItemChanged(QListWidgetItem*,QListWidgetItem*)),this, SLOT(onCurrentItem(QListWidgetItem*,QListWidgetItem*)));
     connect(m_background, &GrubBackgroundItem::requestEnableTheme, this, &BootWidget::enableTheme);
     //connect(m_background, &GrubBackgroundItem::requestSetBackground, this, &BootWidget::requestSetBackground);  // 禁用设置壁纸
 }
+
+void BootWidget::EnabledLiveCD(bool value)
+{
+    if (value) {
+        // 安装 Live
+        if (!QFile::exists("/recovery_live/filesystem.squashfs")) {
+            if (QFile::exists("/usr/bin/aptss")) {
+                std::system("deepin-terminal -e pkexec aptss install live-filesystem-community-mini -y");
+            }
+            else {
+                std::system("deepin-terminal -e pkexec apt install live-filesystem-community-mini -y");
+            }
+            return;
+        }
+        std::system("pkexec bash -c 'rm /etc/disabled_livecd ; update-grub2'");
+        return;
+    }
+    std::system("pkexec bash -c 'touch /etc/disabled_livecd ; update-grub2'");
+}
+
 
 void BootWidget::setDefaultEntry(const QString &value)
 {

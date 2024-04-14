@@ -65,12 +65,14 @@ private:
     QString m_defaultEntry;
     SwitchWidget* m_boot;
     SwitchWidget* m_theme;
+    SwitchWidget* m_liveCDEnabled;
     QListWidget* m_bootList;
     TipsLabel *m_updatingLabel;
     GrubBackgroundItem *m_background;
     TitledSliderItem *display;
     QStringList scaleList = QStringList() << "1080p" << "ultrawide" << "2k"
                                           << "ultrawide2k" << "4k";
+    void EnabledLiveCD(bool value);
 };
 
 }
