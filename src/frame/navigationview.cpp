@@ -39,7 +39,7 @@ NavigationView::NavigationView(QWidget *parent)
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 #ifdef QT_DEBUG
-    setStyleSheet("background-color: rgba(238, 238, 238, .238);");
+    setStyleSheet("background-color: rgba(238, 238, 238, 238);");
 #endif
 }
 
