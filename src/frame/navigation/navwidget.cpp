@@ -50,7 +50,7 @@ NavWidget::NavWidget(QWidget *parent)
     m_navView->setFrameStyle(QFrame::NoFrame);
     m_navView->setShowGrid(false);
 
-    setStyleSheet("background-color: rgba(255, 255, 255, 7.65);");
+    setStyleSheet("background-color: rgba(255, 255, 255, 0);");
 
     QVBoxLayout *centralLayout = new QVBoxLayout;
 
