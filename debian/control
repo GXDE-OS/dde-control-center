@@ -40,14 +40,8 @@ Depends: ${shlibs:Depends},
  xkb-data,
  deepin-installer-timezones,
  passwd,
- fantascene-gxde,
- gxde-top-panel,
- ntp,
- libkf5networkmanagerqt6,
  libdde-network-utils,
- x11vnc
 Recommends: netselect,
- x11vnc
 Suggests: redshift
 Conflicts:
  dde-control-center-plugin-weather,
