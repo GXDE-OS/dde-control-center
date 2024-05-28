@@ -1,10 +1,11 @@
-dde-control-center (4.10.21) UNRELEASED; urgency=medium
+dde-control-center (4.10.22) UNRELEASED; urgency=medium
 
-  * Repiar window problem
+  * Change Icon
   * 
   * 
+  * 
 
- -- gfdgd_xi <3025613752@qq.com>  Sat, 20 Apr 2024 13:28:37 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Tue, 28 May 2024 22:31:07 +0800
 
 dde-control-center (4.10.20) unstable; urgency=low
 
