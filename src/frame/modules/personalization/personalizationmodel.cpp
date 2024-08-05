@@ -104,10 +104,24 @@ void PersonalizationModel::set20Launcher(const bool value)
        file.close();
     }
     else {
-        QFile::remove(QDir::homePath() + "/.config/gxde/gxde-launcher/use_20_launcher"); // 移除自动启动
+        QFile::remove(QDir::homePath() + "/.config/gxde/gxde-launcher/use_20_launcher");
     }
     system("killall dde-launcher-x11 -9");
     system("killall dde-launcher-wayland -9");
+}
+
+void PersonalizationModel::setHideDDEDock(const bool value)
+{
+    if(value){
+       QFile file(QDir::homePath() + "/.config/gxde/gxde-dock/dock-hide");
+       file.open(QFile::WriteOnly);
+       file.write("1");
+       file.close();
+    }
+    else {
+        QFile::remove(QDir::homePath() + "/.config/gxde/gxde-dock/dock-hide");
+    }
+    system("killall dde-dock -9");
 }
 
 bool PersonalizationModel::is3DWm() const
@@ -148,6 +162,11 @@ bool PersonalizationModel::isInstall20Launcher() const
 bool PersonalizationModel::isUse20Launcher() const
 {
     return QFile::exists(QDir::homePath() + "/.config/gxde/gxde-launcher/use_20_launcher");
+}
+
+bool PersonalizationModel::isHideDDEDock() const
+{
+    return QFile::exists(QDir::homePath() + "/.config/gxde/gxde-dock/dock-hide");
 }
 
 bool PersonalizationModel::isWayland() const

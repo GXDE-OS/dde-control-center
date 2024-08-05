@@ -395,6 +395,10 @@ void PersonalizationWork::set20Launcher(const int value){
     m_model->set20Launcher(value);
 }
 
+void PersonalizationWork::setHideDDEDock(const int value){
+    m_model->setHideDDEDock(value);
+}
+
 template<typename T>
 T PersonalizationWork::toSliderValue(std::vector<T> list, T value)
 {

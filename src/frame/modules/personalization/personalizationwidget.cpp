@@ -77,6 +77,8 @@ PersonalizationWidget::PersonalizationWidget()
 
     m_use20Launcher = new SwitchWidget(tr("Use deepin 20 style launcher"));
 
+    m_hideDDEDock = new SwitchWidget(tr("Hide DDE Dock"));
+
     theme->setTitle(tr("Theme"));
     font->setTitle(tr("Font"));
     videoWallpaper->setTitle(tr("Video Wallpaper"));
@@ -105,6 +107,7 @@ PersonalizationWidget::PersonalizationWidget()
         m_wmSwitch->setHidden(true);
         m_use20Launcher->setHidden(true);
     }
+    m_userGroup->appendItem(m_hideDDEDock);
 
     setTitle(tr("Personalization"));
     connect(theme, &NextPageWidget::clicked, this,
@@ -126,17 +129,26 @@ PersonalizationWidget::PersonalizationWidget()
         // reset top panel state
         m_showTopPanel->setChecked(m_model->isOpenTopPanel());
     });
+
     connect(m_showBottomPanel, &SwitchWidget::checkedChanged, this,
             &PersonalizationWidget::requestSetBottomPanel);
     connect(m_showBottomPanel, &SwitchWidget::checkedChanged, this, [=] {
         // reset top panel state
         m_showBottomPanel->setChecked(m_model->isOpenBottomPanel());
     });
+
     connect(m_use20Launcher, &SwitchWidget::checkedChanged, this,
             &PersonalizationWidget::requestSet20Launcher);
     connect(m_use20Launcher, &SwitchWidget::checkedChanged, this, [=] {
        // reset state
         m_use20Launcher->setChecked(m_model->isUse20Launcher());
+    });
+
+    connect(m_hideDDEDock, &SwitchWidget::checkedChanged, this,
+            &PersonalizationWidget::requestSetHideDDEDock);
+    connect(m_hideDDEDock, &SwitchWidget::checkedChanged, this, [=] {
+       // reset state
+        m_hideDDEDock->setChecked(m_model->isHideDDEDock());
     });
 
     connect(m_transparentSlider->slider(), &DCCSlider::valueChanged, this,
@@ -159,6 +171,7 @@ void PersonalizationWidget::setModel(PersonalizationModel *const model)
     m_showTopPanel->setChecked(model->isOpenTopPanel());
     m_showBottomPanel->setChecked(model->isOpenBottomPanel());
     m_use20Launcher->setChecked(model->isUse20Launcher());
+    m_hideDDEDock->setChecked(model->isHideDDEDock());
     connect(model, &PersonalizationModel::onOpacityChanged, this,
             &PersonalizationWidget::onOpacityChanged);
 
