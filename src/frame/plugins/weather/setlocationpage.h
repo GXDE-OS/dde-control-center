@@ -32,7 +32,7 @@
 #include <QStyledItemDelegate>
 
 #include "widgets/searchinput.h"
-#include "labels/largelabel.h"
+#include "widgets/labels/largelabel.h"
 #include "types.h"
 
 using namespace dcc::widgets;

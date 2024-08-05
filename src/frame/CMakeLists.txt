@@ -785,30 +785,6 @@ set(WACOM_FILES
                 modules/wacom/wacomworker.h
 )
 
-# end load
-
-#plugins/calculator/calculatorplugin.cpp
-#plugins/calculator/calculatorplugin.h
-#plugins/example/exampleplugin.cpp
-#plugins/example/exampleplugin.h
-#plugins/weather/caiyun/caiyunlocationprovider.cpp
-#plugins/weather/caiyun/caiyunlocationprovider.h
-#plugins/weather/deepin/deepinlocationprovider.cpp
-#plugins/weather/deepin/deepinlocationprovider.h
-#plugins/weather/locationprovider.h
-#plugins/weather/networkutil.cpp
-#plugins/weather/networkutil.h
-#plugins/weather/setlocationpage.cpp
-#plugins/weather/setlocationpage.h
-#plugins/weather/types.h
-#plugins/weather/weatheritem.cpp
-#plugins/weather/weatheritem.h
-#plugins/weather/weatherplugin.cpp
-#plugins/weather/weatherplugin.h
-#plugins/weather/weatherrequest.cpp
-#plugins/weather/weatherrequest.h
-#plugins/weather/weatherwidget.h
-#plugins/weather/weatherwidget.cpp
 
 set(SRCS
         ${MODULE_FILES}
@@ -826,6 +802,7 @@ set(SRCS
         ${SOUND_FILES}
         ${POWER_FILES}
         ${WACOM_FILES}
+        ${WEATHER_FILES}
         ${UPDATE_FILES}
         ${SYNC_FILES}
         ${SYSTEMINFO_FILES}

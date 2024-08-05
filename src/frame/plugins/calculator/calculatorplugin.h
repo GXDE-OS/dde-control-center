@@ -26,14 +26,14 @@
 #ifndef CALCULATORPLUGIN_H
 #define CALCULATORPLUGIN_H
 
-#include "plugininterface.h"
+#include "interfaces/plugininterface.h"
 
 #include <QLabel>
 
 class CalculatorPlugin : public QObject, public PluginInterface
 {
     Q_OBJECT
-    Q_INTERFACES(PluginInterface)
+    //Q_INTERFACES(PluginInterface)
     Q_PLUGIN_METADATA(IID "com.deepin.dock.PluginsItemInterface" FILE "calculator.json")
 
 public:

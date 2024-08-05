@@ -55,6 +55,7 @@ Q_SIGNALS:
     void requestSetOpacity(int value);
     void requestSetTopPanel(int value);
     void requestSetBottomPanel(int value);
+    void requestSet20Launcher(int value);
 
 private:
     void onOpacityChanged(std::pair<int, double> value);
@@ -66,6 +67,7 @@ private:
     dcc::widgets::SwitchWidget*  m_wmSwitch;
     dcc::widgets::SwitchWidget*  m_showTopPanel;
     dcc::widgets::SwitchWidget*  m_showBottomPanel;
+    dcc::widgets::SwitchWidget*  m_use20Launcher;
     widgets::TitledSliderItem*   m_transparentSlider;
     dcc::widgets::SettingsGroup *m_trGrp;
 };

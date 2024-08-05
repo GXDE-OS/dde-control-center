@@ -75,6 +75,8 @@ PersonalizationWidget::PersonalizationWidget()
 
     m_showBottomPanel = new SwitchWidget(tr("Bottom Panel"));
 
+    m_use20Launcher = new SwitchWidget(tr("Use deepin 20 style launcher"));
+
     theme->setTitle(tr("Theme"));
     font->setTitle(tr("Font"));
     videoWallpaper->setTitle(tr("Video Wallpaper"));
@@ -93,11 +95,15 @@ PersonalizationWidget::PersonalizationWidget()
     if(m_model->isInstallBottomPanel()) {
         m_userGroup->appendItem(m_showBottomPanel);
     }
+    if(m_model->isInstall20Launcher()) {
+        m_userGroup->appendItem(m_use20Launcher);
+    }
     // 如果是 Wayland，则禁用以下内容
     if(m_model->isWayland()) {
         m_showTopPanel->setHidden(true);
         m_showBottomPanel->setHidden(true);
         m_wmSwitch->setHidden(true);
+        m_use20Launcher->setHidden(true);
     }
 
     setTitle(tr("Personalization"));
@@ -126,6 +132,12 @@ PersonalizationWidget::PersonalizationWidget()
         // reset top panel state
         m_showBottomPanel->setChecked(m_model->isOpenBottomPanel());
     });
+    connect(m_use20Launcher, &SwitchWidget::checkedChanged, this,
+            &PersonalizationWidget::requestSet20Launcher);
+    connect(m_use20Launcher, &SwitchWidget::checkedChanged, this, [=] {
+       // reset state
+        m_use20Launcher->setChecked(m_model->isUse20Launcher());
+    });
 
     connect(m_transparentSlider->slider(), &DCCSlider::valueChanged, this,
             &PersonalizationWidget::requestSetOpacity);
@@ -146,6 +158,7 @@ void PersonalizationWidget::setModel(PersonalizationModel *const model)
     m_wmSwitch->setChecked(model->is3DWm());
     m_showTopPanel->setChecked(model->isOpenTopPanel());
     m_showBottomPanel->setChecked(model->isOpenBottomPanel());
+    m_use20Launcher->setChecked(model->isUse20Launcher());
     connect(model, &PersonalizationModel::onOpacityChanged, this,
             &PersonalizationWidget::onOpacityChanged);
 

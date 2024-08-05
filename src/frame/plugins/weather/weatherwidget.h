@@ -38,6 +38,7 @@ DWIDGET_USE_NAMESPACE
 class WeatherWidget : public QWidget
 {
     Q_OBJECT
+    Q_SLOT
 
 public:
     explicit WeatherWidget(WeatherRequest *request, QWidget* parent = 0);

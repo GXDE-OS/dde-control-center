@@ -52,13 +52,16 @@ public:
     void setIs3DWm(const bool is3d);
     void setTopPanel(const bool isTopPanel);
     void setBottomPanel(const bool value);
+    void set20Launcher(const bool value);
     bool is3DWm() const;
     bool isOpenTopPanel() const;
     bool isOpenBottomPanel() const;
     bool isInstallTopPanel() const;
     bool isInstallBottomPanel() const;
     bool isInstallVideoWallpaper() const;
+    bool isInstall20Launcher() const;
     bool isWayland() const;
+    bool isUse20Launcher() const;
 
     inline std::pair<int, double> opacity() const { return m_opacity; }
     void setOpacity(std::pair<int, double> opacity);

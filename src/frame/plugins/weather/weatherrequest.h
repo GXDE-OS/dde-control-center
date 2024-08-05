@@ -26,6 +26,7 @@
 #ifndef WEATHERREQUEST_H
 #define WEATHERREQUEST_H
 
+#include "qobjectdefs.h"
 #include "weatheritem.h"
 
 #include <QObject>
@@ -45,6 +46,7 @@ class QSettings;
 class WeatherRequest : public QObject
 {
     Q_OBJECT
+    Q_SLOT
 
 public:
     explicit WeatherRequest(QObject *parent = 0);

@@ -391,6 +391,10 @@ void PersonalizationWork::setBottomPanel(const int value){
     m_model->setBottomPanel(value);
 }
 
+void PersonalizationWork::set20Launcher(const int value){
+    m_model->set20Launcher(value);
+}
+
 template<typename T>
 T PersonalizationWork::toSliderValue(std::vector<T> list, T value)
 {

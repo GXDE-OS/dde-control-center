@@ -83,6 +83,7 @@ ModuleWidget *PersonalizationModule::moduleWidget()
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetOpacity, m_work, &PersonalizationWork::setOpacity);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetTopPanel, m_work, &PersonalizationWork::setTopPanel);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetBottomPanel, m_work, &PersonalizationWork::setBottomPanel);
+        connect(m_personalizationWidget, &PersonalizationWidget::requestSet20Launcher, m_work, &PersonalizationWork::set20Launcher);
     }
     return m_personalizationWidget;
 }

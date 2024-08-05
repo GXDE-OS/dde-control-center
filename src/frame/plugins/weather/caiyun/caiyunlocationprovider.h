@@ -29,7 +29,7 @@
 #include <QObject>
 #include <QThread>
 
-#include "locationprovider.h"
+#include "plugins/weather/locationprovider.h"
 
 class CaiyunLocationProvider;
 class LoadDataThread : public QThread

@@ -29,7 +29,7 @@
 #include <QObject>
 #include <QNetworkAccessManager>
 
-#include "locationprovider.h"
+#include "plugins/weather/locationprovider.h"
 
 class DeepinLocationProvider : public QObject, public LocationProvider
 {

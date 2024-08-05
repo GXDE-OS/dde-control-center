@@ -95,6 +95,21 @@ void PersonalizationModel::setBottomPanel(const bool value)
     system("killall plank -9");
 }
 
+void PersonalizationModel::set20Launcher(const bool value)
+{
+    if(value){
+       QFile file(QDir::homePath() + "/.config/gxde/gxde-launcher/use_20_launcher");
+       file.open(QFile::WriteOnly);
+       file.write("1");
+       file.close();
+    }
+    else {
+        QFile::remove(QDir::homePath() + "/.config/gxde/gxde-launcher/use_20_launcher"); // 移除自动启动
+    }
+    system("killall dde-launcher-x11 -9");
+    system("killall dde-launcher-wayland -9");
+}
+
 bool PersonalizationModel::is3DWm() const
 {
     return m_is3DWm;
@@ -123,6 +138,16 @@ bool PersonalizationModel::isInstallVideoWallpaper() const
 bool PersonalizationModel::isInstallBottomPanel() const
 {
     return QFile::exists("/usr/bin/plank");
+}
+
+bool PersonalizationModel::isInstall20Launcher() const
+{
+    return QFile::exists("/usr/bin/dde-launcher-wayland");
+}
+
+bool PersonalizationModel::isUse20Launcher() const
+{
+    return QFile::exists(QDir::homePath() + "/.config/gxde/gxde-launcher/use_20_launcher");
 }
 
 bool PersonalizationModel::isWayland() const

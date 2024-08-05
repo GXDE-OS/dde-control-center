@@ -62,6 +62,7 @@ public Q_SLOTS:
     void setOpacity(int opcaity);
     void setTopPanel(int value);
     void setBottomPanel(int value);
+    void set20Launcher(int value);
 
 private Q_SLOTS:
     void FontSizeChanged(const double value) const;
