@@ -97,6 +97,10 @@ void PersonalizationModel::setBottomPanel(const bool value)
 
 void PersonalizationModel::set20Launcher(const bool value)
 {
+    QDir dir(QDir::homePath() + "/.config/gxde/gxde-launcher/");
+    if (!dir.exists()) {
+        dir.mkpath(QDir::homePath() + "/.config/gxde/gxde-launcher/");
+    }
     if(value){
        QFile file(QDir::homePath() + "/.config/gxde/gxde-launcher/use_20_launcher");
        file.open(QFile::WriteOnly);
@@ -112,6 +116,10 @@ void PersonalizationModel::set20Launcher(const bool value)
 
 void PersonalizationModel::setHideDDEDock(const bool value)
 {
+    QDir dir(QDir::homePath() + "/.config/gxde/gxde-launcher/");
+    if (!dir.exists()) {
+        dir.mkpath(QDir::homePath() + "/.config/gxde/gxde-launcher/");
+    }
     if(value){
        QFile file(QDir::homePath() + "/.config/gxde/gxde-dock/dock-hide");
        file.open(QFile::WriteOnly);
