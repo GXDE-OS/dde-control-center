@@ -1,8 +1,9 @@
-dde-control-center (4.10.23) UNRELEASED; urgency=medium
+dde-control-center (4.10.24) UNRELEASED; urgency=medium
 
   * Support using d20 launcher
+  * 
 
- -- gfdgd_xi <3025613752@qq.com>  Mon, 05 Aug 2024 11:36:10 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Wed, 07 Aug 2024 10:13:37 +0800
 
 dde-control-center (4.10.20) unstable; urgency=low
 
