@@ -95,6 +95,7 @@ PersonalizationWidget::PersonalizationWidget()
     // 判断指定程序是否存在，如果不存在则不显示
     if(m_model->isInstallTopPanel()) {
         m_userGroup->appendItem(m_showTopPanel);
+        m_userGroup->appendItem(m_showTopPanelGlobalMenu);
     }
     if(m_model->isInstallBottomPanel()) {
         m_userGroup->appendItem(m_showBottomPanel);
@@ -130,14 +131,14 @@ PersonalizationWidget::PersonalizationWidget()
     connect(m_showTopPanel, &SwitchWidget::checkedChanged, this, [=] {
         // reset top panel state
         m_showTopPanel->setChecked(m_model->isOpenTopPanel());
-        m_showTopPanelGlobalMenu->setVisible(m_model->isOpenTopPanel());
+        m_showTopPanelGlobalMenu->setHidden(!m_model->isOpenTopPanel());
         if (!m_model->isOpenTopPanel()) {
             m_showTopPanelGlobalMenu->setChecked(false);
         }
     });
 
     connect(m_showTopPanelGlobalMenu, &SwitchWidget::checkedChanged, this,
-            &PersonalizationWidget::requestSetTopPanel);
+            &PersonalizationWidget::requestSetTopPanelGlobalMenu);
     connect(m_showTopPanelGlobalMenu, &SwitchWidget::checkedChanged, this, [=] {
         // reset top panel state
         m_showTopPanelGlobalMenu->setChecked(m_model->isOpenTopPanelGlobalMenu());
@@ -186,6 +187,7 @@ void PersonalizationWidget::setModel(PersonalizationModel *const model)
     m_showBottomPanel->setChecked(model->isOpenBottomPanel());
     m_use20Launcher->setChecked(model->isUse20Launcher());
     m_hideDDEDock->setChecked(model->isHideDDEDock());
+
     connect(model, &PersonalizationModel::onOpacityChanged, this,
             &PersonalizationWidget::onOpacityChanged);
 
