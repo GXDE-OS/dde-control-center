@@ -63,19 +63,19 @@ void PersonalizationModel::setIs3DWm(const bool is3d)
 
 void PersonalizationModel::setTopPanelGlobalMenu(const bool value)
 {
-    if(!QFile::exists("/usr/share/applications/dde-globalmenu-service.desktop") /*|| !QFile::exists("/usr/share/applications/gxde-globalmenu-service.desktop")*/){
+    if(!QFile::exists("/usr/share/applications/gxde-globalmenu-service.desktop") /*|| !QFile::exists("/usr/share/applications/gxde-globalmenu-service.desktop")*/){
         // Setting error
-        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/dde-globalmenu-service.desktop or /usr/share/applications/dde-globalmenu-service.desktop";
+        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/gxde-globalmenu-service.desktop or /usr/share/applications/dde-globalmenu-service.desktop";
         return;
     }
     if(value){
-        QFile::copy("/usr/share/applications/dde-globalmenu-service.desktop",
-                    QDir::homePath() + "/.config/autostart/dde-globalmenu-service.desktop"); // 设置自动启动
-        system("setsid dde-globalmenu-service > /dev/null 2>&1 &");
+        QFile::copy("/usr/share/applications/gxde-globalmenu-service.desktop",
+                    QDir::homePath() + "/.config/autostart/gxde-globalmenu-service.desktop"); // 设置自动启动
+        system("setsid gxde-globalmenu-service > /dev/null 2>&1 &");
         return;
     }
-    QFile::remove(QDir::homePath() + "/.config/autostart/dde-globalmenu-service.desktop"); // 移除自动启动
-    system("killall dde-globalmenu-service -9");
+    QFile::remove(QDir::homePath() + "/.config/autostart/gxde-globalmenu-service.desktop"); // 移除自动启动
+    system("killall gxde-globalmenu-service -9");
 }
 
 void PersonalizationModel::setTopPanel(const bool isTopPanel)
@@ -156,7 +156,7 @@ bool PersonalizationModel::is3DWm() const
 
 bool PersonalizationModel::isOpenTopPanelGlobalMenu() const
 {
-    return QFile::exists(QDir::homePath() + "/.config/autostart/dde-globalmenu-service.desktop");
+    return QFile::exists(QDir::homePath() + "/.config/autostart/gxde-globalmenu-service.desktop");
 }
 
 bool PersonalizationModel::isOpenTopPanel() const
