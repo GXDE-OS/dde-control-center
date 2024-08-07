@@ -73,6 +73,8 @@ PersonalizationWidget::PersonalizationWidget()
 
     m_showTopPanel = new SwitchWidget(tr("Top Panel"));
 
+    m_showTopPanelGlobalMenu = new SwitchWidget(tr("Top Panel Global Menu"));
+
     m_showBottomPanel = new SwitchWidget(tr("Bottom Panel"));
 
     m_use20Launcher = new SwitchWidget(tr("Use deepin 20 style launcher"));
@@ -128,6 +130,17 @@ PersonalizationWidget::PersonalizationWidget()
     connect(m_showTopPanel, &SwitchWidget::checkedChanged, this, [=] {
         // reset top panel state
         m_showTopPanel->setChecked(m_model->isOpenTopPanel());
+        m_showTopPanelGlobalMenu->setVisible(m_model->isOpenTopPanel());
+        if (!m_model->isOpenTopPanel()) {
+            m_showTopPanelGlobalMenu->setChecked(false);
+        }
+    });
+
+    connect(m_showTopPanelGlobalMenu, &SwitchWidget::checkedChanged, this,
+            &PersonalizationWidget::requestSetTopPanel);
+    connect(m_showTopPanelGlobalMenu, &SwitchWidget::checkedChanged, this, [=] {
+        // reset top panel state
+        m_showTopPanelGlobalMenu->setChecked(m_model->isOpenTopPanelGlobalMenu());
     });
 
     connect(m_showBottomPanel, &SwitchWidget::checkedChanged, this,
@@ -169,6 +182,7 @@ void PersonalizationWidget::setModel(PersonalizationModel *const model)
 
     m_wmSwitch->setChecked(model->is3DWm());
     m_showTopPanel->setChecked(model->isOpenTopPanel());
+    m_showTopPanelGlobalMenu->setChecked(model->isOpenTopPanelGlobalMenu());
     m_showBottomPanel->setChecked(model->isOpenBottomPanel());
     m_use20Launcher->setChecked(model->isUse20Launcher());
     m_hideDDEDock->setChecked(model->isHideDDEDock());

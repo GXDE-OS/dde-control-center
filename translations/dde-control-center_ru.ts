@@ -1,4 +1,6 @@
-<?xml version="1.0" ?><!DOCTYPE TS><TS language="ru" version="2.1">
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
+<TS version="2.1" language="ru">
 <context>
     <name>BluetoothDelegate</name>
     <message>
@@ -93,7 +95,7 @@
 <context>
     <name>NavigationBar</name>
     <message>
-        <location filename="../src/frame/navigationbar.cpp" line="240"/>
+        <location filename="../src/frame/navigationbar.cpp" line="242"/>
         <source>Navigation</source>
         <translation>Навигация</translation>
     </message>
@@ -113,7 +115,11 @@
     <message numerus="yes">
         <location filename="../src/frame/notify/notifydelegate.cpp" line="202"/>
         <source>%n day(s) ago</source>
-        <translation><numerusform>%n день(й) назад</numerusform><numerusform>%n день(й) назад</numerusform><numerusform>%n день(й) назад</numerusform><numerusform>%n день(й) назад</numerusform></translation>
+        <translation>
+            <numerusform>%n день(й) назад</numerusform>
+            <numerusform>%n день(й) назад</numerusform>
+            <numerusform>%n день(й) назад</numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -132,7 +138,7 @@
 <context>
     <name>RotateDialog</name>
     <message>
-        <location filename="../src/frame/modules/display/rotatedialog.cpp" line="136"/>
+        <location filename="../src/frame/modules/display/rotatedialog.cpp" line="137"/>
         <source>Left click to rotate, right click to restore and exit, press Ctrl+S to save.
 If no operation, the display will be restored after %1s.</source>
         <translation>Щелкните левой кнопкой мыши, чтобы повернуть, щелкните правой кнопкой мыши, чтобы восстановить и выйти, нажмите Ctrl+S, чтобы сохранить. 
@@ -430,7 +436,7 @@ If no operation, the display will be restored after %1s.</source>
     <message>
         <location filename="../src/frame/modules/accounts/accountswidget.cpp" line="57"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="115"/>
-        <location filename="../src/frame/navigationbar.cpp" line="202"/>
+        <location filename="../src/frame/navigationbar.cpp" line="201"/>
         <source>Accounts</source>
         <translation>Учетные записи</translation>
     </message>
@@ -458,32 +464,32 @@ If no operation, the display will be restored after %1s.</source>
         <translation>Изображения</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="324"/>
+        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="330"/>
         <source>Your host was removed from the domain server successfully</source>
         <translation>Ваш хост был удален из домена сервера.</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="325"/>
+        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="331"/>
         <source>Your host joins the domain server successfully</source>
         <translation>Ваш хост успешно присоединился к домену сервера.</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="347"/>
+        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="352"/>
         <source>Your host failed to leave the domain server</source>
         <translation>Ваш хост не смог покинуть домен сервера.</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="348"/>
+        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="353"/>
         <source>Your host failed to join the domain server</source>
         <translation>Ваш хост не смог присоединиться к домену сервера.</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="420"/>
+        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="425"/>
         <source>Password not match</source>
         <translation>Пароль не совпадает.</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="351"/>
+        <location filename="../src/frame/modules/accounts/accountsworker.cpp" line="356"/>
         <source>AD domain settings</source>
         <translation>Настройки домена AD</translation>
     </message>
@@ -673,22 +679,22 @@ If no operation, the display will be restored after %1s.</source>
         <translation>Принять</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/modifypasswordpage.cpp" line="112"/>
+        <location filename="../src/frame/modules/accounts/modifypasswordpage.cpp" line="117"/>
         <source>New password should differ from the current one</source>
         <translation>Новый пароль должен отличаться от текущего</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/modifypasswordpage.cpp" line="148"/>
+        <location filename="../src/frame/modules/accounts/modifypasswordpage.cpp" line="156"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/modifypasswordpage.cpp" line="207"/>
+        <location filename="../src/frame/modules/accounts/modifypasswordpage.cpp" line="215"/>
         <source>The password should be different from the username</source>
         <translation>Пароль должен отличаться от имени пользователя</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/modifypasswordpage.cpp" line="215"/>
+        <location filename="../src/frame/modules/accounts/modifypasswordpage.cpp" line="223"/>
         <source>The password must contain English letters (case-sensitive), numbers or special symbols (~!@#$%^&amp;*()[]{}\|/?,.&lt;&gt;)</source>
         <translation>Пароль должен содержать Английские буквы (с учетом регистра), цифры или специальные символы (~!@#$%^&amp;*()[]{}\|/?,.&lt;&gt;)</translation>
     </message>
@@ -866,12 +872,12 @@ If no operation, the display will be restored after %1s.</source>
         <translation>Настройки Углов Навигации</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/sync/syncstatewidget.cpp" line="210"/>
+        <location filename="../src/frame/modules/sync/syncstatewidget.cpp" line="214"/>
         <source>Last Sync: %1</source>
         <translation>Последняя Синхронизация: %1</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/sync/syncstatewidget.cpp" line="212"/>
+        <location filename="../src/frame/modules/sync/syncstatewidget.cpp" line="216"/>
         <source>yyyy-MM-dd hh:mm</source>
         <translation>yyyy-MM-dd hh:mm</translation>
     </message>
@@ -1022,7 +1028,7 @@ If no operation, the display will be restored after %1s.</source>
     <message>
         <location filename="../src/frame/modules/defapp/defappviewer.cpp" line="41"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="118"/>
-        <location filename="../src/frame/navigationbar.cpp" line="205"/>
+        <location filename="../src/frame/navigationbar.cpp" line="204"/>
         <source>Default Applications</source>
         <translation>Приложения по Умолчанию</translation>
     </message>
@@ -1133,7 +1139,7 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::display::DisplayModule</name>
     <message>
-        <location filename="../src/frame/modules/display/displaymodule.cpp" line="258"/>
+        <location filename="../src/frame/modules/display/displaymodule.cpp" line="267"/>
         <source>Wireless Screen Projection</source>
         <translation>Беспроводной Проекционный Экран</translation>
     </message>
@@ -1141,44 +1147,49 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::display::DisplayWidget</name>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="115"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="118"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="117"/>
-        <location filename="../src/frame/navigationbar.cpp" line="204"/>
+        <location filename="../src/frame/navigationbar.cpp" line="203"/>
         <source>Display</source>
         <translation>Дисплей</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="49"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="51"/>
         <source>Display Scaling</source>
         <translation>Масштабирование Дисплея</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="57"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="59"/>
         <source>Rotate</source>
         <translation>Вращение</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="59"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="61"/>
         <source>Custom Settings</source>
         <translation>Пользовательские Настройки</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="60"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="62"/>
         <source>Resolution</source>
         <translation>Разрешение</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="61"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="63"/>
         <source>Brightness</source>
         <translation>Яркость</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="62"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="64"/>
         <source>Scaling Settings</source>
         <translation>Настройки Масштабирования</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="238"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="65"/>
+        <source>VNC Remote</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="242"/>
         <source>Wireless Screen Projection</source>
         <translation>Беспроводной Проекционный Экран</translation>
     </message>
@@ -1186,17 +1197,17 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::display::MiracastNoDeviceWidget</name>
     <message>
-        <location filename="../src/frame/modules/display/miracastnodevicewidget.cpp" line="43"/>
+        <location filename="../src/frame/modules/display/miracastnodevicewidget.cpp" line="44"/>
         <source>Scanning devices, please wait...</source>
         <translation>Сканирую устройства, пожалуйста ждите...</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/miracastnodevicewidget.cpp" line="44"/>
+        <location filename="../src/frame/modules/display/miracastnodevicewidget.cpp" line="45"/>
         <source>No available device found</source>
         <translation>Доступное устройство не найдено</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/miracastnodevicewidget.cpp" line="47"/>
+        <location filename="../src/frame/modules/display/miracastnodevicewidget.cpp" line="48"/>
         <source>Refresh</source>
         <translation>Обновить</translation>
     </message>
@@ -1240,27 +1251,27 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::display::MonitorSettingDialog</name>
     <message>
-        <location filename="../src/frame/modules/display/monitorsettingdialog.cpp" line="113"/>
+        <location filename="../src/frame/modules/display/monitorsettingdialog.cpp" line="114"/>
         <source>Resolution</source>
         <translation>Разрешение</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/monitorsettingdialog.cpp" line="176"/>
+        <location filename="../src/frame/modules/display/monitorsettingdialog.cpp" line="177"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/monitorsettingdialog.cpp" line="178"/>
+        <location filename="../src/frame/modules/display/monitorsettingdialog.cpp" line="179"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/monitorsettingdialog.cpp" line="185"/>
+        <location filename="../src/frame/modules/display/monitorsettingdialog.cpp" line="186"/>
         <source>Primary</source>
         <translation>Основной</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/monitorsettingdialog.cpp" line="352"/>
+        <location filename="../src/frame/modules/display/monitorsettingdialog.cpp" line="353"/>
         <source> (Recommended)</source>
         <translation>(Рекомендуется)</translation>
     </message>
@@ -1299,6 +1310,41 @@ If no operation, the display will be restored after %1s.</source>
         <location filename="../src/frame/modules/display/scalingpage.cpp" line="87"/>
         <source>Display scaling for all monitors</source>
         <translation>Масштабирование для всех дисплеев</translation>
+    </message>
+</context>
+<context>
+    <name>dcc::display::VNCRemote</name>
+    <message>
+        <location filename="../src/frame/modules/display/vncremote.cpp" line="28"/>
+        <source>Connect Password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/display/vncremote.cpp" line="32"/>
+        <source>New Password</source>
+        <translation type="unfinished">Новый Пароль</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/display/vncremote.cpp" line="35"/>
+        <source>Remove Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/display/vncremote.cpp" line="36"/>
+        <source>Set</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/display/vncremote.cpp" line="60"/>
+        <source>You can use IP address and VNC View to connect.
+Port: 5900
+Power by x11vnc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/display/vncremote.cpp" line="66"/>
+        <source>VNC Remote</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1424,7 +1470,7 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::keyboard::KeyboardLayoutWidget</name>
     <message>
-        <location filename="../src/frame/modules/keyboard/keyboardlayoutwidget.cpp" line="50"/>
+        <location filename="../src/frame/modules/keyboard/keyboardlayoutwidget.cpp" line="51"/>
         <source>Add Keyboard Layout</source>
         <translation>Добавить Раскладку Клавиатуры</translation>
     </message>
@@ -1502,7 +1548,7 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::keyboard::LangWidget</name>
     <message>
-        <location filename="../src/frame/modules/keyboard/langwidget.cpp" line="48"/>
+        <location filename="../src/frame/modules/keyboard/langwidget.cpp" line="49"/>
         <source>System Language</source>
         <translation>Язык Системы</translation>
     </message>
@@ -1786,17 +1832,17 @@ If no operation, the display will be restored after %1s.</source>
         <translation>Сохранить</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/connectioneditpage.cpp" line="343"/>
+        <location filename="../src/frame/modules/network/connectioneditpage.cpp" line="344"/>
         <source>Wired Connection %1</source>
         <translation>Проводное Соединение %1</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/connectioneditpage.cpp" line="347"/>
+        <location filename="../src/frame/modules/network/connectioneditpage.cpp" line="348"/>
         <source>Wireless Connection %1</source>
         <translation>Беспроводное Соединение %1</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/connectioneditpage.cpp" line="351"/>
+        <location filename="../src/frame/modules/network/connectioneditpage.cpp" line="352"/>
         <source>PPPoE Connection %1</source>
         <translation>PPPoE Соединение %1</translation>
     </message>
@@ -1920,7 +1966,7 @@ If no operation, the display will be restored after %1s.</source>
     <name>dcc::network::HotspotPage</name>
     <message>
         <location filename="../src/frame/modules/network/hotspotpage.cpp" line="61"/>
-        <location filename="../src/frame/modules/network/hotspotpage.cpp" line="82"/>
+        <location filename="../src/frame/modules/network/hotspotpage.cpp" line="83"/>
         <source>Hotspot</source>
         <translation>Точка доступа</translation>
     </message>
@@ -2360,164 +2406,164 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::network::Secret8021xSection</name>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="153"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="155"/>
         <source>TLS</source>
         <translation>TLS</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="154"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="156"/>
         <source>MD5</source>
         <translation>MD5</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="155"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="157"/>
         <source>LEAP</source>
         <translation>LEAP</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="156"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="158"/>
         <source>FAST</source>
         <translation>FAST</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="157"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="159"/>
         <source>Tunneled TLS</source>
         <translation>Туннельный TLS </translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="158"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="160"/>
         <source>Protected EAP</source>
         <translation>Защищенный EAP</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="163"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="165"/>
         <source>Saved</source>
         <translation>Сохранено</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="164"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="166"/>
         <source>Ask</source>
         <translation>Спросить</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="169"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="171"/>
         <source>Disabled</source>
         <translation>Отключено</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="170"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="172"/>
         <source>Anonymous</source>
         <translation>Анонимный</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="171"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="173"/>
         <source>Authenticated</source>
         <translation>Проверенный</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="172"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="174"/>
         <source>Both</source>
         <translation>Оба</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="188"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="190"/>
         <source>Automatic</source>
         <translation>Автоматически</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="218"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="220"/>
         <source>Pwd Options</source>
         <translation>Pwd Опции</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="31"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="33"/>
         <source>Security</source>
         <translation>Безопасность</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="202"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="204"/>
         <source>EAP Auth</source>
         <translation>EAP-аутентификация</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="165"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="167"/>
         <source>Not Required</source>
         <translation>Не Требуется</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="189"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="191"/>
         <source>Version 0</source>
         <translation>Версия 0</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="190"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="192"/>
         <source>Version 1</source>
         <translation>Версия 1</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="214"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="216"/>
         <source>Identity</source>
         <translation>Идентично</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="216"/>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="224"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="218"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="226"/>
         <source>Required</source>
         <translation>Требуется</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="302"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="304"/>
         <source>Private Key</source>
         <translation>Личный Ключ</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="306"/>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="387"/>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="423"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="308"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="389"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="425"/>
         <source>CA Cert</source>
         <translation>CA-сертификат</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="310"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="312"/>
         <source>User Cert</source>
         <translation>Сертификат Пользователя</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="332"/>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="383"/>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="419"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="334"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="385"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="421"/>
         <source>Anonymous ID</source>
         <translation>Анонимный ID</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="336"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="338"/>
         <source>Provisioning</source>
         <translation>Резервирование</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="348"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="350"/>
         <source>PAC file</source>
         <translation>PAC-файл</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="352"/>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="391"/>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="438"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="354"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="393"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="440"/>
         <source>Inner Auth</source>
         <translation>Внутренняя Аутентификация</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="427"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="429"/>
         <source>PEAP Version</source>
         <translation>Версия PEAP</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="523"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="525"/>
         <source>Private Pwd</source>
         <translation>Личный Пароль</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="525"/>
+        <location filename="../src/frame/modules/network/sections/secret8021xsection.cpp" line="527"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
@@ -2687,125 +2733,125 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::network::VpnAdvVPNCSection</name>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="140"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="141"/>
         <source>Cisco (default)</source>
         <translation>Cisco (по умолчанию)</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="141"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="142"/>
         <source>Netscreen</source>
         <translation>Netscreen</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="144"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="145"/>
         <source>Secure (default)</source>
         <translation>Безопасный (по умолчанию)</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="145"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="146"/>
         <source>Weak</source>
         <translation>Слабый</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="146"/>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="161"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="147"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="162"/>
         <source>None</source>
         <translation>Ничего</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="149"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="150"/>
         <source>NAT-T When Available (default)</source>
         <translation>NAT-T когда доступен (по умолчанию)</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="150"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="151"/>
         <source>NAT-T Always</source>
         <translation>NAT-T всегда</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="151"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="152"/>
         <source>Cisco UDP</source>
         <translation>Cisco UDP</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="152"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="153"/>
         <source>Disabled</source>
         <translation>Отключено</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="155"/>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="162"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="156"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="163"/>
         <source>DH Group 1</source>
         <translation>DH Группа 1</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="156"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="157"/>
         <source>DH Group 2 (default)</source>
         <translation>DH Группа 2 (по умолчанию)</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="157"/>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="164"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="158"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="165"/>
         <source>DH Group 5</source>
         <translation>DH Группа 5</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="160"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="161"/>
         <source>Server (default)</source>
         <translation>Сервер (по умолчанию)</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="163"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="164"/>
         <source>DH Group 2</source>
         <translation>DH Группа 2</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="31"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="32"/>
         <source>VPN Advanced</source>
         <translation>Расширенный VPN</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="170"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="171"/>
         <source>Domain</source>
         <translation>Домен</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="173"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="174"/>
         <source>Vendor</source>
         <translation>Поставщик</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="179"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="180"/>
         <source>Version</source>
         <translation>Версия</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="182"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="183"/>
         <source>Encryption</source>
         <translation>Шифрование</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="188"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="189"/>
         <source>NAT Traversal Mode</source>
         <translation>Режим Обхода NAT</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="194"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="195"/>
         <source>IKE DH Group</source>
         <translation>IKE DH Группа</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="200"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="201"/>
         <source>Forward Secrecy</source>
         <translation>Скрытная Пересылка</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="206"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="207"/>
         <source>Local Port</source>
         <translation>Локальный Порт</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="211"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnadvvpncsection.cpp" line="212"/>
         <source>Disable Dead Peer Detection</source>
         <translation>Отключить обнаружение нерабочих пиров</translation>
     </message>
@@ -2904,114 +2950,114 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::network::VpnOpenVPNSection</name>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="115"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="117"/>
         <source>Certificates (TLS)</source>
         <translation>Сертификаты (TLS)</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="116"/>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="243"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="118"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="245"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="117"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="119"/>
         <source>Certificates with Password (TLS)</source>
         <translation>Пароль и сертификаты (TLS)</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="118"/>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="272"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="120"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="274"/>
         <source>Static Key</source>
         <translation>Статический Ключ</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="123"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="125"/>
         <source>Saved</source>
         <translation>Сохранено</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="124"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="126"/>
         <source>Ask</source>
         <translation>Спросить</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="125"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="127"/>
         <source>Not Required</source>
         <translation>Не Требуется</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="177"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="179"/>
         <source>User Cert</source>
         <translation>Сертификат Пользователя</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="181"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="183"/>
         <source>Private Key</source>
         <translation>Личный Ключ</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="185"/>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="232"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="187"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="234"/>
         <source>Pwd Options</source>
         <translation>Pwd Опции</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="287"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="289"/>
         <source>Remote IP</source>
         <translation>Удаленный IP</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="292"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="294"/>
         <source>Local IP</source>
         <translation>Локальный IP</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="31"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="33"/>
         <source>VPN</source>
         <translation>VPN</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="131"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="133"/>
         <source>Gateway</source>
         <translation>Шлюз</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="132"/>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="229"/>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="245"/>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="288"/>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="293"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="134"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="231"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="247"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="290"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="295"/>
         <source>Required</source>
         <translation>Требуется</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="142"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="144"/>
         <source>Auth Type</source>
         <translation>Тип Аутентификации</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="145"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="147"/>
         <source>CA Cert</source>
         <translation>CA Сертификат</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="196"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="198"/>
         <source>Private Pwd</source>
         <translation>Личный Пароль</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="227"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="229"/>
         <source>Username</source>
         <translation>Имя пользователя</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="276"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="278"/>
         <source>Customize Key Direction</source>
         <translation>Настроить Ключевое Направление</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="280"/>
+        <location filename="../src/frame/modules/network/sections/vpn/vpnopenvpnsection.cpp" line="282"/>
         <source>Key Direction</source>
         <translation>Ключевое Направление</translation>
     </message>
@@ -3718,12 +3764,12 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::personalization::PersonalizationModule</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="118"/>
+        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="132"/>
         <source>Standard Font</source>
         <translation>Стандартный Шрифт</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="127"/>
+        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="141"/>
         <source>Monospaced Font</source>
         <translation>Моноширный Шрифт</translation>
     </message>
@@ -3731,31 +3777,61 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="77"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="114"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
-        <location filename="../src/frame/navigationbar.cpp" line="206"/>
+        <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
         <translation>Персональные настройки</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="46"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="49"/>
         <source>Transparency</source>
         <translation>Прозрачность</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="68"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="72"/>
         <source>Window Effect</source>
         <translation>Эффекты Окна</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="70"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="74"/>
+        <source>Top Panel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="76"/>
+        <source>Top Panel Global Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="78"/>
+        <source>Bottom Panel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="80"/>
+        <source>Use deepin 20 style launcher</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="82"/>
+        <source>Hide DDE Dock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="84"/>
         <source>Theme</source>
         <translation>Тема</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="71"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="85"/>
         <source>Font</source>
         <translation>Шрифт</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="86"/>
+        <source>Video Wallpaper</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3787,6 +3863,45 @@ If no operation, the display will be restored after %1s.</source>
         <location filename="../src/frame/modules/personalization/module/themewidget/themewidget.cpp" line="54"/>
         <source>Theme</source>
         <translation>Тема</translation>
+    </message>
+</context>
+<context>
+    <name>dcc::personalization::VideoWallpaper</name>
+    <message>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="24"/>
+        <source>Play</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="25"/>
+        <source>Pause</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="29"/>
+        <source>Choose wallpaper path:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="30"/>
+        <source>Video(*.mp4);;所有文件(*.*)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="32"/>
+        <source>More Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="55"/>
+        <source>Press &quot;Play&quot; button to set new wallpaper
+Power by fantascene-dynamic-wallpaper</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="62"/>
+        <source>Video Wallpaper</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3955,7 +4070,7 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::sync::SyncWidget</name>
     <message>
-        <location filename="../src/frame/navigationbar.cpp" line="203"/>
+        <location filename="../src/frame/navigationbar.cpp" line="202"/>
         <source>Cloud Sync</source>
         <translation>Облачная Синхронизация</translation>
     </message>
@@ -3963,32 +4078,36 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::systeminfo::BootWidget</name>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="62"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="67"/>
         <source>Updating...</source>
         <translation>Обновление...</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="73"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="78"/>
         <source>Startup Delay</source>
         <translation>Задержка Загрузки</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="76"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="81"/>
         <source>Theme</source>
         <translation>Тема</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="78"/>
-        <source>You can click the option in boot menu to set it as the first boot, and drag and drop a picture to replace the background.</source>
-        <translation>Вы можете щелкнуть вариант в меню загрузки, чтобы задать его как первоначально загружаемый и перетащите изображение, чтобы заменить фон.</translation>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="84"/>
+        <source>Enable Live Mode</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="82"/>
+        <source>You can click the option in boot menu to set it as the first boot, and drag and drop a picture to replace the background.</source>
+        <translation type="vanished">Вы можете щелкнуть вариант в меню загрузки, чтобы задать его как первоначально загружаемый и перетащите изображение, чтобы заменить фон.</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="93"/>
         <source>Switch theme on to view it in boot menu</source>
         <translation>Переключите тему, чтобы просмотреть её в меню загрузки.</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="102"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="128"/>
         <source>Boot Menu</source>
         <translation>Меню Загрузки</translation>
     </message>
@@ -4004,69 +4123,88 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::systeminfo::SystemInfoWidget</name>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="70"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="73"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="129"/>
-        <location filename="../src/frame/navigationbar.cpp" line="216"/>
+        <location filename="../src/frame/navigationbar.cpp" line="217"/>
         <source>System Information</source>
         <translation>Информация о системе</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="43"/>
         <source>Copyright © 2011-%1 Wuhan Deepin Technology Co., Ltd.</source>
-        <translation>Copyright © 2011-%1 Wuhan Deepin Technology Co., Ltd.</translation>
+        <translation type="vanished">Copyright © 2011-%1 Wuhan Deepin Technology Co., Ltd.</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="81"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="46"/>
+        <source>©2023-%1 GXDE</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="84"/>
         <source>Distribution:</source>
         <translation>Распространяется:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="86"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="89"/>
         <source>Distribution Release:</source>
         <translation>Распространяемый Выпуск:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="91"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="94"/>
         <source>Edition:</source>
         <translation>Версия:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="95"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="98"/>
         <source>Type:</source>
         <translation>Тип:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="98"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="101"/>
         <source>Processor:</source>
         <translation>Процессор:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="102"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="105"/>
         <source>Memory:</source>
         <translation>Память:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="106"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="109"/>
         <source>Disk:</source>
         <translation>Диск:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="120"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="113"/>
+        <source>Kernel:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="117"/>
+        <source>Session:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="121"/>
+        <source>System website</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="137"/>
         <source>Edition License</source>
         <translation>Лицензия</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="123"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="140"/>
         <source>End User License Agreement</source>
         <translation>Лицензионное Соглашение с Конечным Пользователем</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="128"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="145"/>
         <source>Boot Menu</source>
         <translation>Меню Загрузки</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="190"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="210"/>
         <source>%1Bit</source>
         <translation>%1Бит</translation>
     </message>
@@ -4148,7 +4286,7 @@ If no operation, the display will be restored after %1s.</source>
     <message>
         <location filename="../src/frame/modules/update/updatectrlwidget.cpp" line="59"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="128"/>
-        <location filename="../src/frame/navigationbar.cpp" line="215"/>
+        <location filename="../src/frame/navigationbar.cpp" line="216"/>
         <source>Update</source>
         <translation>Обновление</translation>
     </message>
@@ -4221,7 +4359,11 @@ If no operation, the display will be restored after %1s.</source>
     <message numerus="yes">
         <location filename="../src/frame/modules/update/updatectrlwidget.cpp" line="264"/>
         <source>%n application update(s) detected</source>
-        <translation><numerusform>%n приложение обнаружено обновление(я)</numerusform><numerusform>%n приложение обнаружено обновление(я)</numerusform><numerusform>%n приложение обнаружено обновление(я)</numerusform><numerusform>%n приложение обновление(я) обнаружены</numerusform></translation>
+        <translation>
+            <numerusform>%n приложение обнаружено обновление(я)</numerusform>
+            <numerusform>%n приложение обнаружено обновление(я)</numerusform>
+            <numerusform>%n приложение обнаружено обновление(я)</numerusform>
+        </translation>
     </message>
     <message>
         <location filename="../src/frame/modules/update/updatectrlwidget.cpp" line="269"/>
@@ -4231,7 +4373,11 @@ If no operation, the display will be restored after %1s.</source>
     <message numerus="yes">
         <location filename="../src/frame/modules/update/updatectrlwidget.cpp" line="271"/>
         <source>New system edition and %n application update(s) detected</source>
-        <translation><numerusform>Обнаружена новая версия системы и  обновление(я) приложения %n</numerusform><numerusform>Обнаружена новая версия системы и  обновление(я) приложения %n</numerusform><numerusform>Обнаружена новая версия системы и  обновление(я) приложения %n</numerusform><numerusform>Обнаружена новая версия системы и  обновление(я) приложения %n</numerusform></translation>
+        <translation>
+            <numerusform>Обнаружена новая версия системы и  обновление(я) приложения %n</numerusform>
+            <numerusform>Обнаружена новая версия системы и  обновление(я) приложения %n</numerusform>
+            <numerusform>Обнаружена новая версия системы и  обновление(я) приложения %n</numerusform>
+        </translation>
     </message>
     <message>
         <location filename="../src/frame/modules/update/updatectrlwidget.cpp" line="278"/>
@@ -4310,7 +4456,7 @@ If no operation, the display will be restored after %1s.</source>
         <translation>Включите это, чтобы автоматически подключиться к самому быстрому зеркалу</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="113"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="114"/>
         <source>Switch Mirror</source>
         <translation>Переключить Зеркало</translation>
     </message>
@@ -4332,12 +4478,12 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::update::UpdateWorker</name>
     <message>
-        <location filename="../src/frame/modules/update/updatework.cpp" line="244"/>
+        <location filename="../src/frame/modules/update/updatework.cpp" line="238"/>
         <source>Patches</source>
         <translation>Патчи</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatework.cpp" line="245"/>
+        <location filename="../src/frame/modules/update/updatework.cpp" line="239"/>
         <source>System patches</source>
         <translation>Исправления системы</translation>
     </message>
@@ -4378,7 +4524,7 @@ If no operation, the display will be restored after %1s.</source>
     <message>
         <location filename="../src/frame/modules/wacom/wacomwidget.cpp" line="57"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="127"/>
-        <location filename="../src/frame/navigationbar.cpp" line="214"/>
+        <location filename="../src/frame/navigationbar.cpp" line="215"/>
         <source>Wacom</source>
         <translation>Wacom</translation>
     </message>

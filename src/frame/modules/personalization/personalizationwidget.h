@@ -54,6 +54,7 @@ Q_SIGNALS:
     void requestSwitchWM();
     void requestSetOpacity(int value);
     void requestSetTopPanel(int value);
+    void requestSetTopPanelGlobalMenu(int value);
     void requestSetBottomPanel(int value);
     void requestSet20Launcher(int value);
     void requestSetHideDDEDock(int value);
@@ -67,6 +68,7 @@ private:
     dcc::widgets::SettingsGroup* m_userGroup;
     dcc::widgets::SwitchWidget*  m_wmSwitch;
     dcc::widgets::SwitchWidget*  m_showTopPanel;
+    dcc::widgets::SwitchWidget*  m_showTopPanelGlobalMenu;
     dcc::widgets::SwitchWidget*  m_showBottomPanel;
     dcc::widgets::SwitchWidget*  m_use20Launcher;
     dcc::widgets::SwitchWidget*  m_hideDDEDock;

@@ -387,6 +387,10 @@ void PersonalizationWork::setTopPanel(const int value){
     m_model->setTopPanel(value);
 }
 
+void PersonalizationWork::setTopPanelGlobalMenu(const int value){
+    m_model->setTopPanelGlobalMenu(value);
+}
+
 void PersonalizationWork::setBottomPanel(const int value){
     m_model->setBottomPanel(value);
 }

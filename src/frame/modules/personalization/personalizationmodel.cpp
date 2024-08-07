@@ -61,6 +61,23 @@ void PersonalizationModel::setIs3DWm(const bool is3d)
     }
 }
 
+void PersonalizationModel::setTopPanelGlobalMenu(const bool value)
+{
+    if(!QFile::exists("/usr/share/applications/dde-globalmenu-service.desktop") /*|| !QFile::exists("/usr/share/applications/gxde-globalmenu-service.desktop")*/){
+        // Setting error
+        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/dde-globalmenu-service.desktop or /usr/share/applications/dde-globalmenu-service.desktop";
+        return;
+    }
+    if(value){
+        QFile::copy("/usr/share/applications/dde-globalmenu-service.desktop",
+                    QDir::homePath() + "/.config/autostart/dde-globalmenu-service.desktop"); // 设置自动启动
+        system("setsid dde-globalmenu-service > /dev/null 2>&1 &");
+        return;
+    }
+    QFile::remove(QDir::homePath() + "/.config/autostart/dde-globalmenu-service.desktop"); // 移除自动启动
+    system("killall dde-globalmenu-service -9");
+}
+
 void PersonalizationModel::setTopPanel(const bool isTopPanel)
 {
     if(!QFile::exists("/usr/share/applications/gxde-top-panel.desktop") /*|| !QFile::exists("/usr/share/applications/gxde-globalmenu-service.desktop")*/){
@@ -135,6 +152,11 @@ void PersonalizationModel::setHideDDEDock(const bool value)
 bool PersonalizationModel::is3DWm() const
 {
     return m_is3DWm;
+}
+
+bool PersonalizationModel::isOpenTopPanelGlobalMenu() const
+{
+    return QFile::exists(QDir::homePath() + "/.config/autostart/dde-globalmenu-service.desktop");
 }
 
 bool PersonalizationModel::isOpenTopPanel() const

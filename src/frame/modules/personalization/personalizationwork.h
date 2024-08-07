@@ -61,6 +61,7 @@ public Q_SLOTS:
     void switchWM();
     void setOpacity(int opcaity);
     void setTopPanel(int value);
+    void setTopPanelGlobalMenu(int value);
     void setBottomPanel(int value);
     void set20Launcher(int value);
     void setHideDDEDock(int value);

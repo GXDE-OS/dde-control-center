@@ -82,6 +82,7 @@ ModuleWidget *PersonalizationModule::moduleWidget()
         connect(m_personalizationWidget, &PersonalizationWidget::requestSwitchWM, m_work, &PersonalizationWork::switchWM);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetOpacity, m_work, &PersonalizationWork::setOpacity);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetTopPanel, m_work, &PersonalizationWork::setTopPanel);
+        connect(m_personalizationWidget, &PersonalizationWidget::requestSetTopPanelGlobalMenu, m_work, &PersonalizationWork::setTopPanelGlobalMenu);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetBottomPanel, m_work, &PersonalizationWork::setBottomPanel);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSet20Launcher, m_work, &PersonalizationWork::set20Launcher);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetHideDDEDock, m_work, &PersonalizationWork::setHideDDEDock);
