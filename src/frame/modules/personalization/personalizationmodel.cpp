@@ -133,9 +133,9 @@ void PersonalizationModel::set20Launcher(const bool value)
 
 void PersonalizationModel::setHideDDEDock(const bool value)
 {
-    QDir dir(QDir::homePath() + "/.config/gxde/gxde-launcher/");
+    QDir dir(QDir::homePath() + "/.config/gxde/gxde-dock/");
     if (!dir.exists()) {
-        dir.mkpath(QDir::homePath() + "/.config/gxde/gxde-launcher/");
+        dir.mkpath(QDir::homePath() + "/.config/gxde/gxde-dock/");
     }
     if(value){
        QFile file(QDir::homePath() + "/.config/gxde/gxde-dock/dock-hide");
