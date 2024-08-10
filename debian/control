@@ -34,7 +34,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
  ${misc:Depends},
  ${dist:Depends},
- dde-account-faces,
+ gxde-account-faces,
  dde-daemon,
  dde-api (>=2.92.1),
  xkb-data,
