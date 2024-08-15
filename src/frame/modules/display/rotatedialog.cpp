@@ -48,7 +48,7 @@
 #define ResetOperationTimeLimit 15
 
 DWIDGET_USE_NAMESPACE
-DGUI_USE_NAMESPACE
+DTK_USE_NAMESPACE
 
 using namespace dcc::display;
 using MouseInter = com::deepin::daemon::inputdevice::Mouse;

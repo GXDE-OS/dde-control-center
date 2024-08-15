@@ -100,7 +100,7 @@ void SwitchWidget::setTitle(const QString &title)
 
 bool SwitchWidget::checked() const
 {
-    return m_switchBtn->isChecked();
+    return m_switchBtn->checked();
 }
 
 void SwitchWidget::mouseReleaseEvent(QMouseEvent *event)
