@@ -94,12 +94,13 @@ UpdateSettings::UpdateSettings(UpdateModel *model, QWidget *parent)
     layout->addWidget(m_updateLbl);
     layout->addSpacing(15);
 
+    // 暂时屏蔽无法使用的自动 Mirror
     if (!m_isProfessional) {
         m_smartMirrorBtn = new SwitchWidget;
         m_smartMirrorBtn->setTitle(tr("Smart Mirror Switch"));
 
         SettingsGroup *smartMirrorGrp = new SettingsGroup;
-        smartMirrorGrp->appendItem(m_smartMirrorBtn);
+        //smartMirrorGrp->appendItem(m_smartMirrorBtn);
 
         TipsLabel* smartTips = new TipsLabel;
         smartTips->setText(tr("Switch it on to connect to the quickest mirror site automatically"));
@@ -107,13 +108,13 @@ UpdateSettings::UpdateSettings(UpdateModel *model, QWidget *parent)
         smartTips->setContentsMargins(20, 0, 20, 0);
         layout->addWidget(smartMirrorGrp);
         layout->addSpacing(8);
-        layout->addWidget(smartTips);
+        //layout->addWidget(smartTips);
         layout->addSpacing(15);
 
         m_updateMirrors = new NextPageWidget;
         m_updateMirrors->setTitle(tr("Switch Mirror"));
         m_mirrorGrp = new SettingsGroup;
-        m_mirrorGrp->appendItem(m_updateMirrors);
+        //m_mirrorGrp->appendItem(m_updateMirrors);
         layout->addWidget(m_mirrorGrp);
 
         connect(m_updateMirrors, &NextPageWidget::clicked, this, &UpdateSettings::requestShowMirrorsView);
