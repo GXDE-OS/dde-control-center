@@ -118,6 +118,10 @@ set(FRAME_FILES
                 notify/notifyview.h
                 notify/notifyview.cpp
                 notify/notifymodel.cpp
+                notify/soundmodel.h
+                notify/soundmodel.cpp
+                notify/brightnessmodel.h
+                notify/brightnessmodel.cpp
                 dbuscontrolcenterservice.h
                 frame.cpp
                 frame.h

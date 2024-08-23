@@ -25,10 +25,12 @@
 #include "notifymodel.h"
 #include "notifydelegate.h"
 #include "notifyview.h"
+#include "widgets/dccslider.h"
 
 #include <dimagebutton.h>
 #include <QWidget>
 #include <QLabel>
+#include <QGridLayout>
 
 DWIDGET_USE_NAMESPACE
 
@@ -46,11 +48,17 @@ private Q_SLOTS:
     void onRemoveAnimFinished(const QModelIndex &index);
 
 private:
+    QGridLayout *m_controlLayout;
     DImageButton *m_clearAllButton;
     NotifyView *m_notifyView;
     NotifyModel *m_notifyModel;
     NotifyDelegate *m_notifyDelegate;
     QLabel *m_noNotify;
+    dcc::widgets::DCCSlider *m_volumeSlider;
+    dcc::widgets::DCCSlider *m_brightSlider;
+
+    void ChangeVolume();
+    void ChangeBright();
 };
 
 #endif // NOTIFYWIDGET_H
