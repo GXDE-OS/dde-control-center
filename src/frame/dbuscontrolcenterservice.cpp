@@ -142,6 +142,18 @@ void DBusControlCenterService::ShowImmediately()
 #endif
 }
 
+void DBusControlCenterService::ShowNotify()
+{
+    parent()->backToNotify();
+    Show();
+}
+
+void DBusControlCenterService::ShowNav()
+{
+    parent()->backToNav();
+    Show();
+}
+
 void DBusControlCenterService::ShowHome()
 {
     parent()->backToHome();

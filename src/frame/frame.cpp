@@ -283,6 +283,18 @@ void Frame::backToHome()
         popWidget();
 }
 
+void Frame::backToNotify()
+{
+    backToHome();
+    m_mainWidget->SetNotifyWidget();
+}
+
+void Frame::backToNav()
+{
+    backToHome();
+    m_mainWidget->SetNavWidget();
+}
+
 void Frame::setDebugAutoHide(const bool autoHide)
 {
     m_debugAutoHide = autoHide;

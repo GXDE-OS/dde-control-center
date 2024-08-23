@@ -31,6 +31,7 @@
 #include <com_deepin_daemon_display.h>
 #include <com_deepin_dde_launcher.h>
 #include <com_deepin_daemon_appearance.h>
+//#include "mainwidget.h"
 
 #include <QStack>
 #include <QPropertyAnimation>
@@ -76,6 +77,8 @@ public:
     explicit Frame(QWidget *parent = 0);
 
     void backToHome();
+    void backToNotify();
+    void backToNav();
     void setDebugAutoHide(const bool autoHide);
     QString currentModuleName() const;
 

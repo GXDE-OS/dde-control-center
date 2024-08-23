@@ -41,6 +41,7 @@
 
 #include <QtCore/QObject>
 #include <QtDBus/QtDBus>
+//#include "mainwidget.h"
 QT_BEGIN_NAMESPACE
 class QByteArray;
 template<class T> class QList;
@@ -79,6 +80,8 @@ public Q_SLOTS: // METHODS
     void Hide();
     void HideImmediately();
     void Show();
+    void ShowNav();
+    void ShowNotify();
     void ShowImmediately();
     void ShowHome();
     void ShowModule(const QString &module);

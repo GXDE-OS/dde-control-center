@@ -220,16 +220,26 @@ void MainWidget::refershTimedate()
     m_currentDateLbl->setText(tm.date().toString(Qt::SystemLocaleLongDate));
 }
 
+void MainWidget::SetNotifyWidget()
+{
+    m_pluginsLayout->setCurrentWidget(m_notifyWidget);
+    m_notifyToggleBtn->setHoverPic(":/frame/themes/dark/icons/notifications_toggle_checkedhover.svg");
+    m_notifyToggleBtn->setNormalPic(":/frame/themes/dark/icons/notifications_toggle_checked.svg");
+}
+
+void MainWidget::SetNavWidget()
+{
+    m_pluginsLayout->setCurrentWidget(m_navWidget);
+    m_notifyToggleBtn->setHoverPic(":/frame/themes/dark/icons/notifications_toggle_hover.svg");
+    m_notifyToggleBtn->setNormalPic(":/frame/themes/dark/icons/notifications_toggle_normal.svg");
+}
+
 void MainWidget::toggleNotify()
 {
     if (m_pluginsLayout->currentWidget() == m_navWidget) {
-        m_pluginsLayout->setCurrentWidget(m_notifyWidget);
-        m_notifyToggleBtn->setHoverPic(":/frame/themes/dark/icons/notifications_toggle_checkedhover.svg");
-        m_notifyToggleBtn->setNormalPic(":/frame/themes/dark/icons/notifications_toggle_checked.svg");
+        SetNotifyWidget();
     }
     else {
-        m_pluginsLayout->setCurrentWidget(m_navWidget);
-        m_notifyToggleBtn->setHoverPic(":/frame/themes/dark/icons/notifications_toggle_hover.svg");
-        m_notifyToggleBtn->setNormalPic(":/frame/themes/dark/icons/notifications_toggle_normal.svg");
+        SetNavWidget();
     }
 }

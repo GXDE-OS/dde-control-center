@@ -52,6 +52,8 @@ class MainWidget : public FrameWidget
 
 public:
     explicit MainWidget(FrameContentWrapper *parent = 0);
+    void SetNotifyWidget();
+    void SetNavWidget();
 
 Q_SIGNALS:
     void showAllSettings() const;
@@ -59,6 +61,7 @@ Q_SIGNALS:
     void appear() const;
     void disappear() const;
     void requestModuleVisible(const QString &module, bool visible);
+
 
 private:
     int getPluginsHeight();
