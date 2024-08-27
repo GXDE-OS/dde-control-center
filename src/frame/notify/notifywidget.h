@@ -56,6 +56,7 @@ private:
     QLabel *m_noNotify;
     dcc::widgets::DCCSlider *m_volumeSlider;
     dcc::widgets::DCCSlider *m_brightSlider;
+    DImageButton *m_ocrControl;
 
     void ChangeVolume();
     void ChangeBright();

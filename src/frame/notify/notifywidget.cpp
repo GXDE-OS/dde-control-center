@@ -67,13 +67,18 @@ NotifyWidget::NotifyWidget(QWidget *parent) : QWidget(parent)
     m_brightSlider->setValue(BrightnessModel().GetFirstDisplayBrightness() * 100);
     connect(m_brightSlider, &dcc::widgets::DCCSlider::valueChanged, this, &NotifyWidget::ChangeBright);
 
-    m_controlLayout->addWidget(m_volumeSlider, 0, 0);
-    m_controlLayout->addWidget(m_brightSlider, 1, 0);
+    // 快捷按钮
+    m_ocrControl = new DImageButton();
+
+    m_controlLayout->addWidget(m_ocrControl, 0, 0);
+    m_controlLayout->addWidget(m_volumeSlider, 1, 0, 1, 4);
+    m_controlLayout->addWidget(m_brightSlider, 2, 0, 1, 4);
+    m_ocrControl->setMinimumHeight(width() / 4);
 
     mainVBLayout->addWidget(m_clearAllButton);
     mainVBLayout->addWidget(m_notifyView);
     mainVBLayout->addWidget(m_noNotify);
-    mainVBLayout->addLayout(m_controlLayout);
+    //mainVBLayout->addLayout(m_controlLayout);
 
     mainVBLayout->setSpacing(1);
     mainVBLayout->setMargin(0);

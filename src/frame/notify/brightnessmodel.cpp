@@ -9,6 +9,8 @@ BrightnessModel::BrightnessModel()
 // TODO: Bad, empty
 double BrightnessModel::GetFirstDisplayBrightness()
 {
+    // 先返回个 1 先吧
+    return 1;
     return GetBrightness().end().value();
 }
 
