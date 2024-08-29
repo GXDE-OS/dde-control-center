@@ -64,7 +64,8 @@ AccountsDetailWidget::AccountsDetailWidget(User *user, QWidget *parent)
 
     m_nopasswdLogin->setTitle(tr("Login Without Password"));
     m_nopasswdLogin->setChecked(user->nopasswdLogin());
-    m_accountSettings->appendItem(m_nopasswdLogin);
+    //m_accountSettings->appendItem(m_nopasswdLogin);
+    // 因为一些问题需要暂时禁用掉免密登录
 
     m_deleteAccount->setText(tr("Delete Account"));
     m_deleteAccount->setObjectName("DeleteAccountButton");
