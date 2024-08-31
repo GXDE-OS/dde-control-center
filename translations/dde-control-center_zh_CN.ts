@@ -3897,7 +3897,7 @@ Power by x11vnc</source>
         <source>Press &quot;Play&quot; button to set new wallpaper
 Power by fantascene-dynamic-wallpaper</source>
         <translation>按“播放”按钮以生效新的动态壁纸
-基于 梦幻动态壁纸 实现</translation>
+基于 星火动态壁纸 实现</translation>
     </message>
     <message>
         <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="62"/>
