@@ -124,12 +124,12 @@
 <context>
     <name>NotifyWidget</name>
     <message>
-        <location filename="../src/frame/notify/notifywidget.cpp" line="33"/>
+        <location filename="../src/frame/notify/notifywidget.cpp" line="36"/>
         <source>No system notifications</source>
         <translation>Aucune notification système </translation>
     </message>
     <message>
-        <location filename="../src/frame/notify/notifywidget.cpp" line="35"/>
+        <location filename="../src/frame/notify/notifywidget.cpp" line="38"/>
         <source>Clear all</source>
         <translation>Tout effacer</translation>
     </message>
@@ -415,17 +415,17 @@ Sans interaction, l&apos;affichage sera rétabli après %1s.</translation>
         <translation>Connexion sans mot de passe</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="69"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="70"/>
         <source>Delete Account</source>
         <translation>Supprimer le compte</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="72"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="73"/>
         <source>Unable to delete, current user logged in</source>
         <translation>Impossible de supprimer, l&apos;utilisateur actuel est connecté</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="75"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="76"/>
         <source>Fingerprint Password</source>
         <translation>Mot de passe pour l&apos;empreinte digitale</translation>
     </message>
@@ -3776,7 +3776,7 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="114"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="115"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
         <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
@@ -4443,17 +4443,17 @@ Power by fantascene-dynamic-wallpaper</source>
         <translation>Demander la notification si le miroir de mise à jour du système a été modifié</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="99"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="100"/>
         <source>Smart Mirror Switch</source>
         <translation>Commutateur de serveur</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="105"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="106"/>
         <source>Switch it on to connect to the quickest mirror site automatically</source>
         <translation>Activez-le pour vous connecter automatiquement au site miroir le plus rapide</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="114"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="115"/>
         <source>Switch Mirror</source>
         <translation>Changer de source </translation>
     </message>
@@ -4461,15 +4461,30 @@ Power by fantascene-dynamic-wallpaper</source>
 <context>
     <name>dcc::update::UpdateView</name>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="40"/>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="52"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="45"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="68"/>
         <source>Update</source>
         <translation>Mise à jour</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="45"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="50"/>
         <source>Update Settings</source>
         <translation>Paramètres des mises à jour </translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="57"/>
+        <source>Join internal testing group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="76"/>
+        <source>取消</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="77"/>
+        <source>确定</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

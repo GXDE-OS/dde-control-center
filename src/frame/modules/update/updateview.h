@@ -30,6 +30,8 @@
 #include "widgets/nextpagewidget.h"
 #include "widgets/settingsgroup.h"
 
+#include <QPushButton>
+
 namespace dcc{
 namespace update{
 class UpdateView : public ModuleWidget
@@ -48,6 +50,9 @@ private:
     dcc::widgets::SettingsGroup* m_settingsGroup;
     dcc::widgets::NextPageWidget* m_updateItem;
     dcc::widgets::NextPageWidget* m_settingsItem;
+    QPushButton* m_addTestingSource;
+
+    void ShowTesingDialog();
 };
 
 }

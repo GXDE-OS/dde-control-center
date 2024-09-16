@@ -55,6 +55,9 @@ install(FILES ${DOCS_FILES} DESTINATION share/dman/dde-control-center)
 #datebases
 install(FILES data/timezone.db DESTINATION share/dde-control-center)
 
+#internal testing group
+install(FILES join-testing-group.sh DESTINATION share/dde-control-center)
+
 # conf file
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/files/dde-control-center.conf DESTINATION share/dde-control-center)
 

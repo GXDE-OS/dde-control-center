@@ -1,7 +1,7 @@
 Source: dde-control-center
 Section: admin
 Priority: optional
-Maintainer: Deepin Sysdev <sysdev@deepin.com>
+Maintainer: gfdgd xi <3025613752@qq.com>
 Build-Depends: debhelper (>= 9),
  pkg-config,
  dpkg-dev,
@@ -27,10 +27,11 @@ Build-Depends: debhelper (>= 9),
  libxcb-ewmh-dev,
  qtmultimedia5-dev
 Standards-Version: 3.9.5
-Homepage: https://github.com/linuxdeepin/dde-control-center
+Homepage: https://gitee.com/GXDE-OS/dde-control-center
 
 Package: dde-control-center
 Architecture: any
+Provides: gxde-control-center
 Depends: ${shlibs:Depends},
  ${misc:Depends},
  ${dist:Depends},
@@ -45,7 +46,8 @@ Depends: ${shlibs:Depends},
  ntp,
  libkf5networkmanagerqt6,
  libdde-network-utils,
- x11vnc
+ x11vnc,
+ garma
 Recommends: netselect,
  x11vnc
 Suggests: redshift
@@ -55,5 +57,5 @@ Conflicts:
 Replaces:
  dde-control-center-plugin-weather,
  dde-control-center-plugin-notify
-Description: New control center for Deepin Desktop Environment
- DDE Control Center is the control panel of Deepin Desktop Environment.
+Description: New control center for GXDE Desktop Environment
+ GXDE Control Center is the control panel of GXDE Desktop Environment.

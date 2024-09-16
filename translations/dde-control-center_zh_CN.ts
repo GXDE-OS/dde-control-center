@@ -123,12 +123,12 @@
 <context>
     <name>NotifyWidget</name>
     <message>
-        <location filename="../src/frame/notify/notifywidget.cpp" line="33"/>
+        <location filename="../src/frame/notify/notifywidget.cpp" line="36"/>
         <source>No system notifications</source>
         <translation>无系统通知</translation>
     </message>
     <message>
-        <location filename="../src/frame/notify/notifywidget.cpp" line="35"/>
+        <location filename="../src/frame/notify/notifywidget.cpp" line="38"/>
         <source>Clear all</source>
         <translation>全部清除</translation>
     </message>
@@ -414,17 +414,17 @@ If no operation, the display will be restored after %1s.</source>
         <translation>无密码登录</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="69"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="70"/>
         <source>Delete Account</source>
         <translation>删除帐户</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="72"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="73"/>
         <source>Unable to delete, current user logged in</source>
         <translation>当前用户已登录，无法删除</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="75"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="76"/>
         <source>Fingerprint Password</source>
         <translation>指纹密码</translation>
     </message>
@@ -3777,7 +3777,7 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="114"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="115"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
         <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
@@ -4443,17 +4443,17 @@ Power by fantascene-dynamic-wallpaper</source>
         <translation>系统更新源被修改后会弹出通知</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="99"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="100"/>
         <source>Smart Mirror Switch</source>
         <translation>智能镜像源</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="105"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="106"/>
         <source>Switch it on to connect to the quickest mirror site automatically</source>
         <translation>开启智能镜像源会自动匹配响应最快的镜像源</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="114"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="115"/>
         <source>Switch Mirror</source>
         <translation>切换镜像源</translation>
     </message>
@@ -4461,15 +4461,30 @@ Power by fantascene-dynamic-wallpaper</source>
 <context>
     <name>dcc::update::UpdateView</name>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="40"/>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="52"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="45"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="68"/>
         <source>Update</source>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="45"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="50"/>
         <source>Update Settings</source>
         <translation>更新设置</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="57"/>
+        <source>Join internal testing group</source>
+        <translation>添加内测源</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="76"/>
+        <source>取消</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="77"/>
+        <source>确定</source>
+        <translation>确定</translation>
     </message>
 </context>
 <context>

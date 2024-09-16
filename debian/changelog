@@ -1,9 +1,8 @@
-dde-control-center (4.10.25) UNRELEASED; urgency=medium
+dde-control-center (4.10.26) UNRELEASED; urgency=medium
 
-  * Support using d20 launcher
-  * 
+  * Join the internal testing group easily
 
- -- gfdgd_xi <3025613752@qq.com>  Fri, 30 Aug 2024 17:13:53 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Mon, 16 Sep 2024 08:10:32 +0800
 
 dde-control-center (4.10.20) unstable; urgency=low
 

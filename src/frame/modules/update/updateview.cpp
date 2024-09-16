@@ -24,8 +24,13 @@
  */
 
 #include "updateview.h"
+#include "dapplication.h"
 
+#include <QStyle>
 #include <QDebug>
+#include <ddialog.h>
+#include <QProcess>
+#include <QFile>
 
 using namespace dcc::widgets;
 
@@ -49,10 +54,40 @@ UpdateView::UpdateView()
     m_centralLayout->addWidget(m_updateGroup);
     m_centralLayout->addWidget(m_settingsGroup);
 
+    m_addTestingSource = new QPushButton(tr("Join internal testing group"));
+    if (QFile::exists("/usr/share/dde-control-center/join-testing-group.sh")) {
+        // 需要保证脚本存在才会显示按钮
+        m_centralLayout->addWidget(m_addTestingSource);
+    }
+
+
+    connect(m_addTestingSource, &QPushButton::clicked, this, &UpdateView::ShowTesingDialog);
+
+
+
     setTitle(tr("Update"));
 
     connect(m_updateItem, &NextPageWidget::clicked, this, &UpdateView::pushUpdate);
     connect(m_settingsItem, &NextPageWidget::clicked, this, &UpdateView::pushMirrors);
+}
+void UpdateView::ShowTesingDialog()
+{
+    auto dialog = new DDialog("您确定要加入系统内测源吗？", "这可能会导致系统不稳定\n加入过程中需要连接互联网");
+    dialog->addButton(tr("取消"), true);
+    dialog->addButton(tr("确定"), false, DDialog::ButtonType::ButtonWarning);
+    enum QStyle::StandardPixmap dialogIcon = (enum QStyle::StandardPixmap)10;
+    dialog->setIconPixmap(DApplication::style()->standardIcon(dialogIcon).pixmap(64, 64));
+    int value = dialog->exec();
+    if (value == 0) {
+        qDebug() << "user dismissed the dialog.";
+    }
+    else if (value == 1) {
+            qDebug() << "user clicked Confirm";
+            QProcess process;
+            process.start("bash", QStringList() << "/usr/share/dde-control-center/join-testing-group.sh");
+            process.waitForStarted();
+            process.waitForFinished();
+    }
 }
 
 }

@@ -54,7 +54,7 @@ static const QStringList systemFilter = { "terminal",
                                           "logout",
                                           "wm-switcher",
                                           "system-monitor",
-                                          "color-picker",
+                                          "gxde-picker",
                                           "global-search",
                                           "clipboard"};
 

@@ -125,12 +125,12 @@
 <context>
     <name>NotifyWidget</name>
     <message>
-        <location filename="../src/frame/notify/notifywidget.cpp" line="33"/>
+        <location filename="../src/frame/notify/notifywidget.cpp" line="36"/>
         <source>No system notifications</source>
         <translation>Nėra sistemos pranešimų</translation>
     </message>
     <message>
-        <location filename="../src/frame/notify/notifywidget.cpp" line="35"/>
+        <location filename="../src/frame/notify/notifywidget.cpp" line="38"/>
         <source>Clear all</source>
         <translation>Išvalyti viską</translation>
     </message>
@@ -418,17 +418,17 @@ Jeigu nieko nebus atlikta, ekranas bus atkurtas po %1s.</translation>
         <translation>Prisijungti be slaptažodžio</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="69"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="70"/>
         <source>Delete Account</source>
         <translation>Ištrinti paskyrą</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="72"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="73"/>
         <source>Unable to delete, current user logged in</source>
         <translation>Nepavyksta ištrinti, esamas naudotojas yra prisijungęs</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="75"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="76"/>
         <source>Fingerprint Password</source>
         <translation>Piršto atspaudo slaptažodis</translation>
     </message>
@@ -3779,7 +3779,7 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="114"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="115"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
         <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
@@ -4448,17 +4448,17 @@ Power by fantascene-dynamic-wallpaper</source>
         <translation>Rodyti pranešimą, jei sistemos atnaujinimų tinklavietė buvo modifikuota</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="99"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="100"/>
         <source>Smart Mirror Switch</source>
         <translation>Išmanusis tinklavietės perjungimas</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="105"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="106"/>
         <source>Switch it on to connect to the quickest mirror site automatically</source>
         <translation>Įjunkite, norėdami automatiškai jungtis prie greičiausios tinklavietės</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="114"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="115"/>
         <source>Switch Mirror</source>
         <translation>Perjungti tinklavietę</translation>
     </message>
@@ -4466,15 +4466,30 @@ Power by fantascene-dynamic-wallpaper</source>
 <context>
     <name>dcc::update::UpdateView</name>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="40"/>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="52"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="45"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="68"/>
         <source>Update</source>
         <translation>Atnaujinti</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="45"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="50"/>
         <source>Update Settings</source>
         <translation>Atnaujinimų nustatymai</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="57"/>
+        <source>Join internal testing group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="76"/>
+        <source>取消</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="77"/>
+        <source>确定</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

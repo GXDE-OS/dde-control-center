@@ -124,12 +124,12 @@
 <context>
     <name>NotifyWidget</name>
     <message>
-        <location filename="../src/frame/notify/notifywidget.cpp" line="33"/>
+        <location filename="../src/frame/notify/notifywidget.cpp" line="36"/>
         <source>No system notifications</source>
         <translation>কোনও সিস্টেম বিজ্ঞপ্তি নেই</translation>
     </message>
     <message>
-        <location filename="../src/frame/notify/notifywidget.cpp" line="35"/>
+        <location filename="../src/frame/notify/notifywidget.cpp" line="38"/>
         <source>Clear all</source>
         <translation>সব পরিষ্কার করুন</translation>
     </message>
@@ -414,17 +414,17 @@ If no operation, the display will be restored after %1s.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="69"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="70"/>
         <source>Delete Account</source>
         <translation>অ্যাকাউন্ট মুছে ফেলুন</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="72"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="73"/>
         <source>Unable to delete, current user logged in</source>
         <translation>মুছে ফেলতে অক্ষম, বর্তমান ব্যবহারকারী লগ ইন করে আছেন</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="75"/>
+        <location filename="../src/frame/modules/accounts/accountsdetailwidget.cpp" line="76"/>
         <source>Fingerprint Password</source>
         <translation>আঙুলের ছাপ পাসওয়ার্ড</translation>
     </message>
@@ -3778,7 +3778,7 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="114"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="115"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
         <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
@@ -4437,17 +4437,17 @@ Power by fantascene-dynamic-wallpaper</source>
         <translation>যদি সিস্টেম আপডেটের মিরর পরিবর্তন করা হয়ে থাকে তবে বিজ্ঞপ্তিটি দেখান</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="99"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="100"/>
         <source>Smart Mirror Switch</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="105"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="106"/>
         <source>Switch it on to connect to the quickest mirror site automatically</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updatesettings.cpp" line="114"/>
+        <location filename="../src/frame/modules/update/updatesettings.cpp" line="115"/>
         <source>Switch Mirror</source>
         <translation>মিরর পরিবর্তন করুন</translation>
     </message>
@@ -4455,15 +4455,30 @@ Power by fantascene-dynamic-wallpaper</source>
 <context>
     <name>dcc::update::UpdateView</name>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="40"/>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="52"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="45"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="68"/>
         <source>Update</source>
         <translation>আপডেট করুন</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="45"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="50"/>
         <source>Update Settings</source>
         <translation>আপডেট সেটিংস্‌</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="57"/>
+        <source>Join internal testing group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="76"/>
+        <source>取消</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="77"/>
+        <source>确定</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
