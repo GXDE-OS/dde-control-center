@@ -47,7 +47,9 @@ Depends: ${shlibs:Depends},
  libkf5networkmanagerqt6,
  libdde-network-utils,
  x11vnc,
- garma
+ garma,
+ gxde-shell-tools,
+ gxde-app-uninstaller(>=1.2.0)
 Recommends: netselect,
  x11vnc
 Suggests: redshift

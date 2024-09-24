@@ -1,10 +1,14 @@
 #!/bin/bash
-(
-    pkexec aptss update; 
-    pkexec aptss install gxde-testing-source; 
-    if [[ $? == 0 ]]; then 
-        garma --info --text="加入完成！\n在终端输入命令 sudo apt update; sudo apt full-upgrade 即可获取更新"
-    else 
-        garma --error --text="加入失败！"
-    fi
-) | garma --progress --auto-close --pulsate --no-cancel --text="正在添加 GXDE 内测源，请不要使用其它应用直到加入完成\n在此过程中需要多次输入密码"
+function check_is_installed(){
+dpkg -l | grep "^ii" | grep -w "$1" 
+}
+
+if [[ $(check_is_installed gxde-testing-source) ]];then
+	if garma --question --text="您已经加入过内测了，是否退出内测？";then
+		gxde-app-uninstaller package-name gxde-testing-source 
+	else
+		exit
+	fi
+else
+    gxde-app-installer gxde-testing-source 
+fi

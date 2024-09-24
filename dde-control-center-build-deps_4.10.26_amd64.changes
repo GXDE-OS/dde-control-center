@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Tue, 24 Sep 2024 15:40:36 +0800
+Source: dde-control-center-build-deps
+Binary: dde-control-center-build-deps
+Architecture: amd64
+Version: 4.10.26
+Distribution: unstable
+Urgency: low
+Maintainer: Equivs Dummy Package Generator <shenmo@gfdgd-xi-PC>
+Changed-By: Equivs Dummy Package Generator <shenmo@gfdgd-xi-PC>
+Description:
+ dde-control-center-build-deps - build-dependencies for dde-control-center
+Changes:
+ dde-control-center-build-deps (4.10.26) unstable; urgency=low
+ .
+   * First version
+Checksums-Sha1:
+ c6e2bc3bb9d8cf934a87e54fad0b023db3e52893 5406 dde-control-center-build-deps_4.10.26_amd64.buildinfo
+ c833a061fa8b493f432e7de21183635c9b2fa86e 2524 dde-control-center-build-deps_4.10.26_amd64.deb
+Checksums-Sha256:
+ 9086b774a65f4d66ea08e871c4b70be71275df7da2b8dc14284dc5d1f3c39b13 5406 dde-control-center-build-deps_4.10.26_amd64.buildinfo
+ f3f7d185fa00c0970aa0346e3c47553e6ddbceb7a1bd178fc2f9eef29009f42d 2524 dde-control-center-build-deps_4.10.26_amd64.deb
+Files:
+ 6b21431c9a5f7d6d76d66aaca43e8a14 5406 devel optional dde-control-center-build-deps_4.10.26_amd64.buildinfo
+ d6e4305fae084f9813f7c586000cb99b 2524 devel optional dde-control-center-build-deps_4.10.26_amd64.deb
