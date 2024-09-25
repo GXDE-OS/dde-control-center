@@ -31,6 +31,9 @@
 #include <ddialog.h>
 #include <QProcess>
 #include <QFile>
+#include <dpushbutton.h>
+#include <unistd.h>
+
 
 using namespace dcc::widgets;
 
@@ -41,54 +44,63 @@ UpdateView::UpdateView()
     : ModuleWidget()
 {
     setObjectName("Update");
-    m_updateItem = new NextPageWidget;
-    m_updateItem->setTitle(tr("Update"));
-    m_updateGroup = new SettingsGroup;
-    m_updateGroup->appendItem(m_updateItem);
+//    m_updateItem = new NextPageWidget;
+//    m_updateItem->setTitle(tr("Update"));
+//    m_updateGroup = new SettingsGroup;
+//    m_updateGroup->appendItem(m_updateItem);
 
-    m_settingsItem = new NextPageWidget;
-    m_settingsItem->setTitle(tr("Update Settings"));
-    m_settingsGroup = new SettingsGroup;
-    m_settingsGroup->appendItem(m_settingsItem);
+//    m_settingsItem = new NextPageWidget;
+//    m_settingsItem->setTitle(tr("Update Settings"));
+//    m_settingsGroup = new SettingsGroup;
+//    m_settingsGroup->appendItem(m_settingsItem);
 
-    m_centralLayout->addWidget(m_updateGroup);
-    m_centralLayout->addWidget(m_settingsGroup);
+//    m_centralLayout->addWidget(m_updateGroup);
+//    m_centralLayout->addWidget(m_settingsGroup);
+    m_neoUpgrader = new DPushButton;
+    m_neoUpgrader->setText((tr("Check and perform system Upgrade")));
+    if (QFile::exists("/usr/bin/gxde-app-upgrader")) {
+        // 需要保证脚本存在才会显示按钮
+        m_centralLayout->addWidget(m_neoUpgrader);
+    }
 
-    m_addTestingSource = new QPushButton(tr("Join internal testing group"));
+    m_addTestingSource = new DPushButton;
+    m_addTestingSource->setText((tr("Internal Testing Group Settings")));
     if (QFile::exists("/usr/share/dde-control-center/join-testing-group.sh")) {
         // 需要保证脚本存在才会显示按钮
         m_centralLayout->addWidget(m_addTestingSource);
     }
 
 
-    connect(m_addTestingSource, &QPushButton::clicked, this, &UpdateView::ShowTesingDialog);
 
+
+    connect(m_addTestingSource, &DPushButton::clicked, this, &UpdateView::ShowTesingDialog);
+    connect(m_neoUpgrader,&DPushButton::clicked,this,&UpdateView::ExecUpgrader);
 
 
     setTitle(tr("Update"));
 
-    connect(m_updateItem, &NextPageWidget::clicked, this, &UpdateView::pushUpdate);
-    connect(m_settingsItem, &NextPageWidget::clicked, this, &UpdateView::pushMirrors);
+    //connect(m_updateItem, &NextPageWidget::clicked, this, &UpdateView::pushUpdate);
+    //connect(m_settingsItem, &NextPageWidget::clicked, this, &UpdateView::pushMirrors);
+}
+void UpdateView::ExecUpgrader()
+{
+    QProcess process;
+    process.start("/usr/bin/gxde-app-upgrader",QStringList() << "");
+    process.waitForStarted();
+    process.waitForFinished();
 }
 void UpdateView::ShowTesingDialog()
 {
-    auto dialog = new DDialog("您确定要加入系统内测源吗？", "这可能会导致系统不稳定\n加入过程中需要连接互联网");
-    dialog->addButton(tr("取消"), true);
-    dialog->addButton(tr("确定"), false, DDialog::ButtonType::ButtonWarning);
-    enum QStyle::StandardPixmap dialogIcon = (enum QStyle::StandardPixmap)10;
-    dialog->setIconPixmap(DApplication::style()->standardIcon(dialogIcon).pixmap(64, 64));
-    int value = dialog->exec();
-    if (value == 0) {
-        qDebug() << "user dismissed the dialog.";
-    }
-    else if (value == 1) {
-            qDebug() << "user clicked Confirm";
+
             QProcess process;
             process.start("bash", QStringList() << "/usr/share/dde-control-center/join-testing-group.sh");
             process.waitForStarted();
             process.waitForFinished();
-    }
+
+
 }
+
+
 
 }
 }

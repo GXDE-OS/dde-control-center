@@ -29,7 +29,7 @@
 #include "modules/modulewidget.h"
 #include "widgets/nextpagewidget.h"
 #include "widgets/settingsgroup.h"
-
+#include "dpushbutton.h"
 #include <QPushButton>
 
 namespace dcc{
@@ -50,9 +50,11 @@ private:
     dcc::widgets::SettingsGroup* m_settingsGroup;
     dcc::widgets::NextPageWidget* m_updateItem;
     dcc::widgets::NextPageWidget* m_settingsItem;
-    QPushButton* m_addTestingSource;
+    DPushButton* m_addTestingSource;
+    DPushButton* m_neoUpgrader;
 
     void ShowTesingDialog();
+    void ExecUpgrader();
 };
 
 }
