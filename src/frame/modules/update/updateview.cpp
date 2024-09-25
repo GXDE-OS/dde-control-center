@@ -57,14 +57,14 @@ UpdateView::UpdateView()
 //    m_centralLayout->addWidget(m_updateGroup);
 //    m_centralLayout->addWidget(m_settingsGroup);
     m_neoUpgrader = new DPushButton;
-    m_neoUpgrader->setText((tr("Check and perform system Upgrade")));
+    m_neoUpgrader->setText(tr("Check and perform system Upgrade"));
     if (QFile::exists("/usr/bin/gxde-app-upgrader")) {
         // 需要保证脚本存在才会显示按钮
         m_centralLayout->addWidget(m_neoUpgrader);
     }
 
     m_addTestingSource = new DPushButton;
-    m_addTestingSource->setText((tr("Internal Testing Group Settings")));
+    m_addTestingSource->setText(tr("Internal Testing Group Settings"));
     if (QFile::exists("/usr/share/dde-control-center/join-testing-group.sh")) {
         // 需要保证脚本存在才会显示按钮
         m_centralLayout->addWidget(m_addTestingSource);

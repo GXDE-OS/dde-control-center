@@ -1,7 +1,7 @@
 Source: dde-control-center
 Section: admin
 Priority: optional
-Maintainer: gfdgd xi <3025613752@qq.com>
+Maintainer: gfdgd xi <3025613752@qq.com>,shenmo <shenmo@spark-app.store>
 Build-Depends: debhelper (>= 9),
  pkg-config,
  dpkg-dev,
@@ -49,7 +49,8 @@ Depends: ${shlibs:Depends},
  x11vnc,
  garma,
  gxde-shell-tools,
- gxde-app-uninstaller(>=1.2.0)
+ gxde-app-uninstaller(>=1.2.0),
+ transhell
 Recommends: netselect,
  x11vnc
 Suggests: redshift

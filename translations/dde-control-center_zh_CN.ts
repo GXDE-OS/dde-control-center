@@ -4461,30 +4461,35 @@ Power by fantascene-dynamic-wallpaper</source>
 <context>
     <name>dcc::update::UpdateView</name>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="45"/>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="68"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="60"/>
+        <source>Check and perform system Upgrade</source>
+        <translation>检查和执行系统更新</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="67"/>
+        <source>Internal Testing Group Settings</source>
+        <translation>内测设置</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="80"/>
         <source>Update</source>
         <translation>更新</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="50"/>
         <source>Update Settings</source>
-        <translation>更新设置</translation>
+        <translation type="vanished">更新设置</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="57"/>
         <source>Join internal testing group</source>
-        <translation>添加内测源</translation>
+        <translation type="vanished">添加内测源</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="76"/>
         <source>取消</source>
-        <translation>取消</translation>
+        <translation type="vanished">取消</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="77"/>
         <source>确定</source>
-        <translation>确定</translation>
+        <translation type="vanished">确定</translation>
     </message>
 </context>
 <context>

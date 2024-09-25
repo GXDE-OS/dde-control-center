@@ -4464,30 +4464,23 @@ Power by fantascene-dynamic-wallpaper</source>
 <context>
     <name>dcc::update::UpdateView</name>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="45"/>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="68"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="60"/>
+        <source>Check and perform system Upgrade</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="67"/>
+        <source>Internal Testing Group Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="80"/>
         <source>Update</source>
         <translation>Обновление</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="50"/>
         <source>Update Settings</source>
-        <translation>Настройки Обновления</translation>
-    </message>
-    <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="57"/>
-        <source>Join internal testing group</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="76"/>
-        <source>取消</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="77"/>
-        <source>确定</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Настройки Обновления</translation>
     </message>
 </context>
 <context>
