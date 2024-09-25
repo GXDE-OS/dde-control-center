@@ -15,7 +15,7 @@
 build*/
 *.pro.user*
 *.DS_Store
-dde-control-center
+#dde-control-center
 *.core
 *.autosave
 *.user
