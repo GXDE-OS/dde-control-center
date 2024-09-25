@@ -1,7 +1,7 @@
-dde-control-center (4.10.27-1) UNRELEASED; urgency=medium
+dde-control-center (4.10.27-1.1) UNRELEASED; urgency=medium
 
   * Join the internal testing group easily
-
+  * Fix upgrade
  -- shenmo <shenmo@spark-app.store>  Mon, 16 Sep 2024 08:10:32 +0800
 
 dde-control-center (4.10.20) unstable; urgency=low
