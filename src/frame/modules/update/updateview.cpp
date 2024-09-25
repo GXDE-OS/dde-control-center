@@ -85,9 +85,7 @@ UpdateView::UpdateView()
 void UpdateView::ExecUpgrader()
 {
     QProcess process;
-    process.start("/usr/bin/gxde-app-upgrader",QStringList() << "");
-    process.waitForStarted();
-    process.waitForFinished();
+    system("/usr/bin/gxde-app-upgrader");
 }
 void UpdateView::ShowTesingDialog()
 {
