@@ -56,7 +56,7 @@ install(FILES ${DOCS_FILES} DESTINATION share/dman/dde-control-center)
 install(FILES data/timezone.db DESTINATION share/dde-control-center)
 
 #internal testing group
-install(FILES tools/* DESTINATION share/dde-control-center)
+install(DIRECTORY tools/dde-control-center DESTINATION share/)
 
 
 # conf file

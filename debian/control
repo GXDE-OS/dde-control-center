@@ -50,7 +50,8 @@ Depends: ${shlibs:Depends},
  garma,
  gxde-shell-tools,
  gxde-app-uninstaller(>=1.2.0),
- transhell
+ transhell,
+ lastore-daemon(>=0.14.8)
 Recommends: netselect,
  x11vnc
 Suggests: redshift
