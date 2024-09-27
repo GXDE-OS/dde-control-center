@@ -93,7 +93,7 @@ void UpdateView::ShowTesingDialog()
             QProcess process;
             process.start("bash", QStringList() << "/usr/share/dde-control-center/join-testing-group.sh");
             process.waitForStarted();
-            process.waitForFinished();
+            process.waitForFinished(-1);
 
 
 }
