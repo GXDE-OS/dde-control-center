@@ -81,6 +81,8 @@ PersonalizationWidget::PersonalizationWidget()
 
     m_hideDDEDock = new SwitchWidget(tr("Hide DDE Dock"));
 
+    m_sizeMode = new SwitchWidget(tr("deepin 应用开启紧凑模式（注销后生效）"));
+
     theme->setTitle(tr("Theme"));
     font->setTitle(tr("Font"));
     videoWallpaper->setTitle(tr("Video Wallpaper"));
@@ -111,6 +113,7 @@ PersonalizationWidget::PersonalizationWidget()
         m_use20Launcher->setHidden(true);
     }
     m_userGroup->appendItem(m_hideDDEDock);
+    m_userGroup->appendItem(m_sizeMode);
 
     setTitle(tr("Personalization"));
     connect(theme, &NextPageWidget::clicked, this,
@@ -142,6 +145,13 @@ PersonalizationWidget::PersonalizationWidget()
     connect(m_showTopPanelGlobalMenu, &SwitchWidget::checkedChanged, this, [=] {
         // reset top panel state
         m_showTopPanelGlobalMenu->setChecked(m_model->isOpenTopPanelGlobalMenu());
+    });
+
+    connect(m_sizeMode, &SwitchWidget::checkedChanged, this,
+            &PersonalizationWidget::requestSetSizeMode);
+    connect(m_sizeMode, &SwitchWidget::checkedChanged, this, [=] {
+        // reset top panel state
+        m_sizeMode->setChecked(m_model->isSizeMode());
     });
 
     connect(m_showBottomPanel, &SwitchWidget::checkedChanged, this,
@@ -187,6 +197,7 @@ void PersonalizationWidget::setModel(PersonalizationModel *const model)
     m_showBottomPanel->setChecked(model->isOpenBottomPanel());
     m_use20Launcher->setChecked(model->isUse20Launcher());
     m_hideDDEDock->setChecked(model->isHideDDEDock());
+    m_sizeMode->setChecked(model->isSizeMode());
 
     connect(model, &PersonalizationModel::onOpacityChanged, this,
             &PersonalizationWidget::onOpacityChanged);

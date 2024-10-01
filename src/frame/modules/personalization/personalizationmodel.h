@@ -55,6 +55,7 @@ public:
     void setBottomPanel(const bool value);
     void set20Launcher(const bool value);
     void setHideDDEDock(const bool value);
+    void setSizeMode(const bool value);
     bool is3DWm() const;
     bool isOpenTopPanel() const;
     bool isOpenTopPanelGlobalMenu() const;
@@ -66,6 +67,7 @@ public:
     bool isWayland() const;
     bool isUse20Launcher() const;
     bool isHideDDEDock() const;
+    bool isSizeMode() const;
 
     inline std::pair<int, double> opacity() const { return m_opacity; }
     void setOpacity(std::pair<int, double> opacity);

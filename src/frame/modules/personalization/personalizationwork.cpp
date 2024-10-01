@@ -403,6 +403,10 @@ void PersonalizationWork::setHideDDEDock(const int value){
     m_model->setHideDDEDock(value);
 }
 
+void PersonalizationWork::setSizeMode(const int value){
+    m_model->setSizeMode(value);
+}
+
 template<typename T>
 T PersonalizationWork::toSliderValue(std::vector<T> list, T value)
 {

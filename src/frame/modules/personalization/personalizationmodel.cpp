@@ -131,6 +131,23 @@ void PersonalizationModel::set20Launcher(const bool value)
     system("killall dde-launcher-wayland -9");
 }
 
+void PersonalizationModel::setSizeMode(const bool value)
+{
+    QDir dir(QDir::homePath() + "/.config/gxde/dtk/");
+    if (!dir.exists()) {
+        dir.mkpath(QDir::homePath() + "/.config/gxde/dtk/");
+    }
+    if(value){
+       QFile file(QDir::homePath() + "/.config/gxde/dtk/SIZEMODE");
+       file.open(QFile::WriteOnly);
+       file.write("1");
+       file.close();
+    }
+    else {
+        QFile::remove(QDir::homePath() + "/.config/gxde/dtk/SIZEMODE");
+    }
+}
+
 void PersonalizationModel::setHideDDEDock(const bool value)
 {
     QDir dir(QDir::homePath() + "/.config/gxde/gxde-dock/");
@@ -192,6 +209,11 @@ bool PersonalizationModel::isInstall20Launcher() const
 bool PersonalizationModel::isUse20Launcher() const
 {
     return QFile::exists(QDir::homePath() + "/.config/gxde/gxde-launcher/use_20_launcher");
+}
+
+bool PersonalizationModel::isSizeMode() const
+{
+    return QFile::exists(QDir::homePath() + "/.config/gxde/dtk/SIZEMODE");
 }
 
 bool PersonalizationModel::isHideDDEDock() const
