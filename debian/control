@@ -52,8 +52,10 @@ Depends: ${shlibs:Depends},
  gxde-app-uninstaller(>=1.2.0),
  transhell,
  lastore-daemon(>=0.14.8)
-Recommends: netselect,
- x11vnc
+Recommends: 
+ netselect,
+ x11vnc,
+ gxde-live-local,
 Suggests: redshift
 Conflicts:
  dde-control-center-plugin-weather,
