@@ -29,6 +29,8 @@
 #include <QScrollBar>
 #include <QFile>
 #include <iostream>
+#include <QFileDialog>
+#include <dfiledialog.h>
 
 #include "widgets/settingsgroup.h"
 #include "grubbackgrounditem.h"
@@ -84,34 +86,19 @@ BootWidget::BootWidget(QWidget *parent)
     m_liveCDEnabled->setTitle(tr("Enable Live Mode"));
 
     // 检查是否开启 Live CD
-    m_liveCDEnabled->setChecked(QFile::exists("/recovery_live/filesystem.squashfs") && !QFile::exists("/etc/disabled_livecd"));
-
-    //TipsLabel *label = new TipsLabel(tr("You can click the option in boot menu to set it as the first boot, and drag and drop a picture to replace the background."));
-    //label->setWordWrap(true);
-    //label->setContentsMargins(16, 0, 10, 0);
+    m_liveCDEnabled->setChecked(CheckLiveInstalled());
 
     TipsLabel *themeLbl = new TipsLabel(tr("Switch theme on to view it in boot menu"));
     themeLbl->setWordWrap(true);
     themeLbl->setContentsMargins(16, 0, 10, 0);
 
-    /*display = new TitledSliderItem(tr("Display Scaling"));
-    DCCSlider *displaySlider = display->slider();
-    displaySlider->setRange(1, scaleList.size());
-    displaySlider->setType(DCCSlider::Vernier);
-    displaySlider->setTickPosition(QSlider::TicksBelow);
-    displaySlider->setTickInterval(1);
-    displaySlider->setPageStep(1);
-    displaySlider->blockSignals(true);
-    displaySlider->blockSignals(false);*/
-
     group->appendItem(m_background);
     group->appendItem(m_boot);
     group->appendItem(m_theme);
 
-#ifdef __x86_64__
-    // X86 下才显示该选项
-    group->appendItem(m_liveCDEnabled);
-#endif
+    if (QFile::exists("/usr/bin/gxde-live-local")) {
+        group->appendItem(m_liveCDEnabled);
+    }
 
     layout->setMargin(0);
     layout->setSpacing(0);
@@ -135,23 +122,66 @@ BootWidget::BootWidget(QWidget *parent)
     //connect(m_background, &GrubBackgroundItem::requestSetBackground, this, &BootWidget::requestSetBackground);  // 禁用设置壁纸
 }
 
+bool BootWidget::CheckLiveInstalled() {
+    QProcess process;
+    process.start("gxde-live-local", QStringList() << "check");
+    process.waitForStarted();
+    process.waitForFinished();
+    int code = process.exitCode();
+    process.close();
+    return !code;
+}
+
 void BootWidget::EnabledLiveCD(bool value)
 {
+    // 先设置控件为禁用
+    m_liveCDEnabled->setDisabled(true);
+
+    QProcess *process = new QProcess();
     if (value) {
-        // 安装 Live
-        if (!QFile::exists("/recovery_live/filesystem.squashfs")) {
-            if (QFile::exists("/usr/bin/aptss")) {
-                std::system("deepin-terminal -e pkexec aptss install live-filesystem-community-mini -y");
-            }
-            else {
-                std::system("deepin-terminal -e pkexec apt install live-filesystem-community-mini -y");
-            }
+        // 浏览文件
+        QString path = DFileDialog::getOpenFileName(this,
+                                     "选择系统安装镜像",
+                                     QDir::homePath(),
+                                     "GXDE 系统安装镜像(*.iso);;所有文件(*.*)");
+        // 判断是否有选择文件
+        if (path == "" || !QFile::exists(path)) {
+            delete process;
+            m_liveCDEnabled->setChecked(CheckLiveInstalled());
+            m_liveCDEnabled->setEnabled(true);
             return;
         }
-        std::system("pkexec bash -c 'rm /etc/disabled_livecd ; update-grub2'");
-        return;
+
+        process->start("pkexec", QStringList() << "gxde-live-local"
+                       << "set" << path);
     }
-    std::system("pkexec bash -c 'touch /etc/disabled_livecd ; update-grub2'");
+    else {
+        process->start("pkexec", QStringList() << "gxde-live-local" << "del");
+    }
+
+    process->waitForStarted();
+    connect(process,
+            static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(&QProcess::finished),
+            [this, process](int exitCode, QProcess::ExitStatus exitStatus){
+        qDebug() << "Output:";
+        qDebug() << process->readAllStandardOutput();
+        qDebug() << "Error";
+        qDebug() << process->readAllStandardError();
+        // 设置控件为启用
+        m_liveCDEnabled->setChecked(CheckLiveInstalled());
+        m_liveCDEnabled->setEnabled(true);
+        // 显示信息
+        if (exitCode) {
+            system(("notify-send -i dialog-error '控制中心' 'Live 环境配置失败！\n返回值："
+                    + QString::number(exitCode) + "'").toUtf8());
+        }
+        else {
+            system("notify-send -i dialog-ok '控制中心' 'Live 环境配置完成！\n重启后即可在 grub 寻找入口'");
+        }
+        // 销毁对象
+        process->close();
+        delete process;
+    });
 }
 
 

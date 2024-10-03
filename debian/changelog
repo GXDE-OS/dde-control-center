@@ -1,8 +1,8 @@
-dde-control-center (4.10.28) UNRELEASED; urgency=medium
+dde-control-center (4.10.29) UNRELEASED; urgency=medium
 
-  * 支持设置紧凑模式
+  * 支持设置 live 镜像
 
- -- gfdgd_xi <3025613752@qq.com>  Tue, 01 Oct 2024 19:12:50 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Thu, 03 Oct 2024 11:21:30 +0800
 
 dde-control-center (4.10.20) unstable; urgency=low
 

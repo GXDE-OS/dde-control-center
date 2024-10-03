@@ -73,6 +73,7 @@ private:
     QStringList scaleList = QStringList() << "1080p" << "ultrawide" << "2k"
                                           << "ultrawide2k" << "4k";
     void EnabledLiveCD(bool value);
+    bool CheckLiveInstalled();
 };
 
 }
