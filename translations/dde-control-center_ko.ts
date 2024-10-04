@@ -3762,12 +3762,12 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationModule</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="132"/>
+        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="133"/>
         <source>Standard Font</source>
         <translation>표준 폰트</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="141"/>
+        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="142"/>
         <source>Monospaced Font</source>
         <translation>고정 폭 글꼴</translation>
     </message>
@@ -3775,7 +3775,7 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="115"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="118"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
         <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
@@ -3818,16 +3818,21 @@ Power by x11vnc</source>
     </message>
     <message>
         <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="84"/>
+        <source>Enable Compact mode on DTK5 Apps (Relogin to take effect)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="86"/>
         <source>Theme</source>
         <translation>테마</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="85"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="87"/>
         <source>Font</source>
         <translation>폰트</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="86"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="88"/>
         <source>Video Wallpaper</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4076,22 +4081,22 @@ Power by fantascene-dynamic-wallpaper</source>
 <context>
     <name>dcc::systeminfo::BootWidget</name>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="67"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="69"/>
         <source>Updating...</source>
         <translation>업데이트중...</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="78"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="80"/>
         <source>Startup Delay</source>
         <translation>부팅 지연</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="81"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="83"/>
         <source>Theme</source>
         <translation>테마</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="84"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="86"/>
         <source>Enable Live Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4100,12 +4105,12 @@ Power by fantascene-dynamic-wallpaper</source>
         <translation type="vanished">부팅 메뉴의 옵션을 클릭하여 첫 번째 부팅으로 설정하고 그림을 끌어 놓아 배경을 바꿀 수 있습니다</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="93"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="91"/>
         <source>Switch theme on to view it in boot menu</source>
         <translation>부팅 메뉴에서 보여지는 테마 전환</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="128"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="115"/>
         <source>Boot Menu</source>
         <translation>부팅 메뉴</translation>
     </message>

@@ -81,7 +81,7 @@ PersonalizationWidget::PersonalizationWidget()
 
     m_hideDDEDock = new SwitchWidget(tr("Hide DDE Dock"));
 
-    m_sizeMode = new SwitchWidget(tr("deepin 应用开启紧凑模式（注销后生效）"));
+    m_sizeMode = new SwitchWidget(tr("Enable Compact mode on DTK5 Apps (Relogin to take effect)"));
 
     theme->setTitle(tr("Theme"));
     font->setTitle(tr("Font"));
