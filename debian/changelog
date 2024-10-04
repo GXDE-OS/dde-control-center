@@ -1,6 +1,7 @@
-dde-control-center (4.10.29) UNRELEASED; urgency=medium
+dde-control-center (4.10.29.1) UNRELEASED; urgency=medium
 
   * 支持设置 live 镜像
+  * 国际化 Compact Mode设置
 
  -- gfdgd_xi <3025613752@qq.com>  Thu, 03 Oct 2024 11:21:30 +0800
 
