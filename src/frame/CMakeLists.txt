@@ -880,7 +880,7 @@ endfunction()
 
 set(BUILD_MACRO)
 
-if (OS_DEEPIN_PROFESSIONAL)
+#if (OS_DEEPIN_PROFESSIONAL)
     if (${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
         set(BUILD_MACRO
             ${BUILD_MACRO}
@@ -894,9 +894,9 @@ if (OS_DEEPIN_PROFESSIONAL)
 
     set(BUILD_MACRO
         ${BUILD_MACRO}
-        DCC_ENABLE_END_USER_LICENSE
+        #DCC_ENABLE_END_USER_LICENSE
     )
-endif()
+#endif()
 
 if (${CMAKE_SYSTEM_PROCESSOR} STREQUAL "sw_64")
     set(BUILD_MACRO
