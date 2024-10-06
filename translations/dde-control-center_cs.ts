@@ -3764,12 +3764,12 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationModule</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="132"/>
+        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="133"/>
         <source>Standard Font</source>
         <translation>Obvyklé písmo</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="141"/>
+        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="142"/>
         <source>Monospaced Font</source>
         <translation>Písmo s pevnou šířkou</translation>
     </message>
@@ -3777,7 +3777,7 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="115"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="118"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
         <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
@@ -3820,16 +3820,21 @@ Power by x11vnc</source>
     </message>
     <message>
         <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="84"/>
+        <source>Enable Compact mode on DTK5 Apps (Relogin to take effect)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="86"/>
         <source>Theme</source>
         <translation>Vzhled</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="85"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="87"/>
         <source>Font</source>
         <translation>Písmo</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="86"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="88"/>
         <source>Video Wallpaper</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4078,22 +4083,22 @@ Power by fantascene-dynamic-wallpaper</source>
 <context>
     <name>dcc::systeminfo::BootWidget</name>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="67"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="69"/>
         <source>Updating...</source>
         <translation>Obnovuje se...</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="78"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="80"/>
         <source>Startup Delay</source>
         <translation>Zpoždění spuštění</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="81"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="83"/>
         <source>Theme</source>
         <translation>Vzhled</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="84"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="86"/>
         <source>Enable Live Mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4102,12 +4107,12 @@ Power by fantascene-dynamic-wallpaper</source>
         <translation type="vanished">Můžete klepnout na volbu v nabídce pro zavedení a nastavit ji jako první pro zavedení, a táhnout a upustit obrázek, aby nahradil stávající pozadí</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="93"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="91"/>
         <source>Switch theme on to view it in boot menu</source>
         <translation>Zapnout téma pro jeho zobrazení v nabídce pro zavedení</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="128"/>
+        <location filename="../src/frame/modules/systeminfo/bootwidget.cpp" line="115"/>
         <source>Boot Menu</source>
         <translation>Nabídka pro zavedení</translation>
     </message>
