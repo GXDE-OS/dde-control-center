@@ -1,8 +1,8 @@
-dde-control-center (4.10.29) UNRELEASED; urgency=medium
+dde-control-center (4.10.30) UNRELEASED; urgency=medium
 
-  * 支持设置 live 镜像
+  * 尝试启用 Miracast 支持
 
- -- gfdgd_xi <3025613752@qq.com>  Thu, 03 Oct 2024 11:21:30 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 06 Oct 2024 15:46:04 +0800
 
 dde-control-center (4.10.20) unstable; urgency=low
 

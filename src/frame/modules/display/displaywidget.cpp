@@ -87,9 +87,9 @@ DisplayWidget::DisplayWidget()
     m_resolutionsGrp = new SettingsGroup;
     m_resolutionsGrp->appendItem(m_resolution);
 
-#ifndef DCC_DISABLE_MIRACAST
+//#ifndef DCC_DISABLE_MIRACAST
     m_miracastGrp = new SettingsGroup;
-#endif
+//#endif
 
     SettingsGroup *brightnessGrp = new SettingsGroup;
     brightnessGrp->appendItem(m_brightnessSettings);
