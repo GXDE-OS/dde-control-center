@@ -213,7 +213,7 @@ bool PersonalizationModel::isUse20Launcher() const
 
 bool PersonalizationModel::isSizeMode() const
 {
-    return QFile::exists(QDir::homePath() + "/.config/gxde/dtk/SIZEMODE");
+    return QFile::exists(QDir::homePath() + "/.config/GXDE/dtk/SIZEMODE");
 }
 
 bool PersonalizationModel::isHideDDEDock() const
