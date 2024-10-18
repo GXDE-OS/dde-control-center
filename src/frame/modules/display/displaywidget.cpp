@@ -290,7 +290,8 @@ int DisplayWidget::convertToSlider(const float value)
     //remove base scale (100), then convert to 1-based value
     //with a stepping of 25
 
-    return qRound(value);
+    // return qRound(value);
+    return qCeil(value);
 }
 
 float DisplayWidget::convertToScale(const int value)
