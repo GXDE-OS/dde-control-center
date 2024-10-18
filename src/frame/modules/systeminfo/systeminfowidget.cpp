@@ -237,7 +237,7 @@ void SystemInfoWidget::setXdgSessionType(const QString &xdgSessionType)
 
 void SystemInfoWidget::OpenProgramWebsite()
 {
-    QDesktopServices::openUrl(QUrl("https://gitee.com/GXDE-OS"));
+    QDesktopServices::openUrl(QUrl("https://www.gxde.org"));
 }
 
 }
