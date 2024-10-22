@@ -2,6 +2,8 @@
 
 DDE Control Center is the control panel of Deepin Desktop Environment.
 
+GXDE has forked and maintained DCC V4.x and used as control panel of GXDE. You should NOT install this package on Deepin.
+
 ## Dependencies
 
 ### Build dependencies
