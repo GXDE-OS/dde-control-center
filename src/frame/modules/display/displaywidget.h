@@ -31,6 +31,9 @@
 #include "modules/modulewidget.h"
 #include "scalingpage.h"
 
+#include <QTimer>
+#include <QDateTime>
+
 namespace dcc {
 
 namespace widgets {
@@ -78,8 +81,8 @@ Q_SIGNALS:
     void requestOnlyMonitor(const QString &monName) const;
 
 public:
-    static int convertToSlider(const float value);
-    static float convertToScale(const int value);
+    static int convertToSlider(const double value);
+    static double convertToScale(const int value);
 
 private Q_SLOTS:
     void onMonitorListChanged() const;
@@ -100,7 +103,6 @@ private:
     widgets::TitledSliderItem *      m_scaleWidget;
     widgets::NextPageWidget *        m_scalingSettings;
     widgets::NextPageWidget *        m_vncRemote;
-
     const QStringList scaleList =
             QStringList() << "1.0"
               << "1.25"
@@ -111,6 +113,11 @@ private:
               << "2.5"
               << "2.75"
               << "3.0";
+
+    // 添加成员变量
+    QTimer *m_valueChangeTimer;
+    int m_lastEmittedValue;
+    QDateTime m_lastEmissionTime;
 
 #ifndef DCC_DISABLE_MIRACAST
     widgets::SettingsGroup *m_miracastGrp;
