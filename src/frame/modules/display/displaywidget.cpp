@@ -41,6 +41,7 @@
 using namespace dcc::widgets;
 using namespace dcc::display;
 
+
 DisplayWidget::DisplayWidget()
     : ModuleWidget()
     , m_displayControlPage(new DisplayControlPage)
@@ -67,11 +68,12 @@ DisplayWidget::DisplayWidget()
 
 
     DCCSlider *slider = m_scaleWidget->slider();
-    slider->setRange(1, scaleList.size());
+    slider->setRange(100, 300);
     slider->setType(DCCSlider::Vernier);
     slider->setTickPosition(QSlider::TicksBelow);
-    slider->setTickInterval(1);
-    slider->setPageStep(1);
+    slider->setTickInterval(25);
+    slider->setPageStep(25);
+    slider->setSingleStep(25);
     slider->blockSignals(true);
     slider->blockSignals(false);
     m_scaleWidget->setAnnotations(scaleList);
@@ -86,6 +88,11 @@ DisplayWidget::DisplayWidget()
 
     m_resolutionsGrp = new SettingsGroup;
     m_resolutionsGrp->appendItem(m_resolution);
+
+    // 初始化成员变量
+    m_valueChangeTimer = new QTimer(this);
+    m_valueChangeTimer->setInterval(1000); // 1秒
+    m_valueChangeTimer->setSingleShot(true);
 
 //#ifndef DCC_DISABLE_MIRACAST
     m_miracastGrp = new SettingsGroup;
@@ -138,11 +145,28 @@ DisplayWidget::DisplayWidget()
             Q_EMIT requestNewConfig(m_model->DDE_Display_Config);
         }
     });
-    connect(slider, &DCCSlider::valueChanged, this, [=](const int value) {
-        Q_EMIT requestUiScaleChanged(scaleList.at(convertToScale(value) - 1).toDouble());
-
-        m_scaleWidget->setValueLiteral(scaleList.at(convertToScale(value) - 1));
-    });
+	connect(slider, &DCCSlider::valueChanged, this, [=](const int value) {
+        QDateTime currentTime = QDateTime::currentDateTime();
+        if (m_lastEmittedValue != -1) { // 检查是否已发送过信号
+                qint64 msecsSinceLastEmission = m_lastEmissionTime.msecsTo(currentTime);
+                if (msecsSinceLastEmission <  1000 && msecsSinceLastEmission > 0) {
+                    // 在1秒内，且新值小于当前值，不发送信号
+                    qDebug() << "Value changed within 1 second and decreased. Signal not emitted.";
+                    return;
+                }
+            }
+            // 将值调整为离当前值最近的 25 的倍数
+            int adjustedValue = (value + 12) / 25 * 25;;
+            if (value % 25 >= 12) {
+                adjustedValue += 25;
+            }
+                double scale = convertToScale(adjustedValue);
+                Q_EMIT requestUiScaleChanged(scale);
+                m_scaleWidget->setValueLiteral(QString(convertToSlider(adjustedValue)));
+            // 更新最后发送时间和值
+            m_lastEmissionTime = currentTime;
+            m_lastEmittedValue = value;
+	});
 
     connect(m_displayControlPage, &DisplayControlPage::requestDuplicateMode, this,
             &DisplayWidget::requestDuplicateMode);
@@ -285,16 +309,13 @@ void DisplayWidget::setIndividualScalingEnabled(bool enabled) const
 }
 
 
-int DisplayWidget::convertToSlider(const float value)
+int DisplayWidget::convertToSlider(const double value)
 {
-    //remove base scale (100), then convert to 1-based value
-    //with a stepping of 25
 
-    // return qRound(value);
-    return qCeil(value);
+    return value * 100;
 }
 
-float DisplayWidget::convertToScale(const int value)
+double DisplayWidget::convertToScale(const int value)
 {
-    return value;
+    return value / 100.00;
 }
