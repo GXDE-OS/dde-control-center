@@ -166,6 +166,8 @@ DisplayWidget::DisplayWidget()
             // 更新最后发送时间和值
             m_lastEmissionTime = currentTime;
             m_lastEmittedValue = value;
+            QProcess::startDetached("/bin/sh", QStringList() << "-c" << "killall dde-dock && dde-dock");
+            QProcess::startDetached("/bin/sh", QStringList() << "-c" << "killall dde-control-center");
 	});
 
     connect(m_displayControlPage, &DisplayControlPage::requestDuplicateMode, this,
