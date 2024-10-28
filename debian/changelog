@@ -1,10 +1,11 @@
-dde-control-center (4.11.0) UNRELEASED; urgency=medium
+dde-control-center (4.11.0-1) UNRELEASED; urgency=medium
 
   * 尝试启用 Miracast 支持
   * fix: https://gitee.com/GXDE-OS/GXDE/issues/IARME6
   * fix: https://gitee.com/GXDE-OS/GXDE/issues/IAV6WM
   * 修复缩放slider显示不对的问题
   * 修复1.5倍缩放无法生效
+  * 修复 dock隐藏无效/DTK SIZEMODE无效
   -- gfdgd_xi <3025613752@qq.com>  Sun, 06 Oct 2024 15:46:04 +0800
 
 dde-control-center (4.10.29.1) UNRELEASED; urgency=medium
