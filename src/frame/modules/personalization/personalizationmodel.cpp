@@ -133,35 +133,35 @@ void PersonalizationModel::set20Launcher(const bool value)
 
 void PersonalizationModel::setSizeMode(const bool value)
 {
-    QDir dir(QDir::homePath() + "/.config/gxde/dtk/");
+    QDir dir(QDir::homePath() + "/.config/GXDE/dtk/");
     if (!dir.exists()) {
-        dir.mkpath(QDir::homePath() + "/.config/gxde/dtk/");
+        dir.mkpath(QDir::homePath() + "/.config/GXDE/dtk/");
     }
     if(value){
-       QFile file(QDir::homePath() + "/.config/gxde/dtk/SIZEMODE");
+       QFile file(QDir::homePath() + "/.config/GXDE/dtk/SIZEMODE");
        file.open(QFile::WriteOnly);
        file.write("1");
        file.close();
     }
     else {
-        QFile::remove(QDir::homePath() + "/.config/gxde/dtk/SIZEMODE");
+        QFile::remove(QDir::homePath() + "/.config/GXDE/dtk/SIZEMODE");
     }
 }
 
 void PersonalizationModel::setHideDDEDock(const bool value)
 {
-    QDir dir(QDir::homePath() + "/.config/gxde/gxde-dock/");
+    QDir dir(QDir::homePath() + "/.config/GXDE/gxde-dock/");
     if (!dir.exists()) {
-        dir.mkpath(QDir::homePath() + "/.config/gxde/gxde-dock/");
+        dir.mkpath(QDir::homePath() + "/.config/GXDE/gxde-dock/");
     }
     if(value){
-       QFile file(QDir::homePath() + "/.config/gxde/gxde-dock/dock-hide");
+       QFile file(QDir::homePath() + "/.config/GXDE/gxde-dock/dock-hide");
        file.open(QFile::WriteOnly);
        file.write("1");
        file.close();
     }
     else {
-        QFile::remove(QDir::homePath() + "/.config/gxde/gxde-dock/dock-hide");
+        QFile::remove(QDir::homePath() + "/.config/GXDE/gxde-dock/dock-hide");
     }
     system("killall dde-dock -9");
 }
@@ -218,7 +218,7 @@ bool PersonalizationModel::isSizeMode() const
 
 bool PersonalizationModel::isHideDDEDock() const
 {
-    return QFile::exists(QDir::homePath() + "/.config/gxde/gxde-dock/dock-hide");
+    return QFile::exists(QDir::homePath() + "/.config/GXDE/gxde-dock/dock-hide");
 }
 
 bool PersonalizationModel::isWayland() const
