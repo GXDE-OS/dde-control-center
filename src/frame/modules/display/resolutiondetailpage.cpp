@@ -68,7 +68,7 @@ void ResolutionDetailPage::setModel(DisplayModel *model)
     bool first = true;
     for (auto m : modes)
     {
-        const QString res = QString::number(m.width()) + "×" + QString::number(m.height());
+        const QString res = QString::number(m.width()) + "×" + QString::number(m.height()) + "+" + QString::number(round(m.rate())) + "Hz";
         OptionItem *item = new OptionItem;
         item->setContentsMargins(20, 0, 10, 0);
 
