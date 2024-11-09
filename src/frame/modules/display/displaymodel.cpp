@@ -88,6 +88,15 @@ bool DisplayModel::monitorsIsIntersect() const
     return m_monitors.first()->rect().intersects(m_monitors.last()->rect());
 }
 
+void DisplayModel::setScreenRate(const int r)
+{
+    if (m_screenRate != r)
+    {
+        m_screenRate = r;
+        Q_EMIT screenRateChanged(m_screenRate);
+    }
+}
+
 void DisplayModel::setScreenHeight(const int h)
 {
     if (m_screenHeight != h)

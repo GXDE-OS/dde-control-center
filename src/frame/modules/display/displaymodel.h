@@ -50,6 +50,7 @@ public:
 
     inline int screenHeight() const { return m_screenHeight; }
     inline int screenWidth() const { return m_screenWidth; }
+    inline int screenRate() const { return m_screenRate; }
     inline int displayMode() const { return m_mode; }
     inline double uiScale() const { return m_uiScale; }
     inline double minimumBrightnessScale() const { return m_minimumBrightnessScale; }
@@ -83,6 +84,7 @@ public:
     void setIsMerge(bool isMerge);
 
 Q_SIGNALS:
+    void screenRateChanged(const int r) const;
     void screenHeightChanged(const int h) const;
     void screenWidthChanged(const int w) const;
     void displayModeChanged(const int mode) const;
@@ -98,6 +100,7 @@ Q_SIGNALS:
     void redshiftSettingChanged(const bool setting) const;
 
 private Q_SLOTS:
+    void setScreenRate(const int r);
     void setScreenHeight(const int h);
     void setScreenWidth(const int w);
     void setDisplayMode(const int mode);
@@ -113,6 +116,7 @@ private Q_SLOTS:
 private:
     int m_screenHeight;
     int m_screenWidth;
+    int m_screenRate;
     int m_mode;
     double m_uiScale;
     double m_minimumBrightnessScale;
