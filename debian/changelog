@@ -1,4 +1,4 @@
-dde-control-center (4.11.0-2) UNRELEASED; urgency=medium
+dde-control-center (4.11.1) UNRELEASED; urgency=medium
 
   * 尝试启用 Miracast 支持
   * fix: https://gitee.com/GXDE-OS/GXDE/issues/IARME6
@@ -7,14 +7,16 @@ dde-control-center (4.11.0-2) UNRELEASED; urgency=medium
   * 修复1.5倍缩放无法生效
   * 修复 dock隐藏无效/DTK SIZEMODE无效
   * 修复缩放无效
+  * 支持设置刷新率
   -- gfdgd_xi <3025613752@qq.com>  Sun, 06 Oct 2024 15:46:04 +0800
 
 dde-control-center (4.10.29.1) UNRELEASED; urgency=medium
 
   * 支持设置 live 镜像
   * 国际化 Compact Mode设置
+  * 
 
- -- gfdgd_xi <3025613752@qq.com>  Thu, 03 Oct 2024 11:21:30 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 09 Nov 2024 18:26:54 +0800
 
 dde-control-center (4.10.20) unstable; urgency=low
 
