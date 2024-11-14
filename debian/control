@@ -41,21 +41,19 @@ Depends: ${shlibs:Depends},
  xkb-data,
  deepin-installer-timezones,
  passwd,
- fantascene-gxde,
  gxde-top-panel,
  systemd-timesyncd,
  libkf5networkmanagerqt6,
  libdde-network-utils,
- x11vnc,
  garma,
  gxde-shell-tools,
  gxde-app-uninstaller(>=1.2.0),
  transhell,
- lastore-daemon(>=0.14.8)
 Recommends: 
  netselect,
  x11vnc,
  gxde-live-local,
+ fantascene-dynamic-wallpaper | fantascene-gxde,
 Suggests: redshift
 Conflicts:
  dde-control-center-plugin-weather,

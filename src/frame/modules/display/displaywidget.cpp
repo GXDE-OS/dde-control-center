@@ -104,8 +104,9 @@ DisplayWidget::DisplayWidget()
     SettingsGroup *vncRemoteGrp = new SettingsGroup();
     vncRemoteGrp->appendItem(m_vncRemote);
 
-    // 如果是 Wayland 则需要禁用部分组件
-    if(dcc::personalization::PersonalizationModel().isWayland()) {
+    // 如果是 Wayland 或未安装 x11vnc 则需要禁用部分组件
+    if(dcc::personalization::PersonalizationModel().isWayland() ||
+       !QFile::exists("/usr/bin/x11vnc")) {
         vncRemoteGrp->setHidden(true);
     }
 

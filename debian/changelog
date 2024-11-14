@@ -1,4 +1,4 @@
-dde-control-center (4.11.2) UNRELEASED; urgency=medium
+dde-control-center (4.11.3) UNRELEASED; urgency=medium
 
   * 尝试启用 Miracast 支持
   * fix: https://gitee.com/GXDE-OS/GXDE/issues/IARME6
@@ -8,14 +8,14 @@ dde-control-center (4.11.2) UNRELEASED; urgency=medium
   * 修复 dock隐藏无效/DTK SIZEMODE无效
   * 修复缩放无效
   * 支持设置刷新率
-  -- gfdgd_xi <3025613752@qq.com>  Sun, 06 Oct 2024 15:46:04 +0800
+  * 取消 x11vnc、fantascene-dynamic-wallpaper 强制依赖
+
+ -- gfdgd_xi <3025613752@qq.com>  Thu, 14 Nov 2024 22:15:24 +0800
 
 dde-control-center (4.10.29.1) UNRELEASED; urgency=medium
 
   * 支持设置 live 镜像
   * 国际化 Compact Mode设置
-  * 
-  * 
 
  -- gfdgd_xi <3025613752@qq.com>  Sun, 10 Nov 2024 17:11:31 +0800
 
