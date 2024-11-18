@@ -1,4 +1,4 @@
-dde-control-center (4.11.3-1) UNRELEASED; urgency=medium
+dde-control-center (4.11.3-1.1) UNRELEASED; urgency=medium
 
   * 尝试启用 Miracast 支持
   * fix: https://gitee.com/GXDE-OS/GXDE/issues/IARME6
