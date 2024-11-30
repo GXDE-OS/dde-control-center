@@ -49,6 +49,8 @@ Depends: ${shlibs:Depends},
  gxde-shell-tools,
  gxde-app-uninstaller(>=1.2.0),
  transhell,
+ wireplumber,
+ libspa-0.2-bluetooth,
 Recommends: 
  netselect,
  x11vnc,
