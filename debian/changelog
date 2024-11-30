@@ -1,4 +1,4 @@
-dde-control-center (4.11.3) UNRELEASED; urgency=medium
+dde-control-center (4.11.4) UNRELEASED; urgency=medium
 
   * 尝试启用 Miracast 支持
   * fix: https://gitee.com/GXDE-OS/GXDE/issues/IARME6
@@ -10,7 +10,7 @@ dde-control-center (4.11.3) UNRELEASED; urgency=medium
   * 支持设置刷新率
   * 取消 x11vnc、fantascene-dynamic-wallpaper 强制依赖
 
- -- gfdgd_xi <3025613752@qq.com>  Thu, 14 Nov 2024 22:15:24 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 30 Nov 2024 14:54:01 +0800
 
 dde-control-center (4.10.29.1) UNRELEASED; urgency=medium
 
