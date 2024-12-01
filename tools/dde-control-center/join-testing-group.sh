@@ -22,7 +22,7 @@ else
         fi
         garma --info --text="${TRANSHELL_CONTENT_JOIN_USER_GROUP}"
         xdg-open ${HERE}/QQ.jpg &
-        zenity --info --width=300 --text="Discord：https://discord.gg/t5Uf2xYpvA" &
+        garma --info --width=300 --text="Discord：https://discord.gg/t5Uf2xYpvA" &
     else
         exit
     fi

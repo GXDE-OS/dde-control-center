@@ -1,4 +1,4 @@
-dde-control-center (4.11.4) UNRELEASED; urgency=medium
+dde-control-center (4.11.4-1) UNRELEASED; urgency=medium
 
   * 尝试启用 Miracast 支持
   * fix: https://gitee.com/GXDE-OS/GXDE/issues/IARME6
@@ -11,6 +11,7 @@ dde-control-center (4.11.4) UNRELEASED; urgency=medium
   * 取消 x11vnc、fantascene-dynamic-wallpaper 强制依赖
   * 新增 discord 反馈渠道
   * 修复 无法连接蓝牙耳机
+  * adjust: 因garma现在支持复制，zenity --info 替换为 garma --info
 
  -- gfdgd_xi <3025613752@qq.com>  Sat, 30 Nov 2024 14:54:01 +0800
 
