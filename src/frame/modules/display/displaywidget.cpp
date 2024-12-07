@@ -60,7 +60,7 @@ DisplayWidget::DisplayWidget()
     m_rotate->setText(tr("Rotate"));
 #endif
     m_customConfigButton->setText(tr("Custom Settings"));
-    m_resolution->setTitle(tr("Resolution"));
+    m_resolution->setTitle(tr("Resolution/Rate"));
     m_brightnessSettings->setTitle(tr("Brightness"));
     m_scalingSettings->setTitle(tr("Scaling Settings"));
     m_vncRemote->setTitle(tr("VNC Remote"));

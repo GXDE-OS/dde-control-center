@@ -38,7 +38,7 @@ ResolutionDetailPage::ResolutionDetailPage(QWidget *parent)
       m_resolutions(new SettingsGroup),
       m_currentItem(nullptr)
 {
-    setTitle(tr("Resolution"));
+    setTitle(tr("Resolution/Rate"));
 
     TranslucentFrame *widget = new TranslucentFrame;
     QVBoxLayout *mainLayout = new QVBoxLayout(widget);

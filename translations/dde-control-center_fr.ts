@@ -1146,49 +1146,53 @@ Sans interaction, l&apos;affichage sera rétabli après %1s.</translation>
 <context>
     <name>dcc::display::DisplayWidget</name>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="118"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="126"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="117"/>
         <location filename="../src/frame/navigationbar.cpp" line="203"/>
         <source>Display</source>
         <translation>Affichage</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="51"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="52"/>
         <source>Display Scaling</source>
         <translation>Mise à l&apos;échelle de l&apos;affichage</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="59"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="60"/>
         <source>Rotate</source>
         <translation>Pivoter</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="61"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="62"/>
         <source>Custom Settings</source>
         <translation>Paramètres personnels</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="62"/>
         <source>Resolution</source>
-        <translation>Résolution</translation>
+        <translation type="vanished">Résolution</translation>
     </message>
     <message>
         <location filename="../src/frame/modules/display/displaywidget.cpp" line="63"/>
+        <source>Resolution/Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="64"/>
         <source>Brightness</source>
         <translation>Luminosité</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="64"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="65"/>
         <source>Scaling Settings</source>
         <translation>Paramètres de mise à l&apos;échelle</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="65"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="66"/>
         <source>VNC Remote</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="242"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="269"/>
         <source>Wireless Screen Projection</source>
         <translation>Projection d&apos;écran sans fil</translation>
     </message>
@@ -1278,9 +1282,13 @@ Sans interaction, l&apos;affichage sera rétabli après %1s.</translation>
 <context>
     <name>dcc::display::ResolutionDetailPage</name>
     <message>
-        <location filename="../src/frame/modules/display/resolutiondetailpage.cpp" line="41"/>
         <source>Resolution</source>
-        <translation>Résolution</translation>
+        <translation type="vanished">Résolution</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/display/resolutiondetailpage.cpp" line="41"/>
+        <source>Resolution/Rate</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/frame/modules/display/resolutiondetailpage.cpp" line="80"/>

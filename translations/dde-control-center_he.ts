@@ -1145,49 +1145,53 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::display::DisplayWidget</name>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="118"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="126"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="117"/>
         <location filename="../src/frame/navigationbar.cpp" line="203"/>
         <source>Display</source>
         <translation>תצוגה</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="51"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="52"/>
         <source>Display Scaling</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="59"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="60"/>
         <source>Rotate</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="61"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="62"/>
         <source>Custom Settings</source>
         <translation>הגדרות מותאמות אישית</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="62"/>
         <source>Resolution</source>
-        <translation>רזולוציה</translation>
+        <translation type="vanished">רזולוציה</translation>
     </message>
     <message>
         <location filename="../src/frame/modules/display/displaywidget.cpp" line="63"/>
+        <source>Resolution/Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="64"/>
         <source>Brightness</source>
         <translation>בהירות</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="64"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="65"/>
         <source>Scaling Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="65"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="66"/>
         <source>VNC Remote</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="242"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="269"/>
         <source>Wireless Screen Projection</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1277,9 +1281,13 @@ If no operation, the display will be restored after %1s.</source>
 <context>
     <name>dcc::display::ResolutionDetailPage</name>
     <message>
-        <location filename="../src/frame/modules/display/resolutiondetailpage.cpp" line="41"/>
         <source>Resolution</source>
-        <translation>רזולוציה</translation>
+        <translation type="vanished">רזולוציה</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/display/resolutiondetailpage.cpp" line="41"/>
+        <source>Resolution/Rate</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/frame/modules/display/resolutiondetailpage.cpp" line="80"/>
