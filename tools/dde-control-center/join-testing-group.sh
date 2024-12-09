@@ -13,7 +13,7 @@ if check_is_installed gxde-testing-source ;then
 		exit
 	fi
 else
-    garma --warning --text="${TRANSHELL_CONTENT_JOIN_TEST_DIALOG}"
+    garma --question --text="${TRANSHELL_CONTENT_JOIN_TEST_DIALOG}"
     if [[ "$?" = "0" ]];then
         gxde-app-installer gxde-testing-source 
         if ! check_is_installed gxde-testing-source ;then

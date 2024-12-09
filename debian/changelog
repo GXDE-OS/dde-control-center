@@ -1,4 +1,4 @@
-dde-control-center (4.11.5) UNRELEASED; urgency=medium
+dde-control-center (4.11.5-1) UNRELEASED; urgency=medium
 
   * 尝试启用 Miracast 支持
   * fix: https://gitee.com/GXDE-OS/GXDE/issues/IARME6
@@ -13,6 +13,7 @@ dde-control-center (4.11.5) UNRELEASED; urgency=medium
   * 修复 无法连接蓝牙耳机
   * adjust: 因garma现在支持复制，zenity --info 替换为 garma --info
   * 调整分辨率设置文本
+  * Garma warning 行为错误，换成--question
 
  -- gfdgd_xi <3025613752@qq.com>  Sat, 07 Dec 2024 12:07:05 +0800
 
