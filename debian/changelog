@@ -1,4 +1,4 @@
-dde-control-center (4.11.5-1) UNRELEASED; urgency=medium
+dde-control-center (4.11.6) UNRELEASED; urgency=medium
 
   * 尝试启用 Miracast 支持
   * fix: https://gitee.com/GXDE-OS/GXDE/issues/IARME6
@@ -14,8 +14,9 @@ dde-control-center (4.11.5-1) UNRELEASED; urgency=medium
   * adjust: 因garma现在支持复制，zenity --info 替换为 garma --info
   * 调整分辨率设置文本
   * Garma warning 行为错误，换成--question
+  * 使用 dbus 接口启用 gxde top panel 等
 
- -- gfdgd_xi <3025613752@qq.com>  Sat, 07 Dec 2024 12:07:05 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 05 Jan 2025 16:41:09 +0800
 
 dde-control-center (4.10.29.1) UNRELEASED; urgency=medium
 
