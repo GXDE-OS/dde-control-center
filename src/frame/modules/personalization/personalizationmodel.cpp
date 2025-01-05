@@ -31,6 +31,12 @@
 #include <QFile>
 #include <QDir>
 #include <QProcessEnvironment>
+#include <QDBusMessage>
+#include <QDBusConnection>
+
+#define PERSIONALIZATION_DESTINATION "com.gxde.daemon.personalization"
+#define PERSIONALIZATION_PATH "/com/gxde/daemon/personalization"
+#define PERSIONALIZATION_INTERFACE "com.gxde.daemon.personalization"
 
 using namespace dcc;
 using namespace dcc::personalization;
@@ -63,53 +69,32 @@ void PersonalizationModel::setIs3DWm(const bool is3d)
 
 void PersonalizationModel::setTopPanelGlobalMenu(const bool value)
 {
-    if(!QFile::exists("/usr/share/applications/gxde-globalmenu-service.desktop") /*|| !QFile::exists("/usr/share/applications/gxde-globalmenu-service.desktop")*/){
-        // Setting error
-        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/gxde-globalmenu-service.desktop or /usr/share/applications/dde-globalmenu-service.desktop";
-        return;
-    }
-    if(value){
-        QFile::copy("/usr/share/applications/gxde-globalmenu-service.desktop",
-                    QDir::homePath() + "/.config/autostart/gxde-globalmenu-service.desktop"); // 设置自动启动
-        system("setsid gxde-globalmenu-service > /dev/null 2>&1 &");
-        return;
-    }
-    QFile::remove(QDir::homePath() + "/.config/autostart/gxde-globalmenu-service.desktop"); // 移除自动启动
-    system("killall gxde-globalmenu-service -9");
+    QDBusMessage dbus = QDBusMessage::createMethodCall(PERSIONALIZATION_DESTINATION,
+                                                       PERSIONALIZATION_PATH,
+                                                       PERSIONALIZATION_INTERFACE,
+                                                       "SetTopPanelGlobalMenu");
+    dbus << value;
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
 void PersonalizationModel::setTopPanel(const bool isTopPanel)
 {
-    if(!QFile::exists("/usr/share/applications/gxde-top-panel.desktop") /*|| !QFile::exists("/usr/share/applications/gxde-globalmenu-service.desktop")*/){
-        // Setting error
-        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/gxde-top-panel.desktop or /usr/share/applications/gxde-globalmenu-service.desktop";
-        return;
-    }
-    if(isTopPanel){
-        QFile::copy("/usr/share/applications/gxde-top-panel.desktop",
-                    QDir::homePath() + "/.config/autostart/gxde-top-panel.desktop"); // 设置自动启动
-        system("setsid gxde-top-panel > /dev/null 2>&1 &");
-        return;
-    }
-    QFile::remove(QDir::homePath() + "/.config/autostart/gxde-top-panel.desktop"); // 移除自动启动
-    system("killall gxde-top-panel -9");
+    QDBusMessage dbus = QDBusMessage::createMethodCall(PERSIONALIZATION_DESTINATION,
+                                                       PERSIONALIZATION_PATH,
+                                                       PERSIONALIZATION_INTERFACE,
+                                                       "SetTopPanel");
+    dbus << isTopPanel;
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
 void PersonalizationModel::setBottomPanel(const bool value)
 {
-    if(!QFile::exists("/usr/share/applications/plank.desktop")){
-        // Setting error
-        qDebug() << "Can't find gxde top panel config file: /usr/share/applications/plank.desktop";
-        return;
-    }
-    if(value){
-        QFile::copy("/usr/share/applications/plank.desktop",
-                    QDir::homePath() + "/.config/autostart/plank.desktop"); // 设置自动启动
-        system("setsid plank > /dev/null 2>&1 &");
-        return;
-    }
-    QFile::remove(QDir::homePath() + "/.config/autostart/plank.desktop"); // 移除自动启动
-    system("killall plank -9");
+    QDBusMessage dbus = QDBusMessage::createMethodCall(PERSIONALIZATION_DESTINATION,
+                                                       PERSIONALIZATION_PATH,
+                                                       PERSIONALIZATION_INTERFACE,
+                                                       "SetBottomPanel");
+    dbus << value;
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
 }
 
 void PersonalizationModel::set20Launcher(const bool value)
@@ -173,17 +158,33 @@ bool PersonalizationModel::is3DWm() const
 
 bool PersonalizationModel::isOpenTopPanelGlobalMenu() const
 {
-    return QFile::exists(QDir::homePath() + "/.config/autostart/gxde-globalmenu-service.desktop");
+    QDBusMessage dbus = QDBusMessage::createMethodCall(PERSIONALIZATION_DESTINATION,
+                                                       PERSIONALIZATION_PATH,
+                                                       PERSIONALIZATION_INTERFACE,
+                                                       "IsOpenTopPanelGlobalMenu");
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
+    return res.arguments().at(0).toBool();
 }
 
 bool PersonalizationModel::isOpenTopPanel() const
 {
-    return QFile::exists(QDir::homePath() + "/.config/autostart/gxde-top-panel.desktop");
+    QDBusMessage dbus = QDBusMessage::createMethodCall(PERSIONALIZATION_DESTINATION,
+                                                       PERSIONALIZATION_PATH,
+                                                       PERSIONALIZATION_INTERFACE,
+                                                       "IsOpenTopPanel");
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
+    return res.arguments().at(0).toBool();
 }
 
 bool PersonalizationModel::isOpenBottomPanel() const
 {
-    return QFile::exists(QDir::homePath() + "/.config/autostart/plank.desktop");
+    QDBusMessage dbus = QDBusMessage::createMethodCall(PERSIONALIZATION_DESTINATION,
+                                                       PERSIONALIZATION_PATH,
+                                                       PERSIONALIZATION_INTERFACE,
+                                                       "IsOpenBottomPanel");
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
+    qDebug() << res.arguments().at(0).toString();
+    return res.arguments()[0].toBool();
 }
 
 bool PersonalizationModel::isInstallTopPanel() const
