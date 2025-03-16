@@ -146,30 +146,35 @@ DisplayWidget::DisplayWidget()
             Q_EMIT requestNewConfig(m_model->DDE_Display_Config);
         }
     });
-	connect(slider, &DCCSlider::valueChanged, this, [=](const int value) {
+    connect(slider, &DCCSlider::valueChanged, this, [=](const int value) {
         QDateTime currentTime = QDateTime::currentDateTime();
-        if (m_lastEmittedValue != -1) { // 检查是否已发送过信号
-                qint64 msecsSinceLastEmission = m_lastEmissionTime.msecsTo(currentTime);
-                if (msecsSinceLastEmission <  1000 && msecsSinceLastEmission > 0) {
-                    // 在1秒内，且新值小于当前值，不发送信号
-                    qDebug() << "Value changed within 1 second and decreased. Signal not emitted.";
-                    return;
-                }
+
+        /*if (m_lastEmittedValue != -1) { // 检查是否已发送过信号
+            qint64 msecsSinceLastEmission = m_lastEmissionTime.msecsTo(currentTime);
+            if (msecsSinceLastEmission <  1000 && msecsSinceLastEmission > 0) {
+                // 在1秒内，且新值小于当前值，不发送信号
+                qDebug() << "Value changed within 1 second and decreased. Signal not emitted.";
+                return;
             }
-            // 将值调整为离当前值最近的 25 的倍数
-            int adjustedValue = (value + 12) / 25 * 25;;
-            if (value % 25 >= 12) {
-                adjustedValue += 25;
-            }
-                double scale = convertToScale(adjustedValue);
-                Q_EMIT requestUiScaleChanged(scale);
-                m_scaleWidget->setValueLiteral(QString(convertToSlider(adjustedValue)));
-            // 更新最后发送时间和值
-            m_lastEmissionTime = currentTime;
-            m_lastEmittedValue = value;
-            // QProcess::startDetached("/bin/sh", QStringList() << "-c" << "killall dde-dock && dde-dock");
-            // QProcess::startDetached("/bin/sh", QStringList() << "-c" << "killall dde-control-center");
-	});
+        }*/
+
+        // 将值调整为离当前值最近的 25 的倍数
+        int adjustedValue = (value + 12) / 25 * 25;;
+        if (value % 25 >= 12) {
+            adjustedValue += 25;
+        }
+        if (value != adjustedValue) {
+            slider->setValue(adjustedValue);
+            return;
+        }
+
+        double scale = convertToScale(adjustedValue);
+        Q_EMIT requestUiScaleChanged(scale);
+        m_scaleWidget->setValueLiteral(QString::number(scale));
+        // 更新最后发送时间和值
+        m_lastEmissionTime = currentTime;
+        m_lastEmittedValue = value;
+    });
 
     connect(m_displayControlPage, &DisplayControlPage::requestDuplicateMode, this,
             &DisplayWidget::requestDuplicateMode);

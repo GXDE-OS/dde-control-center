@@ -42,8 +42,20 @@ const QString systemCopyright()
     const QSettings settings("/etc/deepin-installer.conf", QSettings::IniFormat);
     const QString oem_copyright = settings.value("system_info_vendor_name").toString().toLatin1();
 
+    QString buildDate = __DATE__;  // Mar 16 2025
+    QString nowYear = QDateTime::currentDateTime().toString("yyyy");
+    QString showYear = "2025";
+    auto dateList = buildDate.split(" ");
+    if (dateList.length() >= 3) {
+        showYear = dateList.at(2);
+    }
+    // 对比年份，避免出现显示类似 ©2023-1970 GXDE OS 的情况
+    if (nowYear.toInt() >= showYear.toInt()) {
+        showYear = nowYear;
+    }
+
     if (oem_copyright.isEmpty())
-        return QString(QApplication::translate("dcc::systeminfo::SystemInfoWidget", "©2023-%1 GXDE")).arg(QDateTime::currentDateTime().toString("yyyy"));
+        return QString(QApplication::translate("dcc::systeminfo::SystemInfoWidget", "©2023-%1 GXDE OS")).arg(showYear);
     else
         return oem_copyright;
 }
@@ -237,7 +249,7 @@ void SystemInfoWidget::setXdgSessionType(const QString &xdgSessionType)
 
 void SystemInfoWidget::OpenProgramWebsite()
 {
-    QDesktopServices::openUrl(QUrl("https://www.gxde.org"));
+    QDesktopServices::openUrl(QUrl("https://www.gxde.top"));
 }
 
 }
