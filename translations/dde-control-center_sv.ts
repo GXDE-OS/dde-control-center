@@ -1191,7 +1191,7 @@ If no operation, the display will be restored after %1s.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/display/displaywidget.cpp" line="269"/>
+        <location filename="../src/frame/modules/display/displaywidget.cpp" line="274"/>
         <source>Wireless Screen Projection</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4130,84 +4130,84 @@ Power by fantascene-dynamic-wallpaper</source>
 <context>
     <name>dcc::systeminfo::SystemInfoWidget</name>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="73"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="85"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="129"/>
         <location filename="../src/frame/navigationbar.cpp" line="217"/>
         <source>System Information</source>
         <translation>Systeminformation</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="46"/>
-        <source>©2023-%1 GXDE</source>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="58"/>
+        <source>©2023-%1 GXDE OS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="84"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="96"/>
         <source>Distribution:</source>
         <translation>Distribution:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="89"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="101"/>
         <source>Distribution Release:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="94"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="106"/>
         <source>Edition:</source>
         <translation>Utgåva:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="98"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="110"/>
         <source>Type:</source>
         <translation>Typ:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="101"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="113"/>
         <source>Processor:</source>
         <translation>Processor:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="105"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="117"/>
         <source>Memory:</source>
         <translation>Minne:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="109"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="121"/>
         <source>Disk:</source>
         <translation>Disk:</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="113"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="125"/>
         <source>Kernel:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="117"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="129"/>
         <source>Session:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="121"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="133"/>
         <source>System website</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="137"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="149"/>
         <source>Edition License</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="140"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="152"/>
         <source>End User License Agreement</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="145"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="157"/>
         <source>Boot Menu</source>
         <translation>Uppstartsmeny</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="210"/>
+        <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="222"/>
         <source>%1Bit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4465,17 +4465,22 @@ Power by fantascene-dynamic-wallpaper</source>
 <context>
     <name>dcc::update::UpdateView</name>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="60"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="61"/>
         <source>Check and perform system Upgrade</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="67"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="68"/>
         <source>Internal Testing Group Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="80"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="76"/>
+        <source>Disabled Upgrade Notifications</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="84"/>
         <source>Update</source>
         <translation>Uppdatering</translation>
     </message>
