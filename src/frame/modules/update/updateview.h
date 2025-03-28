@@ -29,6 +29,7 @@
 #include "modules/modulewidget.h"
 #include "widgets/nextpagewidget.h"
 #include "widgets/settingsgroup.h"
+#include "widgets/switchwidget.h"
 #include "dpushbutton.h"
 #include <QCheckBox>
 #include <QPushButton>
@@ -51,9 +52,9 @@ private:
     dcc::widgets::SettingsGroup* m_settingsGroup;
     dcc::widgets::NextPageWidget* m_updateItem;
     dcc::widgets::NextPageWidget* m_settingsItem;
-    QCheckBox *m_disabledUpgradeNotifications;
-    DPushButton* m_addTestingSource;
-    DPushButton* m_neoUpgrader;
+    dcc::widgets::NextPageWidget* m_addTestingSource;
+    dcc::widgets::NextPageWidget* m_neoUpgrader;
+    dcc::widgets::SwitchWidget *m_disabledUpgradeNotifications;
 
     void ShowTesingDialog();
     void ExecUpgrader();

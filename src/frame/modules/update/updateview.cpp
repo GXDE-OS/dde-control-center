@@ -47,7 +47,7 @@ UpdateView::UpdateView()
     setObjectName("Update");
 //    m_updateItem = new NextPageWidget;
 //    m_updateItem->setTitle(tr("Update"));
-//    m_updateGroup = new SettingsGroup;
+    m_updateGroup = new SettingsGroup;
 //    m_updateGroup->appendItem(m_updateItem);
 
 //    m_settingsItem = new NextPageWidget;
@@ -55,30 +55,30 @@ UpdateView::UpdateView()
 //    m_settingsGroup = new SettingsGroup;
 //    m_settingsGroup->appendItem(m_settingsItem);
 
-//    m_centralLayout->addWidget(m_updateGroup);
+    m_centralLayout->addWidget(m_updateGroup);
 //    m_centralLayout->addWidget(m_settingsGroup);
-    m_neoUpgrader = new DPushButton;
-    m_neoUpgrader->setText(tr("Check and perform system Upgrade"));
+    m_neoUpgrader = new NextPageWidget;
+    m_neoUpgrader->setTitle(tr("Check and perform system Upgrade"));
     if (QFile::exists("/usr/bin/gxde-app-upgrader")) {
         // 需要保证脚本存在才会显示按钮
-        m_centralLayout->addWidget(m_neoUpgrader);
+        //m_centralLayout->addWidget(m_neoUpgrader);
+        m_updateGroup->appendItem(m_neoUpgrader);
     }
 
-    m_addTestingSource = new DPushButton;
-    m_addTestingSource->setText(tr("Internal Testing Group Settings"));
+    m_addTestingSource = new NextPageWidget;
+    m_addTestingSource->setTitle(tr("Internal Testing Group Settings"));
     if (QFile::exists("/usr/share/dde-control-center/join-testing-group.sh")) {
         // 需要保证脚本存在才会显示按钮
-        m_centralLayout->addWidget(m_addTestingSource);
+        m_updateGroup->appendItem(m_addTestingSource);
     }
 
 
-    m_disabledUpgradeNotifications = new QCheckBox;
-    m_disabledUpgradeNotifications->setText(tr("Disabled Upgrade Notifications"));
-    m_centralLayout->addWidget(m_disabledUpgradeNotifications);
+    m_disabledUpgradeNotifications = new SwitchWidget(tr("Disabled Upgrade Notifications"));
+    m_updateGroup->appendItem(m_disabledUpgradeNotifications);
 
-    connect(m_addTestingSource, &DPushButton::clicked, this, &UpdateView::ShowTesingDialog);
-    connect(m_neoUpgrader, &DPushButton::clicked,this, &UpdateView::ExecUpgrader);
-    connect(m_disabledUpgradeNotifications, &QCheckBox::stateChanged, this, &UpdateView::DisabledUpgradeNotifications);
+    connect(m_addTestingSource, &NextPageWidget::clicked, this, &UpdateView::ShowTesingDialog);
+    connect(m_neoUpgrader, &NextPageWidget::clicked,this, &UpdateView::ExecUpgrader);
+    connect(m_disabledUpgradeNotifications, &SwitchWidget::checkedChanged, this, &UpdateView::DisabledUpgradeNotifications);
 
 
     setTitle(tr("Update"));
@@ -119,7 +119,7 @@ void UpdateView::DisabledUpgradeNotifications()
                                                                                      "/com/gxde/daemon/system/update",
                                                                                      "com.gxde.daemon.system.update",
                                                                                      "DisabledUpgradeNotifications");
-    disabledUpgradeNotificationsStatus << m_disabledUpgradeNotifications->isChecked();
+    disabledUpgradeNotificationsStatus << m_disabledUpgradeNotifications->checked();
     QDBusConnection::sessionBus().call(disabledUpgradeNotificationsStatus);
     init();
 }
