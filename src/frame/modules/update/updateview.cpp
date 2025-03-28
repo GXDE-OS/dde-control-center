@@ -93,7 +93,10 @@ void UpdateView::init()
                                                                                      "/com/gxde/daemon/system/update",
                                                                                      "com.gxde.daemon.system.update",
                                                                                      "IsDisabledUpgradeNotifications");
-    m_disabledUpgradeNotifications->setChecked(QDBusConnection::sessionBus().call(disabledUpgradeNotificationsStatus).arguments().at(0).toBool());
+    auto result = QDBusConnection::sessionBus().call(disabledUpgradeNotificationsStatus).arguments();
+    if (result.count() >= 1) {
+        m_disabledUpgradeNotifications->setChecked(result.at(0).toBool());
+    }
 }
 
 void UpdateView::ExecUpgrader()
@@ -117,7 +120,7 @@ void UpdateView::DisabledUpgradeNotifications()
                                                                                      "com.gxde.daemon.system.update",
                                                                                      "DisabledUpgradeNotifications");
     disabledUpgradeNotificationsStatus << m_disabledUpgradeNotifications->isChecked();
-    QDBusConnection::sessionBus().call(disabledUpgradeNotificationsStatus).arguments();
+    QDBusConnection::sessionBus().call(disabledUpgradeNotificationsStatus);
     init();
 }
 
