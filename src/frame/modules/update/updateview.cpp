@@ -33,7 +33,8 @@
 #include <QFile>
 #include <dpushbutton.h>
 #include <unistd.h>
-
+#include <QDBusMessage>
+#include <QDBusConnection>
 
 using namespace dcc::widgets;
 
@@ -71,10 +72,13 @@ UpdateView::UpdateView()
     }
 
 
-
+    m_disabledUpgradeNotifications = new QCheckBox;
+    m_disabledUpgradeNotifications->setText(tr("Disabled Upgrade Notifications"));
+    m_centralLayout->addWidget(m_disabledUpgradeNotifications);
 
     connect(m_addTestingSource, &DPushButton::clicked, this, &UpdateView::ShowTesingDialog);
-    connect(m_neoUpgrader,&DPushButton::clicked,this,&UpdateView::ExecUpgrader);
+    connect(m_neoUpgrader, &DPushButton::clicked,this, &UpdateView::ExecUpgrader);
+    connect(m_disabledUpgradeNotifications, &QCheckBox::stateChanged, this, &UpdateView::DisabledUpgradeNotifications);
 
 
     setTitle(tr("Update"));
@@ -82,23 +86,40 @@ UpdateView::UpdateView()
     //connect(m_updateItem, &NextPageWidget::clicked, this, &UpdateView::pushUpdate);
     //connect(m_settingsItem, &NextPageWidget::clicked, this, &UpdateView::pushMirrors);
 }
+
+void UpdateView::init()
+{
+    QDBusMessage disabledUpgradeNotificationsStatus = QDBusMessage::createMethodCall("com.gxde.daemon.system.update",
+                                                                                     "/com/gxde/daemon/system/update",
+                                                                                     "com.gxde.daemon.system.update",
+                                                                                     "IsDisabledUpgradeNotifications");
+    m_disabledUpgradeNotifications->setChecked(QDBusConnection::sessionBus().call(disabledUpgradeNotificationsStatus).arguments().at(0).toBool());
+}
+
 void UpdateView::ExecUpgrader()
 {
     QProcess process;
     system("/usr/bin/gxde-app-upgrader &");
 }
+
 void UpdateView::ShowTesingDialog()
 {
-
-            QProcess process;
-            process.start("bash", QStringList() << "/usr/share/dde-control-center/join-testing-group.sh");
-            process.waitForStarted();
-            process.waitForFinished(-1);
-
-
+    QProcess process;
+    process.start("bash", QStringList() << "/usr/share/dde-control-center/join-testing-group.sh");
+    process.waitForStarted();
+    process.waitForFinished(-1);
 }
 
-
+void UpdateView::DisabledUpgradeNotifications()
+{
+    QDBusMessage disabledUpgradeNotificationsStatus = QDBusMessage::createMethodCall("com.gxde.daemon.system.update",
+                                                                                     "/com/gxde/daemon/system/update",
+                                                                                     "com.gxde.daemon.system.update",
+                                                                                     "DisabledUpgradeNotifications");
+    disabledUpgradeNotificationsStatus << m_disabledUpgradeNotifications->isChecked();
+    QDBusConnection::sessionBus().call(disabledUpgradeNotificationsStatus).arguments();
+    init();
+}
 
 }
 }
