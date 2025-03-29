@@ -1,11 +1,11 @@
-dde-control-center (4.11.9) UNRELEASED; urgency=medium
+dde-control-center (4.11.10) UNRELEASED; urgency=medium
 
   * 修复屏幕缩放调整条不对准刻度的问题
   * 修复系统信息在时间异常时显示类似 ©2023-1970 等错误信息的问题
   * 支持禁用更新提示框
-  * 调整更新模块的 ui
+  * 调整更新模块的 ui 
 
- -- gfdgd_xi <3025613752@qq.com>  Fri, 28 Mar 2025 23:11:10 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 29 Mar 2025 20:01:20 +0800
 
 dde-control-center (4.10.29.1) UNRELEASED; urgency=medium
 
