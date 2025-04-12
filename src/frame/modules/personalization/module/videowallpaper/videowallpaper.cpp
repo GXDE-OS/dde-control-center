@@ -2,10 +2,16 @@
 #include "videowallpapermodel.h"
 #include "widgets/nextpagewidget.h"
 #include "widgets/labels/tipslabel.h"
+#include "widgets/settingsgroup.h"
 #include "../../personalizationmodel.h"
 #include "widgets/dccslider.h"
 
+#include "videothumbnail.h"
+#include "videothumbnailview.h"
+
 #include <QLineEdit>
+#include <QPixmap>
+#include <QDir>
 
 using namespace dcc;
 using namespace dcc::widgets;
@@ -17,6 +23,10 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     m_mainlayout         = new QVBoxLayout;
     m_widget             = new TranslucentFrame;
 
+    SettingsGroup* settingGroup = new SettingsGroup();
+
+    m_mainlayout->addWidget(settingGroup);
+
     m_enableSwitch = new SwitchWidget("Video Wallpaper");
 
     m_videoWallpaperSettingGroup = new QFrame();
@@ -27,7 +37,7 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     m_moreSettingButton = new NextPageWidget();
 
     m_videoWallpaperChooseWidget->setTitle(tr("Choose wallpaper path:"));
-    m_videoWallpaperChooseWidget->setType(tr("Video(*.mp4);;所有文件(*.*)"));
+    m_videoWallpaperChooseWidget->setType(tr("Video (*.mp4);;All files(*.*)"));
     m_volumeSetting->slider()->setRange(0, 100);
     m_moreSettingButton->setTitle(tr("More Settings"));
 
@@ -43,16 +53,16 @@ dcc::personalization::VideoWallpaper::VideoWallpaper(QWidget *parent)
     mediaControl->addWidget(m_playButton);
     mediaControl->addWidget(m_pauseButton);
 
-    m_mainlayout->addWidget(m_enableSwitch);
-    m_mainlayout->addWidget(m_videoWallpaperSettingGroup);
-    QVBoxLayout *m_videoWallpaperSettingGroupLayout = new QVBoxLayout();
-    m_videoWallpaperSettingGroup->setLayout(m_videoWallpaperSettingGroupLayout);
-    m_mainlayout->addWidget(m_videoWallpaperSettingGroup);
-    m_videoWallpaperSettingGroupLayout->addWidget(m_videoWallpaperChooseWidget);
-    m_videoWallpaperSettingGroupLayout->addLayout(mediaControl);
-    //m_videoWallpaperSettingGroupLayout->addWidget(m_volumeSetting);  // 因为功能有问题，暂时屏蔽
-    m_videoWallpaperSettingGroupLayout->addWidget(m_moreSettingButton);
-    m_videoWallpaperSettingGroupLayout->addWidget(new TipsLabel(tr("Press \"Play\" button to set new wallpaper\nPower by fantascene-dynamic-wallpaper")));
+    settingGroup->appendItem(m_enableSwitch);
+    settingGroup->appendItem(m_videoWallpaperChooseWidget);
+    m_mainlayout->addLayout(mediaControl);
+    settingGroup->appendItem(m_moreSettingButton);
+    m_mainlayout->addWidget(new TipsLabel(tr("Press \"Play\" button to set new wallpaper\nPower by fantascene-dynamic-wallpaper")));
+
+    /*VideoThumbnailView *view = new VideoThumbnailView();
+    view->setVideoDirList(QStringList() << "/usr/share/fantascene-dynamic-wallpaper/normal/"
+                          << QDir::homePath() + "/Videos/fantascene/");
+    m_mainlayout->addWidget(view);*/
 
     m_mainlayout->addSpacing(10);
     m_mainlayout->setMargin(0);

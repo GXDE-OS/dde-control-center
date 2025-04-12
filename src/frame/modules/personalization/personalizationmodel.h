@@ -29,6 +29,10 @@
 #include <QObject>
 #include <QDebug>
 
+#define PERSONALIZATION_DESTINATION "com.gxde.daemon.personalization"
+#define PERSONALIZATION_PATH "/com/gxde/daemon/personalization"
+#define PERSONALIZATION_INTERFACE "com.gxde.daemon.personalization"
+
 namespace dcc
 {
 namespace personalization
@@ -56,6 +60,7 @@ public:
     void set20Launcher(const bool value);
     void setHideDDEDock(const bool value);
     void setSizeMode(const bool value);
+    static void setWindowRadius(const int radius);
     bool is3DWm() const;
     bool isOpenTopPanel() const;
     bool isOpenTopPanelGlobalMenu() const;
@@ -68,6 +73,7 @@ public:
     bool isUse20Launcher() const;
     bool isHideDDEDock() const;
     bool isSizeMode() const;
+    static int windowRadius();
 
     inline std::pair<int, double> opacity() const { return m_opacity; }
     void setOpacity(std::pair<int, double> opacity);

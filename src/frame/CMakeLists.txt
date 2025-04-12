@@ -668,6 +668,10 @@ set(PERSONALIZATION_FILES
                 modules/personalization/personalizationmodel.h
                 modules/personalization/personalizationwidget.h
                 modules/personalization/personalizationwork.h
+                modules/personalization/module/videowallpaper/videothumbnail.h
+                modules/personalization/module/videowallpaper/videothumbnail.cpp
+                modules/personalization/module/videowallpaper/videothumbnailview.h
+                modules/personalization/module/videowallpaper/videothumbnailview.cpp
 )
 
 # load power

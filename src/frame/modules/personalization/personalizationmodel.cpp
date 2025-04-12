@@ -151,6 +151,8 @@ void PersonalizationModel::setHideDDEDock(const bool value)
     system("killall dde-dock -9");
 }
 
+
+
 bool PersonalizationModel::is3DWm() const
 {
     return m_is3DWm;
@@ -227,6 +229,29 @@ bool PersonalizationModel::isWayland() const
     QString XDG_SESSION_TYPE = QProcessEnvironment::systemEnvironment().value("XDG_SESSION_TYPE");
     QString WAYLAND_DISPLAY = QProcessEnvironment::systemEnvironment().value("WAYLAND_DISPLAY");
     return XDG_SESSION_TYPE == "wayland" || WAYLAND_DISPLAY != "";
+}
+
+int PersonalizationModel::windowRadius()
+{
+    QDBusMessage dbus = QDBusMessage::createMethodCall(PERSONALIZATION_DESTINATION,
+                                                       PERSONALIZATION_PATH,
+                                                       PERSONALIZATION_INTERFACE,
+                                                       "Radius");
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
+    if (res.arguments().count() == 0) {
+        return 8;
+    }
+    return res.arguments().at(0).toInt();
+}
+
+void PersonalizationModel::setWindowRadius(const int radius)
+{
+    QDBusMessage dbus = QDBusMessage::createMethodCall(PERSONALIZATION_DESTINATION,
+                                                       PERSONALIZATION_PATH,
+                                                       PERSONALIZATION_INTERFACE,
+                                                       "SetRadius");
+    dbus << radius;
+    QDBusConnection::sessionBus().call(dbus);
 }
 
 void PersonalizationModel::setOpacity(std::pair<int, double> opacity)

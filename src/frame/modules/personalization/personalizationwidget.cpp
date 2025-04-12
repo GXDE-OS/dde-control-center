@@ -47,13 +47,16 @@ PersonalizationWidget::PersonalizationWidget()
     : ModuleWidget()
     , m_userGroup(new SettingsGroup)
     , m_transparentSlider(new TitledSliderItem(tr("Transparency")))
+    , m_radiusSlider(new TitledSliderItem(tr("Radius (Logout to apply)")))
     , m_trGrp(new SettingsGroup)
 {
     setObjectName("Personalization");
 
     m_trGrp->appendItem(m_transparentSlider);
+    m_trGrp->appendItem(m_radiusSlider);
 
     m_transparentSlider->setObjectName("Transparency");
+    m_radiusSlider->setObjectName("Radius");
 
     DCCSlider *slider = m_transparentSlider->slider();
     slider->setRange(1, 6);
@@ -61,6 +64,18 @@ PersonalizationWidget::PersonalizationWidget()
     slider->setTickPosition(QSlider::TicksBelow);
     slider->setTickInterval(1);
     slider->setPageStep(1);
+
+    DCCSlider *radiusSlider = m_radiusSlider->slider();
+    radiusSlider->setRange(0, 18);
+    radiusSlider->setType(DCCSlider::Vernier);
+    radiusSlider->setTickPosition(QSlider::TicksBelow);
+    radiusSlider->setTickInterval(1);
+    radiusSlider->setPageStep(1);
+    /*QStringList numberList;
+    for (int i = 0; i <= 18; ++i) {
+        numberList << QString::number(i);
+    }
+    m_radiusSlider->setAnnotations(numberList);*/
 
     m_centralLayout->addWidget(m_trGrp);
 
@@ -178,10 +193,14 @@ PersonalizationWidget::PersonalizationWidget()
     connect(m_transparentSlider->slider(), &DCCSlider::valueChanged, this,
             &PersonalizationWidget::requestSetOpacity);
 
+    connect(m_radiusSlider->slider(), &DCCSlider::valueChanged, this,
+            &PersonalizationWidget::requestSetRadius);
+
     connect(DWindowManagerHelper::instance(), &DWindowManagerHelper::hasBlurWindowChanged, this,
             &PersonalizationWidget::onBlurWindowChanged);
 
     onBlurWindowChanged();
+    initRadiusSlider();
 }
 
 void PersonalizationWidget::setModel(PersonalizationModel *const model)
@@ -215,4 +234,16 @@ void PersonalizationWidget::onOpacityChanged(std::pair<int, double> value)
 void PersonalizationWidget::onBlurWindowChanged()
 {
     m_trGrp->setVisible(DWindowManagerHelper::instance()->hasBlurWindow());
+}
+
+void PersonalizationWidget::initRadiusSlider()
+{
+    m_radiusSlider->slider()->setValue(PersonalizationModel::windowRadius());
+    m_radiusSlider->setValueLiteral(QString::number(PersonalizationModel::windowRadius()));
+}
+
+void PersonalizationWidget::requestSetRadius(int value)
+{
+    PersonalizationModel::setWindowRadius(value);
+    initRadiusSlider();
 }

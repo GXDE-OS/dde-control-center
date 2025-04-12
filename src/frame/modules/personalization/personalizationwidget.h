@@ -63,6 +63,8 @@ Q_SIGNALS:
 private:
     void onOpacityChanged(std::pair<int, double> value);
     void onBlurWindowChanged();
+    void requestSetRadius(int value);
+    void initRadiusSlider();
 
 private:
     PersonalizationModel *m_model;
@@ -75,6 +77,7 @@ private:
     dcc::widgets::SwitchWidget*  m_hideDDEDock;
     dcc::widgets::SwitchWidget*  m_sizeMode;
     widgets::TitledSliderItem*   m_transparentSlider;
+    widgets::TitledSliderItem*   m_radiusSlider;
     dcc::widgets::SettingsGroup *m_trGrp;
 };
 }
