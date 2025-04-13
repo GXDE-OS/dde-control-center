@@ -3783,7 +3783,7 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="118"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="133"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
         <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
@@ -3795,52 +3795,57 @@ Power by x11vnc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="72"/>
-        <source>Window Effect</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="74"/>
-        <source>Top Panel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="76"/>
-        <source>Top Panel Global Menu</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="78"/>
-        <source>Bottom Panel</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="80"/>
-        <source>Use deepin 20 style launcher</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="82"/>
-        <source>Hide DDE Dock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="84"/>
-        <source>Enable Compact mode on DTK5 Apps (Relogin to take effect)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="86"/>
-        <source>Theme</source>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="50"/>
+        <source>Radius (Logout to apply)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="87"/>
+        <source>Window Effect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="89"/>
+        <source>Top Panel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="91"/>
+        <source>Top Panel Global Menu</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="93"/>
+        <source>Bottom Panel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="95"/>
+        <source>Use deepin 20 style launcher</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="97"/>
+        <source>Hide DDE Dock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="99"/>
+        <source>Enable Compact mode on DTK5 Apps (Relogin to take effect)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="101"/>
+        <source>Theme</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="102"/>
         <source>Font</source>
         <translation>Տառատեսակ</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="88"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="103"/>
         <source>Video Wallpaper</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3879,38 +3884,38 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::VideoWallpaper</name>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="24"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="34"/>
         <source>Play</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="25"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="35"/>
         <source>Pause</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="29"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="39"/>
         <source>Choose wallpaper path:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="30"/>
-        <source>Video(*.mp4);;所有文件(*.*)</source>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="40"/>
+        <source>Video (*.mp4);;All files(*.*)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="32"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="42"/>
         <source>More Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="55"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="60"/>
         <source>Press &quot;Play&quot; button to set new wallpaper
 Power by fantascene-dynamic-wallpaper</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="62"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="72"/>
         <source>Video Wallpaper</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4470,7 +4475,7 @@ Power by fantascene-dynamic-wallpaper</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="68"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="69"/>
         <source>Internal Testing Group Settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4480,7 +4485,7 @@ Power by fantascene-dynamic-wallpaper</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="84"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="86"/>
         <source>Update</source>
         <translation type="unfinished"></translation>
     </message>

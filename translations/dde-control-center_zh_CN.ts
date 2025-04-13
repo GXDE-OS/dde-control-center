@@ -3785,7 +3785,7 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="118"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="133"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
         <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
@@ -3797,52 +3797,57 @@ Power by x11vnc</source>
         <translation>透明度调节</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="72"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="50"/>
+        <source>Radius (Logout to apply)</source>
+        <translation>窗口圆角（注销或重启后生效）</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="87"/>
         <source>Window Effect</source>
         <translation>窗口特效</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="74"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="89"/>
         <source>Top Panel</source>
         <translation>顶栏</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="76"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="91"/>
         <source>Top Panel Global Menu</source>
         <translation>顶栏全局菜单</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="78"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="93"/>
         <source>Bottom Panel</source>
         <translation>底栏</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="80"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="95"/>
         <source>Use deepin 20 style launcher</source>
         <translation>启动器使用 deepin20 样式</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="82"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="97"/>
         <source>Hide DDE Dock</source>
         <translation>隐藏 dde 任务栏</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="84"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="99"/>
         <source>Enable Compact mode on DTK5 Apps (Relogin to take effect)</source>
         <translation>DTK5 应用开启紧凑模式（下次登录时生效）</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="86"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="101"/>
         <source>Theme</source>
         <translation>主题</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="87"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="102"/>
         <source>Font</source>
         <translation>字体</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="88"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="103"/>
         <source>Video Wallpaper</source>
         <translation>动态壁纸</translation>
     </message>
@@ -3881,39 +3886,43 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::VideoWallpaper</name>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="24"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="34"/>
         <source>Play</source>
         <translation>播放</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="25"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="35"/>
         <source>Pause</source>
         <translation>暂停</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="29"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="39"/>
         <source>Choose wallpaper path:</source>
         <translation>选择壁纸路径：</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="30"/>
-        <source>Video(*.mp4);;所有文件(*.*)</source>
-        <translation>视频文件(*.mp4);;所有文件(*.*)</translation>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="40"/>
+        <source>Video (*.mp4);;All files(*.*)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="32"/>
+        <source>Video(*.mp4);;所有文件(*.*)</source>
+        <translation type="vanished">视频文件(*.mp4);;所有文件(*.*)</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="42"/>
         <source>More Settings</source>
         <translation>更多设置</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="55"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="60"/>
         <source>Press &quot;Play&quot; button to set new wallpaper
 Power by fantascene-dynamic-wallpaper</source>
         <translation>按“播放”按钮以生效新的动态壁纸
 基于 星火动态壁纸 实现</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="62"/>
+        <location filename="../src/frame/modules/personalization/module/videowallpaper/videowallpaper.cpp" line="72"/>
         <source>Video Wallpaper</source>
         <translation>动态壁纸</translation>
     </message>
@@ -4154,7 +4163,7 @@ Power by fantascene-dynamic-wallpaper</source>
     <message>
         <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="58"/>
         <source>©2023-%1 GXDE OS</source>
-        <translation type="unfinished"></translation>
+        <translation>©2023-%1 GXDE OS</translation>
     </message>
     <message>
         <location filename="../src/frame/modules/systeminfo/systeminfowidget.cpp" line="96"/>
@@ -4483,7 +4492,7 @@ Power by fantascene-dynamic-wallpaper</source>
         <translation>检查和执行系统更新</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="68"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="69"/>
         <source>Internal Testing Group Settings</source>
         <translation>内测设置</translation>
     </message>
@@ -4493,7 +4502,7 @@ Power by fantascene-dynamic-wallpaper</source>
         <translation>禁用系统更新提示</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/update/updateview.cpp" line="84"/>
+        <location filename="../src/frame/modules/update/updateview.cpp" line="86"/>
         <source>Update</source>
         <translation>更新</translation>
     </message>
