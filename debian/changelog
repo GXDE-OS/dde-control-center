@@ -1,12 +1,13 @@
-dde-control-center (4.11.11) UNRELEASED; urgency=medium
+dde-control-center (4.11.12) UNRELEASED; urgency=medium
 
   * 修复屏幕缩放调整条不对准刻度的问题
   * 修复系统信息在时间异常时显示类似 ©2023-1970 等错误信息的问题
   * 支持禁用更新提示框
   * 调整更新模块的 ui 
   * 支持自定义窗口圆角大小
+  * 针对 GXDE Wayland 进行特调
 
- -- gfdgd_xi <3025613752@qq.com>  Sat, 12 Apr 2025 23:08:04 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 13 Apr 2025 13:23:00 +0800
 
 dde-control-center (4.10.29.1) UNRELEASED; urgency=medium
 
