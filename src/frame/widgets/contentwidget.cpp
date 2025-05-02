@@ -76,7 +76,8 @@ ContentWidget::ContentWidget(QWidget *parent)
     m_contentArea->installEventFilter(this);
     m_contentArea->setFrameStyle(QFrame::NoFrame);
     m_contentArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    m_contentArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    //m_contentArea->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    m_contentArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
     m_contentArea->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Expanding);
     m_contentArea->setContentsMargins(0, 0, 0, 0);
 
@@ -186,8 +187,10 @@ bool ContentWidget::eventFilter(QObject *watched, QEvent *event)
 {
     if (!m_content) return false;
 
-    if (m_content && watched == m_contentArea && event->type() == QEvent::Resize)
-        m_content->setFixedWidth(static_cast<QResizeEvent *>(event)->size().width());
+    // 移除该部分以修复控件显示不完全的问题
+    /*if (m_content && watched == m_contentArea && event->type() == QEvent::Resize) {
+        m_content->setFixedWidth(static_cast<QResizeEvent *>(event)->size().width() - width);
+    }*/
 
     if (m_content && watched == m_contentArea->viewport() && event->type() == QEvent::Wheel) {
         const QWheelEvent *wheel = static_cast<QWheelEvent*>(event);
