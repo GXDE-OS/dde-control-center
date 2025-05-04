@@ -95,6 +95,7 @@ PersonalizationWidget::PersonalizationWidget()
     m_use20Launcher = new SwitchWidget(tr("Use deepin 20 style launcher"));
 
     m_hideDDEDock = new SwitchWidget(tr("Hide DDE Dock"));
+    m_dockUseMacMode = new SwitchWidget(tr("Dock's Mac Mode"));
 
     m_sizeMode = new SwitchWidget(tr("Enable Compact mode on DTK5 Apps (Relogin to take effect)"));
 
@@ -128,6 +129,7 @@ PersonalizationWidget::PersonalizationWidget()
         m_use20Launcher->setHidden(true);
     }
     m_userGroup->appendItem(m_hideDDEDock);
+    m_userGroup->appendItem(m_dockUseMacMode);
     m_userGroup->appendItem(m_sizeMode);
 
     setTitle(tr("Personalization"));
@@ -190,6 +192,13 @@ PersonalizationWidget::PersonalizationWidget()
         m_hideDDEDock->setChecked(m_model->isHideDDEDock());
     });
 
+    connect(m_dockUseMacMode, &SwitchWidget::checkedChanged, this,
+            &PersonalizationWidget::requestSetDockUseMacMode);
+    connect(m_dockUseMacMode, &SwitchWidget::checkedChanged, this, [=] {
+       // reset state
+        m_dockUseMacMode->setChecked(m_model->isDockUseMacMode());
+    });
+
     connect(m_transparentSlider->slider(), &DCCSlider::valueChanged, this,
             &PersonalizationWidget::requestSetOpacity);
 
@@ -216,6 +225,7 @@ void PersonalizationWidget::setModel(PersonalizationModel *const model)
     m_showBottomPanel->setChecked(model->isOpenBottomPanel());
     m_use20Launcher->setChecked(model->isUse20Launcher());
     m_hideDDEDock->setChecked(model->isHideDDEDock());
+    m_dockUseMacMode->setChecked(model->isDockUseMacMode());
     m_sizeMode->setChecked(model->isSizeMode());
 
     connect(model, &PersonalizationModel::onOpacityChanged, this,

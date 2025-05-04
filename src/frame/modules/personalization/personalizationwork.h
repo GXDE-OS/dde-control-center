@@ -66,6 +66,7 @@ public Q_SLOTS:
     void set20Launcher(int value);
     void setHideDDEDock(int value);
     void setSizeMode(int value);
+    void setDockUseMacMode(int value);
 
 private Q_SLOTS:
     void FontSizeChanged(const double value) const;

@@ -86,6 +86,7 @@ ModuleWidget *PersonalizationModule::moduleWidget()
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetBottomPanel, m_work, &PersonalizationWork::setBottomPanel);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSet20Launcher, m_work, &PersonalizationWork::set20Launcher);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetHideDDEDock, m_work, &PersonalizationWork::setHideDDEDock);
+        connect(m_personalizationWidget, &PersonalizationWidget::requestSetDockUseMacMode, m_work, &PersonalizationWork::setDockUseMacMode);
         connect(m_personalizationWidget, &PersonalizationWidget::requestSetSizeMode, m_work, &PersonalizationWork::setSizeMode);
     }
     return m_personalizationWidget;

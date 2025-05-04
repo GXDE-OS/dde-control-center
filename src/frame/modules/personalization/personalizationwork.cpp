@@ -383,24 +383,34 @@ void PersonalizationWork::setOpacity(int opacity)
     m_dbus->setOpacity(sliderValutToOpacity(opacity));
 }
 
-void PersonalizationWork::setTopPanel(const int value){
+void PersonalizationWork::setTopPanel(const int value)
+{
     m_model->setTopPanel(value);
 }
 
-void PersonalizationWork::setTopPanelGlobalMenu(const int value){
+void PersonalizationWork::setTopPanelGlobalMenu(const int value)
+{
     m_model->setTopPanelGlobalMenu(value);
 }
 
-void PersonalizationWork::setBottomPanel(const int value){
+void PersonalizationWork::setBottomPanel(const int value)
+{
     m_model->setBottomPanel(value);
 }
 
-void PersonalizationWork::set20Launcher(const int value){
+void PersonalizationWork::set20Launcher(const int value)
+{
     m_model->set20Launcher(value);
 }
 
-void PersonalizationWork::setHideDDEDock(const int value){
+void PersonalizationWork::setHideDDEDock(const int value)
+{
     m_model->setHideDDEDock(value);
+}
+
+void PersonalizationWork::setDockUseMacMode(const int value)
+{
+    m_model->setDockUseMacMode(value);
 }
 
 void PersonalizationWork::setSizeMode(const int value){

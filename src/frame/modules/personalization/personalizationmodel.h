@@ -60,6 +60,7 @@ public:
     void set20Launcher(const bool value);
     void setHideDDEDock(const bool value);
     void setSizeMode(const bool value);
+    void setDockUseMacMode(bool option);
     static void setWindowRadius(const int radius);
     bool is3DWm() const;
     bool isOpenTopPanel() const;
@@ -73,6 +74,7 @@ public:
     bool isUse20Launcher() const;
     bool isHideDDEDock() const;
     bool isSizeMode() const;
+    bool isDockUseMacMode() const;
     static int windowRadius();
 
     inline std::pair<int, double> opacity() const { return m_opacity; }

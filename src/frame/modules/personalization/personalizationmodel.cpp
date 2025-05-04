@@ -224,6 +224,17 @@ bool PersonalizationModel::isHideDDEDock() const
     return QFile::exists(QDir::homePath() + "/.config/GXDE/gxde-dock/dock-hide");
 }
 
+bool PersonalizationModel::isDockUseMacMode() const
+{
+    QDBusMessage dbus = QDBusMessage::createMethodCall(PERSONALIZATION_DESTINATION,
+                                                       PERSONALIZATION_PATH,
+                                                       PERSONALIZATION_INTERFACE,
+                                                       "IsDockUseMacMode");
+    QDBusMessage res = QDBusConnection::sessionBus().call(dbus);
+    qDebug() << res.arguments().at(0).toString();
+    return res.arguments()[0].toBool();
+}
+
 bool PersonalizationModel::isWayland() const
 {
     QString XDG_SESSION_TYPE = QProcessEnvironment::systemEnvironment().value("XDG_SESSION_TYPE");
@@ -261,4 +272,14 @@ void PersonalizationModel::setOpacity(std::pair<int, double> opacity)
     m_opacity = opacity;
 
     Q_EMIT onOpacityChanged(opacity);
+}
+
+void PersonalizationModel::setDockUseMacMode(bool option)
+{
+    QDBusMessage dbus = QDBusMessage::createMethodCall(PERSONALIZATION_DESTINATION,
+                                                       PERSONALIZATION_PATH,
+                                                       PERSONALIZATION_INTERFACE,
+                                                       "SetDockUseMacMode");
+    dbus << option;
+    QDBusConnection::sessionBus().call(dbus);
 }
