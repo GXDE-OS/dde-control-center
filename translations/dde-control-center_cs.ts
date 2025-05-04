@@ -3772,12 +3772,12 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationModule</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="133"/>
+        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="134"/>
         <source>Standard Font</source>
         <translation>Obvyklé písmo</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="142"/>
+        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="143"/>
         <source>Monospaced Font</source>
         <translation>Písmo s pevnou šířkou</translation>
     </message>
@@ -3785,7 +3785,7 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="133"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="135"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
         <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
@@ -3832,22 +3832,27 @@ Power by x11vnc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="99"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="98"/>
+        <source>Dock&apos;s Mac Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="100"/>
         <source>Enable Compact mode on DTK5 Apps (Relogin to take effect)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="101"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="102"/>
         <source>Theme</source>
         <translation>Vzhled</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="102"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="103"/>
         <source>Font</source>
         <translation>Písmo</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="103"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="104"/>
         <source>Video Wallpaper</source>
         <translation type="unfinished"></translation>
     </message>

@@ -3772,12 +3772,12 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationModule</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="133"/>
+        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="134"/>
         <source>Standard Font</source>
         <translation>标准字体</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="142"/>
+        <location filename="../src/frame/modules/personalization/personalizationmodule.cpp" line="143"/>
         <source>Monospaced Font</source>
         <translation>等宽字体</translation>
     </message>
@@ -3785,7 +3785,7 @@ Power by x11vnc</source>
 <context>
     <name>dcc::personalization::PersonalizationWidget</name>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="133"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="135"/>
         <location filename="../src/frame/navigation/navmodel.cpp" line="119"/>
         <location filename="../src/frame/navigationbar.cpp" line="205"/>
         <source>Personalization</source>
@@ -3832,22 +3832,27 @@ Power by x11vnc</source>
         <translation>隐藏 dde 任务栏</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="99"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="98"/>
+        <source>Dock&apos;s Mac Mode</source>
+        <translation>启用任务栏仿 Mac 风格</translation>
+    </message>
+    <message>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="100"/>
         <source>Enable Compact mode on DTK5 Apps (Relogin to take effect)</source>
         <translation>DTK5 应用开启紧凑模式（下次登录时生效）</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="101"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="102"/>
         <source>Theme</source>
         <translation>主题</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="102"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="103"/>
         <source>Font</source>
         <translation>字体</translation>
     </message>
     <message>
-        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="103"/>
+        <location filename="../src/frame/modules/personalization/personalizationwidget.cpp" line="104"/>
         <source>Video Wallpaper</source>
         <translation>动态壁纸</translation>
     </message>
