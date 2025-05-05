@@ -1,4 +1,4 @@
-dde-control-center (4.12.0) UNRELEASED; urgency=medium
+dde-control-center (4.12.1) UNRELEASED; urgency=medium
 
   * 修复屏幕缩放调整条不对准刻度的问题
   * 修复系统信息在时间异常时显示类似 ©2023-1970 等错误信息的问题
@@ -7,6 +7,7 @@ dde-control-center (4.12.0) UNRELEASED; urgency=medium
   * 支持自定义窗口圆角大小
   * 针对 GXDE Wayland 进行特调
   * 支持启动任务栏Mac 模式
+  * 修复 蓝牙无法连接 的问题
 
  -- gfdgd_xi <3025613752@qq.com>  Sun, 04 May 2025 22:12:06 +0800
 
