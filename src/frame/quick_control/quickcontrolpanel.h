@@ -118,6 +118,8 @@ private:
 
     DImageButton *m_screenShotBtn;
     DImageButton *m_screenRecordBtn;
+    DImageButton *m_systemMonitorBtn;
+    DImageButton *m_grandSearchBtn;
 
     QList<dcc::QuickSwitchButton *> m_switchs;
 };

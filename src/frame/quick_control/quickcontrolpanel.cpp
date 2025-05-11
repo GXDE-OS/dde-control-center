@@ -63,8 +63,10 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
       m_itemStack(new QStackedLayout)
 {
     QHBoxLayout *btnsLayout = new QHBoxLayout;
+    QGridLayout *controlBtnLayout = new QGridLayout;
     QVBoxLayout *mainLayout = new QVBoxLayout;
     mainLayout->addLayout(m_itemStack);
+    mainLayout->addLayout(controlBtnLayout);
     mainLayout->addLayout(btnsLayout);
     mainLayout->setSpacing(0);
     mainLayout->setContentsMargins(0, 0, 0, 0);
@@ -113,6 +115,12 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     m_screenRecordBtn = new DImageButton(":/frame/quick_control/icons/dark/status-screen-record.svg",
                                        ":/frame/quick_control/icons/dark/status-screen-record.svg",
                                        ":/frame/quick_control/icons/dark/status-screen-record.svg");
+    m_systemMonitorBtn = new DImageButton(":/frame/quick_control/icons/dark/deepin-system-monitor.svg",
+                                          ":/frame/quick_control/icons/dark/deepin-system-monitor.svg",
+                                          ":/frame/quick_control/icons/dark/deepin-system-monitor.svg");
+    m_grandSearchBtn = new DImageButton(":/frame/quick_control/icons/dark/grand-search-light.svg",
+                                          ":/frame/quick_control/icons/dark/grand-search-light.svg",
+                                          ":/frame/quick_control/icons/dark/grand-search-light.svg");
 
     m_detailSwitch = new QuickSwitchButton(0, "all_settings");
     QuickSwitchButton *displaySwitch = new QuickSwitchButton(4, "display");
@@ -152,11 +160,14 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     btnsLayout->addWidget(m_vpnSwitch);
     btnsLayout->addWidget(m_wifiSwitch);
     btnsLayout->addWidget(displaySwitch);
-    btnsLayout->addWidget(m_screenShotBtn);
-    btnsLayout->addWidget(m_screenRecordBtn);
 
     btnsLayout->addWidget(m_detailSwitch);
     btnsLayout->setContentsMargins(0, 0, 0, 0);
+
+    controlBtnLayout->addWidget(m_screenShotBtn, 0, 0);
+    controlBtnLayout->addWidget(m_screenRecordBtn, 0, 1);
+    controlBtnLayout->addWidget(m_systemMonitorBtn, 0, 2);
+    controlBtnLayout->addWidget(m_grandSearchBtn, 0, 3);
 
 #ifndef DISABLE_BLUETOOTH
     connect(m_btSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
@@ -168,6 +179,12 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     });
     connect(m_screenRecordBtn, &DImageButton::clicked, this, [this](){
         QProcess::startDetached("deepin-screen-recorder --record");
+    });
+    connect(m_systemMonitorBtn, &DImageButton::clicked, this, [this](){
+        QProcess::startDetached("deepin-system-monitor");
+    });
+    connect(m_grandSearchBtn, &DImageButton::clicked, this, [this](){
+        QProcess::startDetached("dde-grand-search");
     });
 
     connect(displaySwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);

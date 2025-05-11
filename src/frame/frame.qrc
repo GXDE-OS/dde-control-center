@@ -521,5 +521,7 @@
         <file>themes/dark/icons/notifications_toggle_checkedhover.svg</file>
         <file>quick_control/icons/dark/screenshot.svg</file>
         <file>quick_control/icons/dark/status-screen-record.svg</file>
+        <file>quick_control/icons/dark/deepin-system-monitor.svg</file>
+        <file>quick_control/icons/dark/grand-search-light.svg</file>
     </qresource>
 </RCC>
