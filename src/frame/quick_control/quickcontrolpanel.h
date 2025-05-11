@@ -95,6 +95,8 @@ private Q_SLOTS:
 #endif
     void onIndexChanged(const int index);
 
+    void reconnectDisplaySwitch();
+
 private:
     QStackedLayout *m_itemStack;
     dde::network::NetworkModel *m_networkModel;
@@ -115,11 +117,13 @@ private:
 #endif
     dcc::QuickSwitchButton *m_vpnSwitch;
     dcc::QuickSwitchButton *m_detailSwitch;
+    dcc::QuickSwitchButton *m_displaySwitch;
 
     DImageButton *m_screenShotBtn;
     DImageButton *m_screenRecordBtn;
     DImageButton *m_systemMonitorBtn;
     DImageButton *m_grandSearchBtn;
+    DImageButton *m_powerBtn;
 
     QList<dcc::QuickSwitchButton *> m_switchs;
 };

@@ -523,5 +523,6 @@
         <file>quick_control/icons/dark/status-screen-record.svg</file>
         <file>quick_control/icons/dark/deepin-system-monitor.svg</file>
         <file>quick_control/icons/dark/grand-search-light.svg</file>
+        <file>quick_control/icons/dark/power.svg</file>
     </qresource>
 </RCC>

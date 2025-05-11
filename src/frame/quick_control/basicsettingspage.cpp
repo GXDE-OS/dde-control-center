@@ -189,7 +189,7 @@ BasicSettingsPage::BasicSettingsPage(QWidget *parent)
 
     m_mprisWidget = new DMPRISControl;
     m_mprisWidget->setPictureVisible(false);
-    //m_mprisWidget->setPictureSize({100, 100});
+    //m_mprisWidget->setPictureSize({60, 60});
 
     QHBoxLayout *volumeLayout = new QHBoxLayout;
     volumeLayout->setMargin(0);

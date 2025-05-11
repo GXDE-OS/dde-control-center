@@ -88,7 +88,7 @@ private:
     void onDeviceApInfoChanged(const QJsonObject &info);
     void onDeviceApRemoved(dde::network::WirelessDevice *dev, const QJsonObject &apInfo);
     void onDeviceStateChanged(const dde::network::NetworkDevice::DeviceStatus &stat);
-    void onDeviceActiveApChanged(const QJsonObject &oldApInfo, const QJsonObject &newApInfo);
+    void onDeviceActiveApChanged(const QJsonObject &newApInfo);
 
     void refershActivatingIndex();
     void sortApList();

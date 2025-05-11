@@ -121,9 +121,13 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     m_grandSearchBtn = new DImageButton(":/frame/quick_control/icons/dark/grand-search-light.svg",
                                           ":/frame/quick_control/icons/dark/grand-search-light.svg",
                                           ":/frame/quick_control/icons/dark/grand-search-light.svg");
+    m_powerBtn = new DImageButton(":/frame/quick_control/icons/dark/power.svg",
+                                  ":/frame/quick_control/icons/dark/power.svg",
+                                  ":/frame/quick_control/icons/dark/power.svg");
 
     m_detailSwitch = new QuickSwitchButton(0, "all_settings");
     QuickSwitchButton *displaySwitch = new QuickSwitchButton(4, "display");
+    m_displaySwitch = displaySwitch;
 
 #ifndef DISABLE_BLUETOOTH
     m_btSwitch->setObjectName("QuickSwitchBluetooth");
@@ -143,7 +147,7 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     m_detailSwitch->setAccessibleName("QuickSwitchAllSettings");
     m_detailSwitch->setCheckable(false);
     m_detailSwitch->setBackgroundVisible(false);
-    m_detailSwitch->setVisible(false);
+    m_detailSwitch->setVisible(1);
 
     m_switchs.append(m_detailSwitch);
 #ifndef DISABLE_BLUETOOTH
@@ -154,40 +158,49 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     m_switchs.append(displaySwitch);
     //m_switchs.append(m_screenShotBtn);
 
-#ifndef DISABLE_BLUETOOTH
+/*#ifndef DISABLE_BLUETOOTH
     btnsLayout->addWidget(m_btSwitch);
 #endif
     btnsLayout->addWidget(m_vpnSwitch);
     btnsLayout->addWidget(m_wifiSwitch);
-    btnsLayout->addWidget(displaySwitch);
+    btnsLayout->addWidget(displaySwitch);*/
 
-    btnsLayout->addWidget(m_detailSwitch);
+    //btnsLayout->addWidget(m_detailSwitch);
     btnsLayout->setContentsMargins(0, 0, 0, 0);
 
-    controlBtnLayout->addWidget(m_screenShotBtn, 0, 0);
-    controlBtnLayout->addWidget(m_screenRecordBtn, 0, 1);
-    controlBtnLayout->addWidget(m_systemMonitorBtn, 0, 2);
-    controlBtnLayout->addWidget(m_grandSearchBtn, 0, 3);
+    controlBtnLayout->addWidget(m_btSwitch, 0, 0);
+    controlBtnLayout->addWidget(m_vpnSwitch, 0, 1);
+    controlBtnLayout->addWidget(m_wifiSwitch, 0, 2);
+    controlBtnLayout->addWidget(displaySwitch, 0, 3);
+    controlBtnLayout->addWidget(m_screenShotBtn, 1, 0);
+    controlBtnLayout->addWidget(m_screenRecordBtn, 1, 1);
+    controlBtnLayout->addWidget(m_systemMonitorBtn, 1, 2);
+    controlBtnLayout->addWidget(m_grandSearchBtn, 1, 3);
+    controlBtnLayout->addWidget(m_detailSwitch, 2, 0);
+    controlBtnLayout->addWidget(m_powerBtn, 2, 3);
 
 #ifndef DISABLE_BLUETOOTH
-    connect(m_btSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
+    //connect(m_btSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
 #endif
-    connect(m_vpnSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
-    connect(m_wifiSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
-    connect(m_screenShotBtn, &DImageButton::clicked, this, [this](){
+    //connect(m_vpnSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
+    //connect(m_wifiSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
+    connect(m_screenShotBtn, &DImageButton::clicked, this, [](){
         QProcess::startDetached("deepin-screen-recorder --shot");
     });
-    connect(m_screenRecordBtn, &DImageButton::clicked, this, [this](){
+    connect(m_screenRecordBtn, &DImageButton::clicked, this, [](){
         QProcess::startDetached("deepin-screen-recorder --record");
     });
-    connect(m_systemMonitorBtn, &DImageButton::clicked, this, [this](){
+    connect(m_systemMonitorBtn, &DImageButton::clicked, this, [](){
         QProcess::startDetached("deepin-system-monitor");
     });
-    connect(m_grandSearchBtn, &DImageButton::clicked, this, [this](){
+    connect(m_grandSearchBtn, &DImageButton::clicked, this, [](){
         QProcess::startDetached("dde-grand-search");
     });
+    connect(m_powerBtn, &DImageButton::clicked, this, [](){
+        QProcess::startDetached("dde-shutdown");
+    });
 
-    connect(displaySwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
+
     connect(m_detailSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
     connect(m_detailSwitch, &QuickSwitchButton::clicked, this, &QuickControlPanel::requestDetailConfig);
 
@@ -197,7 +210,7 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     connect(vpnPage, &VpnControlPage::mouseLeaveView, this, [=] { m_itemStack->setCurrentIndex(0); });
     connect(vpnPage, &VpnControlPage::requestActivateConnection, m_networkWorker, &NetworkWorker::activateConnection);
     connect(vpnPage, &VpnControlPage::requestDisconnect, m_networkWorker, &NetworkWorker::deactiveConnection);
-    connect(m_wifiSwitch, &QuickSwitchButton::hovered, m_networkWorker, &NetworkWorker::requestWirelessScan);
+    //connect(m_wifiSwitch, &QuickSwitchButton::hovered, m_networkWorker, &NetworkWorker::requestWirelessScan);
 
 
 #ifndef DISABLE_BLUETOOTH
@@ -215,7 +228,7 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     connect(wifiPage, &WifiPage::requestDeactivateConnection, m_networkWorker, &NetworkWorker::deactiveConnection);
     connect(wifiPage, &WifiPage::requestPage, this, &QuickControlPanel::requestPage);
 
-    connect(m_displayModel, &DisplayModel::monitorListChanged, [=] { displaySwitch->setVisible(m_displayModel->monitorList().size() > 1); });
+    connect(m_displayModel, &DisplayModel::monitorListChanged, [=] { displaySwitch->setEnabled(m_displayModel->monitorList().size() > 1); reconnectDisplaySwitch(); });
     //connect(displayPage, &dcc::display::DisplayControlPage::mouseLeaveView, this, [=] { m_itemStack->setCurrentIndex(0); });
     connect(displayPage, &dcc::display::DisplayControlPage::requestOnlyMonitor, [=](const QString &name) { m_displayWorker->switchMode(SINGLE_MODE, name); m_displayWorker->saveChanges(); });
     connect(displayPage, &dcc::display::DisplayControlPage::requestDuplicateMode, [=] { m_displayWorker->switchMode(MERGE_MODE); m_displayWorker->saveChanges(); });
@@ -234,7 +247,9 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
 
     connect(m_itemStack, &QStackedLayout::currentChanged, this, &QuickControlPanel::onIndexChanged);
 
-    displaySwitch->setVisible(m_displayModel->monitorList().size() > 1);
+    displaySwitch->setEnabled(m_displayModel->monitorList().size() > 1);
+    reconnectDisplaySwitch();
+
     m_vpnSwitch->setChecked(m_networkModel->vpnEnabled());
     onNetworkDeviceEnableChanged();
     onNetworkDeviceListChanged();
@@ -244,6 +259,17 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     onBluetoothDeviceEnableChanged();
     onBluetoothDeviceListChanged();
 #endif
+}
+
+void QuickControlPanel::reconnectDisplaySwitch()
+{
+    if (m_displayModel->monitorList().size() > 1) {
+        m_displaySwitch->setChecked(1);
+        connect(m_displaySwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
+        return;
+    }
+    m_displaySwitch->setChecked(0);
+    disconnect(m_displaySwitch, &QuickSwitchButton::hovered, 0, 0);
 }
 
 void QuickControlPanel::setAllSettingsVisible(const bool visible)
@@ -304,19 +330,20 @@ void QuickControlPanel::onNetworkDeviceListChanged()
     {
         if (dev->type() == NetworkDevice::Wireless)
         {
-            m_wifiSwitch->setVisible(true);
+            //m_wifiSwitch->setVisible(true);
+            m_wifiSwitch->setEnabled(true);
             return;
         }
     }
 
-    m_wifiSwitch->setVisible(false);
+    m_wifiSwitch->setEnabled(false);
     m_itemStack->setCurrentIndex(0);
 }
 
 void QuickControlPanel::onNetworkConnectionListChanged()
 {
     const bool state = m_networkModel->vpns().size();
-    m_vpnSwitch->setVisible(state);
+    m_vpnSwitch->setEnabled(state);
 
     if (!state)
         m_itemStack->setCurrentIndex(0);
@@ -359,11 +386,11 @@ void QuickControlPanel::onBluetoothDeviceListChanged()
 {
     for (const Adapter *adapter : m_bluetoothModel->adapters()) {
         Q_UNUSED(adapter);
-        m_btSwitch->setVisible(true);
+        m_btSwitch->setEnabled(true);
         return;
     }
 
-    m_btSwitch->setVisible(false);
+    m_btSwitch->setEnabled(false);
     m_itemStack->setCurrentIndex(0);
 }
 #endif
