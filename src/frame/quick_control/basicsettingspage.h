@@ -58,7 +58,7 @@ public:
     inline bool mute() const { return m_mute; }
     void setMute(bool mute);
 
-signals:
+Q_SIGNALS:
     void muteChanged(const bool &mute) const;
     void volumeChanged(const double &volume) const;
     void brightnessChanged(const double &brightness) const;
@@ -74,13 +74,13 @@ class BasicSettingsWorker : public QObject {
 public:
     explicit BasicSettingsWorker(BasicSettingsModel *model, QObject *parent=0);
 
-public slots:
+public Q_SLOTS:
     void setMute(const bool &mute);
     void setVolume(const double &volume);
     void setBrightness(const double brightness);
     void disableALABrightness();
 
-private slots:
+private Q_SLOTS:
     void onDefaultSinkChanged(const QDBusObjectPath & value);
     void onBrightnessChanged(const BrightnessMap value);
 
@@ -101,11 +101,11 @@ class BasicSettingsPage : public QFrame
 public:
     explicit BasicSettingsPage(QWidget *parent = 0);
 
-public slots:
+public Q_SLOTS:
     void setMPRISEnable(const bool enable);
     void setMPRISPictureEnable(const bool enable);
 
-private slots:
+private Q_SLOTS:
     void onMuteChanged(const bool &mute);
     void onGSettingsChanged(const QString &name);
     void onMPRISChanged();

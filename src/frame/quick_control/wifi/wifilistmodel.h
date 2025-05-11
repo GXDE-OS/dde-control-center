@@ -71,11 +71,11 @@ public:
     int rowCount(const QModelIndex &parent) const;
     QVariant data(const QModelIndex &index, int role) const;
 
-public slots:
+public Q_SLOTS:
     void setCurrentHovered(const QModelIndex &index);
     void setCurrentActivating(const QModelIndex &index);
 
-signals:
+Q_SIGNALS:
     void requestDeviceApList(const QString &devPath) const;
 
 private:

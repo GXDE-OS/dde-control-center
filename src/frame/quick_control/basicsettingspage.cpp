@@ -52,7 +52,7 @@ void BasicSettingsModel::setVolume(double volume)
 {
     if (volume != m_volume) {
         m_volume = volume;
-        emit volumeChanged(volume);
+        Q_EMIT volumeChanged(volume);
     }
 }
 
@@ -60,7 +60,7 @@ void BasicSettingsModel::setBrightness(double brightness)
 {
     if (brightness != m_brightness) {
         m_brightness = brightness;
-        emit brightnessChanged(brightness);
+        Q_EMIT brightnessChanged(brightness);
     }
 }
 
@@ -68,7 +68,7 @@ void BasicSettingsModel::setMute(bool mute)
 {
     if (m_mute != mute) {
         m_mute = mute;
-        emit muteChanged(mute);
+        Q_EMIT muteChanged(mute);
     }
 }
 
@@ -185,41 +185,47 @@ BasicSettingsPage::BasicSettingsPage(QWidget *parent)
     m_soundSlider->setFocusProxy(this);
     m_soundSlider->installEventFilter(this);
 
+    m_lightSlider->setOrientation(Qt::Horizontal);
+
     m_mprisWidget = new DMPRISControl;
-    m_mprisWidget->setPictureVisible(true);
-    m_mprisWidget->setPictureSize({120, 120});
+    m_mprisWidget->setPictureVisible(false);
+    //m_mprisWidget->setPictureSize({100, 100});
 
     QHBoxLayout *volumeLayout = new QHBoxLayout;
     volumeLayout->setMargin(0);
     volumeLayout->setSpacing(0);
     volumeLayout->addWidget(m_volumeLow);
-    volumeLayout->addSpacing(10);
+    volumeLayout->addSpacing(5);
     volumeLayout->addWidget(m_soundSlider);
-    volumeLayout->addSpacing(10);
+    volumeLayout->addSpacing(5);
     volumeLayout->addWidget(m_volumeHigh);
 
     QHBoxLayout *brightnessLayout = new QHBoxLayout;
     brightnessLayout->setMargin(0);
     brightnessLayout->setSpacing(0);
     brightnessLayout->addWidget(m_brightnessLow);
-    brightnessLayout->addSpacing(10);
+    //brightnessLayout->addSpacing(10);
+    brightnessLayout->addSpacing(2);
     brightnessLayout->addWidget(m_lightSlider);
-    brightnessLayout->addSpacing(10);
+    brightnessLayout->addSpacing(2);
+    //brightnessLayout->addSpacing(10);
     brightnessLayout->addWidget(m_brightnessHigh);
 
     QHBoxLayout *mprisLayout = new QHBoxLayout;
     mprisLayout->addWidget(m_mprisWidget);
-    mprisLayout->setContentsMargins(5, 0, 5, 20);
+    //mprisLayout->setContentsMargins(5, 0, 5, 20);
 
     QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addStretch();
+    //mainLayout->addStretch();
     mainLayout->addLayout(mprisLayout);
     mainLayout->addLayout(volumeLayout);
-    mainLayout->addSpacing(30);
+    mainLayout->addSpacing(10);
     mainLayout->addLayout(brightnessLayout);
-    mainLayout->addSpacing(40);
+    mainLayout->addSpacing(10);
     mainLayout->setContentsMargins(LeftRightMargin, 0, LeftRightMargin, 0);
     setLayout(mainLayout);
+
+    m_scrollTimer = new QTimer();
 
     auto onVolumeChanged = [this] (const double &volume) {
         if (!m_model->mute() && !m_scrollTimer->isActive()) {

@@ -24,7 +24,7 @@
  */
 
 #include "bluetoothlistmodel.h"
-#include "bluetooth/device.h"
+#include "modules/bluetooth/device.h"
 #include <QSize>
 #include <QTimer>
 
@@ -47,7 +47,7 @@ BluetoothListModel::BluetoothListModel(BluetoothModel *model, QObject *parent)
         }
     });
 
-    qRegisterMetaType<ItemInfo>("ItemInfo");
+    qRegisterMetaType<BluetoothItemInfo>("BluetoothItemInfo");
 }
 
 int BluetoothListModel::rowCount(const QModelIndex &parent) const
@@ -75,7 +75,7 @@ QVariant BluetoothListModel::data(const QModelIndex &index, int role) const
     if (rowCount(QModelIndex()) <= index.row())
         return QVariant();
 
-    const ItemInfo info = indexInfo(index.row());
+    const BluetoothItemInfo info = indexInfo(index.row());
 
     switch (role) {
     case Qt::DisplayRole:
@@ -135,7 +135,7 @@ void BluetoothListModel::setCurrentHovered(const QModelIndex &index)
 {
     m_currentIndex = index;
 
-    emit dataChanged(m_currentIndex, m_currentIndex);
+    Q_EMIT dataChanged(m_currentIndex, m_currentIndex);
 }
 
 void BluetoothListModel::onAdapterAdded(const dcc::bluetooth::Adapter *adapter)
@@ -214,7 +214,7 @@ void BluetoothListModel::onDeviceChanged(const dcc::bluetooth::Adapter * const a
 
     const int pos = indexof(adapter) + m_adapterList[adapter].indexOf(device) + 1;
     const QModelIndex i = index(pos);
-    emit dataChanged(i, i);
+    Q_EMIT dataChanged(i, i);
     m_activeIndex = i;
 
     if (device->state() == Device::StateAvailable)
@@ -234,7 +234,7 @@ void BluetoothListModel::onDevicePairedChanged()
 
 void BluetoothListModel::refershConnectAnimation()
 {
-    emit dataChanged(m_activeIndex, m_activeIndex);
+    Q_EMIT dataChanged(m_activeIndex, m_activeIndex);
 }
 
 void BluetoothListModel::onAdapterPowerChanged(const bool powered)
@@ -260,13 +260,13 @@ void BluetoothListModel::onAdapterChanged()
     const int pos = indexof(adapter);
     const QModelIndex i = index(pos);
 
-    emit dataChanged(i, i);
+    Q_EMIT dataChanged(i, i);
 }
 
 
-const ItemInfo BluetoothListModel::indexInfo(const int index) const
+const BluetoothItemInfo BluetoothListModel::indexInfo(const int index) const
 {
-    ItemInfo info;
+    BluetoothItemInfo info;
     int r = index;
 
     for (const Adapter *adapter : m_bluetoothModel->adapters())

@@ -43,7 +43,7 @@ class WifiPage : public QWidget
 public:
     explicit WifiPage(dde::network::NetworkModel *model, QWidget *parent = 0);
 
-signals:
+Q_SIGNALS:
     void mouseLeaveView() const;
     void requestPage(const QString &module, const QString &page, bool animation) const;
     void requestDeviceApList(const QString &devPath) const;
@@ -53,7 +53,7 @@ signals:
 private:
     bool eventFilter(QObject *watched, QEvent *event);
 
-private slots:
+private Q_SLOTS:
     void onItemClicked(const QModelIndex &index);
 
 private:

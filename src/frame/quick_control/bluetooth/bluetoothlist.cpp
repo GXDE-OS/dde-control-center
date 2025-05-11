@@ -25,9 +25,9 @@
 
 #include "bluetoothlist.h"
 #include "bluetoothdelegate.h"
-#include "bluetooth/bluetoothmodel.h"
-#include "bluetooth/device.h"
-#include "bluetooth/adapter.h"
+#include "modules/bluetooth/bluetoothmodel.h"
+#include "modules/bluetooth/device.h"
+#include "modules/bluetooth/adapter.h"
 
 #include <QVBoxLayout>
 #include <QEvent>
@@ -60,7 +60,7 @@ bool BluetoothList::eventFilter(QObject *watched, QEvent *event)
     Q_UNUSED(watched);
 
     if (event->type() == QEvent::Leave)
-        emit mouseLeaveView();
+        Q_EMIT mouseLeaveView();
 
     return false;
 }
@@ -72,23 +72,23 @@ void BluetoothList::onItemClicked(const QModelIndex &index) const
 
     if (index.data(BluetoothListModel::ItemIsHeaderRole).toBool()) {
         m_model->refreshData();
-        emit requestAdapterDiscoverable(index.data(BluetoothListModel::ItemAdapterRole).toString());
+        Q_EMIT requestAdapterDiscoverable(index.data(BluetoothListModel::ItemAdapterRole).toString());
         return;
     }
 
     if (index.data(BluetoothListModel::ItemIsSettingRole).toBool()) {
         if (index.data(BluetoothListModel::ItemCountRole).toInt() != 1)
-            emit requestDetailPage("bluetooth", "", false);
+            Q_EMIT requestDetailPage("bluetooth", "", false);
         else
-            emit requestDetailPage("bluetooth", "bluetooth", false);
+            Q_EMIT requestDetailPage("bluetooth", "bluetooth", false);
         return;
     }
 
     const bool connected = index.data(BluetoothListModel::ItemConnectedRole).toBool();
-    const ItemInfo info = index.data(BluetoothListModel::ItemDeviceRole).value<ItemInfo>();
+    const BluetoothItemInfo info = index.data(BluetoothListModel::ItemDeviceRole).value<BluetoothItemInfo>();
 
-    if (connected)
-        emit requestDisConnect(info.device);
+    /*if (connected)
+        Q_EMIT requestDisConnect(info.device);
     else
-        emit requestConnect(info.device);
+        Q_EMIT requestConnect(info.device);*/
 }

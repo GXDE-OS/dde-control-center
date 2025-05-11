@@ -47,8 +47,8 @@ WifiListModel::WifiListModel(NetworkModel *model, QObject *parent)
     m_refreshTimer->setInterval(1000 / 60);
 
     connect(m_refreshTimer, &QTimer::timeout, this, &WifiListModel::refershActivatingIndex);
-    connect(m_networkModel, &NetworkModel::connectionListChanged, [this] { emit layoutChanged(); });
-    connect(m_networkModel, &NetworkModel::deviceEnableChanged, [this] { emit layoutChanged(); });
+    connect(m_networkModel, &NetworkModel::connectionListChanged, [this] { Q_EMIT layoutChanged(); });
+    connect(m_networkModel, &NetworkModel::deviceEnableChanged, [this] { Q_EMIT layoutChanged(); });
     connect(m_networkModel, &NetworkModel::deviceListChanged, this, &WifiListModel::onDeviceListChanged);
 
     QTimer::singleShot(1, this, [=] { onDeviceListChanged(m_networkModel->devices()); });
@@ -103,16 +103,16 @@ QVariant WifiListModel::data(const QModelIndex &index, int role) const
         return index == m_currentIndex;
     case ItemIsHeaderRole:
         return !info.info && info.device;
-    case ItemIsActiveRole:
-        return info.info && static_cast<const WirelessDevice *>(info.device)->activeConnName() == info.info->value("Ssid").toString();
+    //case ItemIsActiveRole:
+    //    return info.info && static_cast<const WirelessDevice *>(info.device)->activeConnName() == info.info->value("Ssid").toString();
     case ItemIsActivatingRole:
         return m_refreshTimer->isActive() && info.info && m_activatingSsid == info.info->value("Ssid").toString();
     case ItemDevicePathRole:
         return info.device->path();
     case ItemApPathRole:
         return info.info ? info.info->value("Path") : QVariant();
-    case ItemUuidRole:
-        return info.info ? m_networkModel->connectionUuidByApInfo(static_cast<const WirelessDevice *>(info.device), info.info->value("Ssid").toString()) : QVariant();
+    //case ItemUuidRole:
+    //    return info.info ? m_networkModel->connectionUuidByApInfo(static_cast<const WirelessDevice *>(info.device), info.info->value("Ssid").toString()) : QVariant();
     case ItemIsHiddenTipsRole:
         return !info.info && !info.device;
     case ItemNextRole:
@@ -131,7 +131,7 @@ void WifiListModel::setCurrentHovered(const QModelIndex &index)
 {
     m_currentIndex = index;
 
-    emit dataChanged(m_currentIndex, m_currentIndex);
+    Q_EMIT dataChanged(m_currentIndex, m_currentIndex);
 }
 
 void WifiListModel::setCurrentActivating(const QModelIndex &index)
@@ -146,7 +146,7 @@ void WifiListModel::setCurrentActivating(const QModelIndex &index)
         m_activatingSsid = QString();
     }
 
-    emit dataChanged(oldIndex, oldIndex);
+    Q_EMIT dataChanged(oldIndex, oldIndex);
 }
 
 int WifiListModel::indexOf(dde::network::WirelessDevice * const dev) const
@@ -232,14 +232,14 @@ void WifiListModel::onDeviceListChanged(const QList<NetworkDevice *> &devices)
             continue;
 
         connect(d, &WirelessDevice::enableChanged, this, &WifiListModel::onDeviceEnableChanged, Qt::UniqueConnection);
-        connect(d, &WirelessDevice::activeConnectionChanged, this, &WifiListModel::refershActivatingIndex, Qt::UniqueConnection);
+        //connect(d, &WirelessDevice::activeConnectionChanged, this, &WifiListModel::refershActivatingIndex, Qt::UniqueConnection);
         connect(d, &WirelessDevice::apAdded, this, &WifiListModel::onDeviceApAdded, Qt::UniqueConnection);
         connect(d, &WirelessDevice::apInfoChanged, this, &WifiListModel::onDeviceApInfoChanged, Qt::UniqueConnection);
-        connect(d, &WirelessDevice::activeConnectionChanged, this, &WifiListModel::onDeviceActiveApChanged, Qt::UniqueConnection);
+        //connect(d, &WirelessDevice::activeConnectionChanged, this, &WifiListModel::onDeviceActiveApChanged, Qt::UniqueConnection);
         connect(d, static_cast<void (WirelessDevice::*)(const NetworkDevice::DeviceStatus) const>(&WirelessDevice::statusChanged), this, &WifiListModel::onDeviceStateChanged, Qt::UniqueConnection);
         connect(d, &WirelessDevice::apRemoved, d, [=](const QJsonObject &apInfo) { onDeviceApRemoved(d, apInfo); }, Qt::UniqueConnection);
 
-        emit requestDeviceApList(d->path());
+        Q_EMIT requestDeviceApList(d->path());
     }
 
     // removed devices
@@ -252,7 +252,7 @@ void WifiListModel::onDeviceListChanged(const QList<NetworkDevice *> &devices)
 
     sortApList();
 
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 }
 
 void WifiListModel::onDeviceApAdded(const QJsonObject &info)
@@ -289,12 +289,12 @@ void WifiListModel::onDeviceApAdded(const QJsonObject &info)
 
     // reach here means it is a new ap need to add
     beginInsertRows(QModelIndex(), row, row);
-    if (info.value("Ssid").toString() == dev->activeConnName()) {
+    /*if (info.value("Ssid").toString() == dev->activeConnName()) {
         m_activeConnNameMap.insert(dev, dev->activeConnName());
         m_apInfoList[dev].insert(0, info);
     } else {
         m_apInfoList[dev].append(info);
-    }
+    }*/
     sortApList();
     endInsertRows();
 }
@@ -380,7 +380,7 @@ void WifiListModel::onDeviceActiveApChanged(const QJsonObject &oldApInfo, const 
             }
 
             sortApList();
-            emit layoutChanged();
+            Q_EMIT layoutChanged();
             return;
         }
     }
@@ -388,7 +388,7 @@ void WifiListModel::onDeviceActiveApChanged(const QJsonObject &oldApInfo, const 
 
 void WifiListModel::refershActivatingIndex()
 {
-    emit dataChanged(m_activatingIndex, m_activatingIndex);
+    Q_EMIT dataChanged(m_activatingIndex, m_activatingIndex);
 }
 
 void WifiListModel::sortApList()
@@ -425,7 +425,7 @@ void WifiListModel::onDeviceEnableChanged(const bool enable)
         m_apInfoList.insert(d, QList<QJsonObject>());
         endInsertRows();
 
-        emit requestDeviceApList(d->path());
+        Q_EMIT requestDeviceApList(d->path());
     } else {
         const int pos = indexOf(d);
         beginRemoveRows(QModelIndex(), pos, pos + m_apInfoList[d].length());

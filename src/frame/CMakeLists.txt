@@ -73,36 +73,36 @@ set(FRAME_FILES
                 framecontentwrapper.h
                 navigationdelegate.h
                 navigationview.h
-                # quick_control/bluetooth/bluetoothdelegate.cpp
-                # quick_control/bluetooth/bluetoothdelegate.h
-                # quick_control/bluetooth/bluetoothlist.cpp
-                # quick_control/bluetooth/bluetoothlist.h
-                # quick_control/bluetooth/bluetoothlistmodel.cpp
-                # quick_control/bluetooth/bluetoothlistmodel.h
-                # quick_control/display/displaycontrolmodel.cpp
-                # quick_control/display/displaycontrolmodel.h
-                # quick_control/display/displaycontrolpage.cpp
-                # quick_control/display/displaycontrolpage.h
-                # quick_control/display/displayitemdelegate.cpp
-                # quick_control/display/displayitemdelegate.h
-                # quick_control/quickcontrolpanel.cpp
-                # quick_control/quickcontrolpanel.h
-                # quick_control/quickswitchbutton.cpp
-                # quick_control/quickswitchbutton.h
-                # quick_control/vpn/vpncontrolpage.cpp
-                # quick_control/vpn/vpncontrolpage.h
-                # quick_control/vpn/vpnlistdelegate.cpp
-                # quick_control/vpn/vpnlistdelegate.h
-                # quick_control/vpn/vpnlistmodel.cpp
-                # quick_control/vpn/vpnlistmodel.h
-                # quick_control/wifi/wifilistdelegate.cpp
-                # quick_control/wifi/wifilistdelegate.h
-                # quick_control/wifi/wifipage.cpp
-                # quick_control/wifi/wifipage.h
-                # quick_control/wifi/wifilistmodel.cpp
-                # quick_control/wifi/wifilistmodel.h
-                # quick_control/basicsettingspage.cpp
-                # quick_control/basicsettingspage.h
+                quick_control/bluetooth/bluetoothdelegate.cpp
+                quick_control/bluetooth/bluetoothdelegate.h
+                quick_control/bluetooth/bluetoothlist.cpp
+                quick_control/bluetooth/bluetoothlist.h
+                quick_control/bluetooth/bluetoothlistmodel.cpp
+                quick_control/bluetooth/bluetoothlistmodel.h
+                #quick_control/display/displaycontrolmodel.cpp
+                #quick_control/display/displaycontrolmodel.h
+                #quick_control/display/displaycontrolpage.cpp
+                #quick_control/display/displaycontrolpage.h
+                #quick_control/display/displayitemdelegate.cpp
+                #quick_control/display/displayitemdelegate.h
+                quick_control/quickcontrolpanel.cpp
+                quick_control/quickcontrolpanel.h
+                quick_control/quickswitchbutton.cpp
+                quick_control/quickswitchbutton.h
+                quick_control/vpn/vpncontrolpage.cpp
+                quick_control/vpn/vpncontrolpage.h
+                quick_control/vpn/vpnlistdelegate.cpp
+                quick_control/vpn/vpnlistdelegate.h
+                quick_control/vpn/vpnlistmodel.cpp
+                quick_control/vpn/vpnlistmodel.h
+                quick_control/wifi/wifilistdelegate.cpp
+                quick_control/wifi/wifilistdelegate.h
+                quick_control/wifi/wifipage.cpp
+                quick_control/wifi/wifipage.h
+                quick_control/wifi/wifilistmodel.cpp
+                quick_control/wifi/wifilistmodel.h
+                quick_control/basicsettingspage.cpp
+                quick_control/basicsettingspage.h
                 navigation/navdelegate.cpp
                 navigation/navdelegate.h
                 navigation/navwidget.cpp
@@ -144,6 +144,8 @@ set(FRAME_FILES
                 settingswidget.h
                 updatenotifier.cpp
                 updatenotifier.h
+
+
 )
 
 # load interfaces

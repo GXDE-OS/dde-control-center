@@ -29,6 +29,9 @@
 #include <QWidget>
 #include <QStackedLayout>
 #include <QPushButton>
+#include "dimagebutton.h"
+
+DWIDGET_USE_NAMESPACE
 
 namespace dcc {
 
@@ -73,14 +76,14 @@ public:
     void appear();
     void disappear();
 
-signals:
+Q_SIGNALS:
     void requestDetailConfig() const;
     void requestPage(const QString &module, const QString &page, bool animation);
 
 protected:
     void leaveEvent(QEvent *e);
 
-private slots:
+private Q_SLOTS:
     void onNetworkDeviceEnableChanged();
     void onNetworkDeviceListChanged();
     void onNetworkConnectionListChanged();
@@ -112,6 +115,10 @@ private:
 #endif
     dcc::QuickSwitchButton *m_vpnSwitch;
     dcc::QuickSwitchButton *m_detailSwitch;
+
+    DImageButton *m_screenShotBtn;
+    DImageButton *m_screenRecordBtn;
+
     QList<dcc::QuickSwitchButton *> m_switchs;
 };
 

@@ -26,7 +26,7 @@
 #ifndef VPNCONTROLPAGE_H
 #define VPNCONTROLPAGE_H
 
-#include "vpnlistmodel.h"
+#include "quick_control/vpn/vpnlistmodel.h"
 
 #include <QWidget>
 
@@ -37,7 +37,7 @@ class VpnControlPage : public QWidget
 public:
     explicit VpnControlPage(dde::network::NetworkModel *model, QWidget *parent = 0);
 
-signals:
+Q_SIGNALS:
     void mouseLeaveView() const;
     void requestActivateConnection(const QString &devPath, const QString &uuid) const;
     void requestDisconnect(const QString &uuid) const;
@@ -45,7 +45,7 @@ signals:
 private:
     bool eventFilter(QObject *watched, QEvent *event);
 
-private slots:
+private Q_SLOTS:
     void onItemClicked(const QModelIndex &index) const;
 
 private:

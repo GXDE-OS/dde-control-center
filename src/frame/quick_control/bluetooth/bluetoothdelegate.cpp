@@ -25,7 +25,7 @@
 
 #include "bluetoothdelegate.h"
 #include "bluetoothlistmodel.h"
-#include "bluetooth/device.h"
+#include "modules/bluetooth/device.h"
 #include "widgets/basiclistdelegate.h"
 
 #include <QPainter>

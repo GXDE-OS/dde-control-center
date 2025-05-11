@@ -26,9 +26,9 @@
 #ifndef BLUETOOTHLISTMODEL_H
 #define BLUETOOTHLISTMODEL_H
 
-#include "bluetooth/bluetoothmodel.h"
-#include "bluetooth/adapter.h"
-#include "bluetooth/device.h"
+#include "modules/bluetooth/bluetoothmodel.h"
+#include "modules/bluetooth/adapter.h"
+#include "modules/bluetooth/device.h"
 
 #include <QAbstractListModel>
 #include <QJsonObject>
@@ -40,7 +40,7 @@ using dcc::bluetooth::BluetoothModel;
 using dcc::bluetooth::Adapter;
 using dcc::bluetooth::Device;
 
-struct ItemInfo
+struct BluetoothItemInfo
 {
     const dcc::bluetooth::Adapter *adapter = nullptr;
     const Device *device = nullptr;
@@ -72,10 +72,10 @@ public:
     QVariant data(const QModelIndex &index, int role) const;
     void refreshData();
 
-public slots:
+public Q_SLOTS:
     void setCurrentHovered(const QModelIndex &index);
 
-private slots:
+private Q_SLOTS:
     void onAdapterAdded(const Adapter *adapter);
     void onAdapterRemove(const dcc::bluetooth::Adapter *adapter);
     void onAdapterChanged();
@@ -87,7 +87,7 @@ private slots:
     void onAdapterPowerChanged(const bool powered);
 
 private:
-    const ItemInfo indexInfo(const int index) const;
+    const BluetoothItemInfo indexInfo(const int index) const;
     int indexof(const dcc::bluetooth::Adapter * const adapter) const;
     const Adapter * adapterById(const QString &id);
     const Adapter * findAdapter(const QString &id);
@@ -101,6 +101,6 @@ private:
     QTimer *m_refreshTimer;
 };
 
-Q_DECLARE_METATYPE(ItemInfo)
+Q_DECLARE_METATYPE(BluetoothItemInfo)
 
 #endif // BLUETOOTHLISTMODEL_H

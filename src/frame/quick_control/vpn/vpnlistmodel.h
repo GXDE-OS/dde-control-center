@@ -66,7 +66,7 @@ public:
     int rowCount(const QModelIndex &parent) const;
     QVariant data(const QModelIndex &index, int role) const;
 
-public slots:
+public Q_SLOTS:
     void refreshActivedIndex();
     void setHoveredIndex(const QModelIndex &index);
     void onActiveConnInfoChanged(const QList<QJsonObject> &infoList);

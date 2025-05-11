@@ -27,20 +27,21 @@
 #include "basicsettingspage.h"
 #include "quickswitchbutton.h"
 #include "vpn/vpncontrolpage.h"
-#include "display/displaycontrolpage.h"
+#include "modules/display/displaycontrolpage.h"
 #include "wifi/wifipage.h"
 
-#include "display/displaymodel.h"
-#include "display/displayworker.h"
+#include "modules/display/displaymodel.h"
+#include "modules/display/displayworker.h"
 
 #ifndef DISABLE_BLUETOOTH
-#include "bluetooth/bluetoothlist.h"
-#include "bluetooth/bluetoothmodel.h"
-#include "bluetooth/bluetoothworker.h"
-#include "bluetooth/adapter.h"
+#include "quick_control/bluetooth/bluetoothlist.h"
+#include "modules/bluetooth/bluetoothmodel.h"
+#include "modules/bluetooth/bluetoothworker.h"
+#include "modules/bluetooth/adapter.h"
 #endif
 
 #include <QVBoxLayout>
+#include <QProcess>
 #include <networkmodel.h>
 #include <networkworker.h>
 
@@ -87,7 +88,7 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     BluetoothList *bluetoothList = new BluetoothList(m_bluetoothModel);
 #endif
 
-    DisplayControlPage *displayPage = new DisplayControlPage(m_displayModel);
+    dcc::display::DisplayControlPage *displayPage = new dcc::display::DisplayControlPage(/*m_displayModel*/);
 
     VpnControlPage *vpnPage = new VpnControlPage(m_networkModel);
 
@@ -106,6 +107,12 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
 #endif
     m_vpnSwitch = new QuickSwitchButton(2, "VPN");
     m_wifiSwitch = new QuickSwitchButton(3, "wifi");
+    m_screenShotBtn = new DImageButton(":/frame/quick_control/icons/dark/screenshot.svg",
+                                       ":/frame/quick_control/icons/dark/screenshot.svg",
+                                       ":/frame/quick_control/icons/dark/screenshot.svg");
+    m_screenRecordBtn = new DImageButton(":/frame/quick_control/icons/dark/status-screen-record.svg",
+                                       ":/frame/quick_control/icons/dark/status-screen-record.svg",
+                                       ":/frame/quick_control/icons/dark/status-screen-record.svg");
 
     m_detailSwitch = new QuickSwitchButton(0, "all_settings");
     QuickSwitchButton *displaySwitch = new QuickSwitchButton(4, "display");
@@ -137,6 +144,7 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     m_switchs.append(m_vpnSwitch);
     m_switchs.append(m_wifiSwitch);
     m_switchs.append(displaySwitch);
+    //m_switchs.append(m_screenShotBtn);
 
 #ifndef DISABLE_BLUETOOTH
     btnsLayout->addWidget(m_btSwitch);
@@ -144,6 +152,8 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     btnsLayout->addWidget(m_vpnSwitch);
     btnsLayout->addWidget(m_wifiSwitch);
     btnsLayout->addWidget(displaySwitch);
+    btnsLayout->addWidget(m_screenShotBtn);
+    btnsLayout->addWidget(m_screenRecordBtn);
 
     btnsLayout->addWidget(m_detailSwitch);
     btnsLayout->setContentsMargins(0, 0, 0, 0);
@@ -153,6 +163,12 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
 #endif
     connect(m_vpnSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
     connect(m_wifiSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
+    connect(m_screenShotBtn, &DImageButton::clicked, this, [this](){
+        QProcess::startDetached("deepin-screen-recorder --shot");
+    });
+    connect(m_screenRecordBtn, &DImageButton::clicked, this, [this](){
+        QProcess::startDetached("deepin-screen-recorder --record");
+    });
 
     connect(displaySwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
     connect(m_detailSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
@@ -183,18 +199,18 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     connect(wifiPage, &WifiPage::requestPage, this, &QuickControlPanel::requestPage);
 
     connect(m_displayModel, &DisplayModel::monitorListChanged, [=] { displaySwitch->setVisible(m_displayModel->monitorList().size() > 1); });
-    connect(displayPage, &DisplayControlPage::mouseLeaveView, this, [=] { m_itemStack->setCurrentIndex(0); });
-    connect(displayPage, &DisplayControlPage::requestOnlyMonitor, [=](const QString &name) { m_displayWorker->switchMode(SINGLE_MODE, name); m_displayWorker->saveChanges(); });
-    connect(displayPage, &DisplayControlPage::requestDuplicateMode, [=] { m_displayWorker->switchMode(MERGE_MODE); m_displayWorker->saveChanges(); });
-    connect(displayPage, &DisplayControlPage::requestExtendMode, [=] { m_displayWorker->switchMode(EXTEND_MODE); m_displayWorker->saveChanges(); });
-    connect(displayPage, &DisplayControlPage::requestConfig, m_displayWorker, &DisplayWorker::switchConfig);
-    connect(displayPage, &DisplayControlPage::requestCustom, [=] { emit requestPage("display", QString(), false); });
+    //connect(displayPage, &dcc::display::DisplayControlPage::mouseLeaveView, this, [=] { m_itemStack->setCurrentIndex(0); });
+    connect(displayPage, &dcc::display::DisplayControlPage::requestOnlyMonitor, [=](const QString &name) { m_displayWorker->switchMode(SINGLE_MODE, name); m_displayWorker->saveChanges(); });
+    connect(displayPage, &dcc::display::DisplayControlPage::requestDuplicateMode, [=] { m_displayWorker->switchMode(MERGE_MODE); m_displayWorker->saveChanges(); });
+    connect(displayPage, &dcc::display::DisplayControlPage::requestExtendMode, [=] { m_displayWorker->switchMode(EXTEND_MODE); m_displayWorker->saveChanges(); });
+    connect(displayPage, &dcc::display::DisplayControlPage::requestConfig, m_displayWorker, &DisplayWorker::switchConfig);
+    connect(displayPage, &dcc::display::DisplayControlPage::requestCustom, [=] { Q_EMIT requestPage("display", QString(), false); });
 
 
 #ifndef DISABLE_BLUETOOTH
     connect(bluetoothList, &BluetoothList::mouseLeaveView, this, [=] { m_itemStack->setCurrentIndex(0); });
-    connect(bluetoothList, &BluetoothList::requestConnect, m_bluetoothWorker, &bluetooth::BluetoothWorker::connectDevice);
-    connect(bluetoothList, &BluetoothList::requestDisConnect, m_bluetoothWorker, &bluetooth::BluetoothWorker::disconnectDevice);
+    //connect(bluetoothList, &BluetoothList::requestConnect, m_bluetoothWorker, &bluetooth::BluetoothWorker::connectDevice);
+    //connect(bluetoothList, &BluetoothList::requestDisConnect, m_bluetoothWorker, &bluetooth::BluetoothWorker::disconnectDevice);
     connect(bluetoothList, &BluetoothList::requestDetailPage, this, &QuickControlPanel::requestPage);
     connect(bluetoothList, &BluetoothList::requestAdapterDiscoverable, m_bluetoothWorker, &bluetooth::BluetoothWorker::setAdapterDiscoverable);
 #endif

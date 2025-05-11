@@ -26,8 +26,8 @@
 #ifndef BLUETOOTHLIST_H
 #define BLUETOOTHLIST_H
 
-#include "bluetooth/bluetoothmodel.h"
-#include "bluetoothlistmodel.h"
+#include "modules/bluetooth/bluetoothmodel.h"
+#include "quick_control/bluetooth/bluetoothlistmodel.h"
 #include "widgets/basiclistview.h"
 #include <QWidget>
 
@@ -40,7 +40,7 @@ class BluetoothList : public QWidget
 public:
     explicit BluetoothList(BluetoothModel *model, QWidget *parent = 0);
 
-signals:
+Q_SIGNALS:
     void mouseLeaveView() const;
     void requestConnect(const Device *device) const;
     void requestDisConnect(const Device *device) const;
@@ -50,7 +50,7 @@ signals:
 private:
     bool eventFilter(QObject *watched, QEvent *event);
 
-private slots:
+private Q_SLOTS:
     void onItemClicked(const QModelIndex &index) const;
 
 private:

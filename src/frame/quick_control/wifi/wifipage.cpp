@@ -68,7 +68,7 @@ bool WifiPage::eventFilter(QObject *watched, QEvent *event)
     Q_UNUSED(watched);
 
     if (event->type() == QEvent::Leave)
-        emit mouseLeaveView();
+        Q_EMIT mouseLeaveView();
 
     return false;
 }
@@ -81,20 +81,20 @@ void WifiPage::onItemClicked(const QModelIndex &index)
     if (index.data(WifiListModel::ItemIsHiddenTipsRole).toBool())
     {
         if (index.data(WifiListModel::ItemCountRole) != 1)
-            emit requestPage("network", "", false);
+            Q_EMIT requestPage("network", "", false);
         else
-            emit requestPage("network", "network", false);
+            Q_EMIT requestPage("network", "network", false);
         return;
     }
 
     const QString uuid = index.data(WifiListModel::ItemUuidRole).toString();
     if (index.data(WifiListModel::ItemIsActiveRole).toBool())
     {
-        emit requestDeactivateConnection(uuid);
+        Q_EMIT requestDeactivateConnection(uuid);
     } else {
         const QString devPath = index.data(WifiListModel::ItemDevicePathRole).toString();
         const QString apPath = index.data(WifiListModel::ItemApPathRole).toString();
 
-        emit requestActivateAccessPoint(devPath, apPath, uuid);
+        Q_EMIT requestActivateAccessPoint(devPath, apPath, uuid);
     }
 }

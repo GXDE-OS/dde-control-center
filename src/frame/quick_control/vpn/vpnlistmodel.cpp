@@ -46,8 +46,8 @@ VpnListModel::VpnListModel(NetworkModel *model, QObject *parent)
 
     connect(m_refreshTimer, &QTimer::timeout, this, &VpnListModel::refreshActivedIndex);
     connect(m_networkModel, &NetworkModel::activeConnInfoChanged, this, &VpnListModel::onActiveConnInfoChanged);
-    connect(m_networkModel, &NetworkModel::connectionListChanged, [this] { emit layoutChanged(); });
-    connect(m_networkModel, &NetworkModel::vpnEnabledChanged, [this] { emit layoutChanged(); });
+    connect(m_networkModel, &NetworkModel::connectionListChanged, [this] { Q_EMIT layoutChanged(); });
+    connect(m_networkModel, &NetworkModel::vpnEnabledChanged, [this] { Q_EMIT layoutChanged(); });
 
     onActiveConnInfoChanged(m_networkModel->activeConnInfos());
 }
@@ -106,10 +106,10 @@ void VpnListModel::refreshActivedIndex()
         const QString &connUuid = info.value("Uuid").toString();
         const auto idx = vpnIndex(connUuid);
 
-        emit dataChanged(idx, idx);
+        Q_EMIT dataChanged(idx, idx);
     }
 
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 }
 
 void VpnListModel::setHoveredIndex(const QModelIndex &index)
@@ -118,8 +118,8 @@ void VpnListModel::setHoveredIndex(const QModelIndex &index)
 
     m_hoveredIndex = index;
 
-    emit dataChanged(oldIndex, oldIndex);
-    emit dataChanged(m_hoveredIndex, m_hoveredIndex);
+    Q_EMIT dataChanged(oldIndex, oldIndex);
+    Q_EMIT dataChanged(m_hoveredIndex, m_hoveredIndex);
 }
 
 void VpnListModel::onActiveConnInfoChanged(const QList<QJsonObject> &infoList)
@@ -140,7 +140,7 @@ void VpnListModel::onActiveConnInfoChanged(const QList<QJsonObject> &infoList)
     else
         m_refreshTimer->stop();
 
-    emit layoutChanged();
+    Q_EMIT layoutChanged();
 }
 
 bool VpnListModel::needRefresh() const
@@ -156,8 +156,9 @@ bool VpnListModel::needRefresh() const
 
 VpnListModel::VpnState VpnListModel::vpnState(const QString &uuid) const
 {
-    if (!m_networkModel->activeConnections().contains(uuid))
-        return VpnState::NotActive;
+    //if (!m_networkModel->activeConnections().contains(uuid))
+    //if (!m_networkModel->activeConns().contains(uuid))
+    //    return VpnState::NotActive;
 
     for (const auto &info : m_activeVpns)
     {

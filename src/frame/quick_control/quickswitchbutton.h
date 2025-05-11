@@ -43,12 +43,12 @@ public:
 
     bool checked() const { return m_checked; }
 
-signals:
+Q_SIGNALS:
     void hovered(const int index) const;
     void clicked(const int index) const;
     void checkedChanged(const bool checked) const;
 
-public slots:
+public Q_SLOTS:
     void setChecked(const bool checked);
     void setCheckable(const bool checkable);
     void setSelected(const bool selected);

@@ -63,7 +63,7 @@ bool VpnControlPage::eventFilter(QObject *watched, QEvent *event)
     Q_UNUSED(watched);
 
     if (event->type() == QEvent::Leave)
-        emit mouseLeaveView();
+        Q_EMIT mouseLeaveView();
 
     return false;
 }
@@ -76,7 +76,7 @@ void VpnControlPage::onItemClicked(const QModelIndex &index) const
     const VpnListModel::VpnState state = index.data(VpnListModel::VpnStateRole).value<VpnListModel::VpnState>();
 
     if (state == VpnListModel::NotActive)
-        emit requestActivateConnection("/", index.data(VpnListModel::VpnUuidRole).toString());
+        Q_EMIT requestActivateConnection("/", index.data(VpnListModel::VpnUuidRole).toString());
     else
-        emit requestDisconnect(index.data(VpnListModel::VpnUuidRole).toString());
+        Q_EMIT requestDisconnect(index.data(VpnListModel::VpnUuidRole).toString());
 }

@@ -26,7 +26,7 @@
 #ifndef DISPLAYCONTROLMODEL_H
 #define DISPLAYCONTROLMODEL_H
 
-#include "display/displaymodel.h"
+#include "modules/display/displaymodel.h"
 
 #include <QAbstractListModel>
 

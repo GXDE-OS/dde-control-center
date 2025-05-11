@@ -60,10 +60,14 @@ MainWidget::MainWidget(FrameContentWrapper *parent)
     , m_notifyWidget(new NotifyWidget(this))
 #ifndef DISABLE_SYS_UPDATE
     , m_updateNotifier(new UpdateNotifier)
+    , m_quickSettingsPanel(new QuickControlPanel(this))
 #endif
 {
     m_pluginsLayout->setMargin(0);
     m_pluginsLayout->setSpacing(0);
+
+    // 默认隐藏
+    m_quickSettingsPanel->setHidden(true);
 
 #ifndef DISABLE_ACCOUNT
     // TODO: get dbus data
@@ -149,6 +153,7 @@ MainWidget::MainWidget(FrameContentWrapper *parent)
 
     m_pluginsLayout->addWidget(m_navWidget);
     m_pluginsLayout->addWidget(m_notifyWidget);
+    //m_pluginsLayout->addWidget(m_quickSettingsPanel);
 
     QVBoxLayout *centralLayout = static_cast<QVBoxLayout *>(layout());
     centralLayout->addWidget(headerFrame);
@@ -156,19 +161,19 @@ MainWidget::MainWidget(FrameContentWrapper *parent)
     centralLayout->addWidget(m_updateNotifier);
     centralLayout->addSpacing(1);
 #endif
-    centralLayout->addLayout(m_pluginsLayout);
-//    centralLayout->addWidget(m_quickSettingsPanel);
+    centralLayout->addLayout(m_pluginsLayout, 99);
+    centralLayout->addWidget(m_quickSettingsPanel, 1);
     centralLayout->addSpacing(10);
     centralLayout->setSpacing(0);
     centralLayout->setMargin(0);
     centralLayout->setContentsMargins(1, 1, 1, 1);
 
-//    connect(m_pluginsController, &PluginsController::pluginAdded, this, &MainWidget::pluginAdded, Qt::QueuedConnection);
-//    connect(m_pluginsController, &PluginsController::requestModulePage, this, &MainWidget::showSettingPage, Qt::QueuedConnection);
-//    connect(m_quickSettingsPanel, &QuickControlPanel::requestDetailConfig, this, &MainWidget::showAllSettings);
-//    connect(m_quickSettingsPanel, &QuickControlPanel::requestPage, this, &MainWidget::showSettingPage);
-//    connect(this, &MainWidget::appear, m_quickSettingsPanel, &QuickControlPanel::appear);
-//    connect(this, &MainWidget::disappear, m_quickSettingsPanel, &QuickControlPanel::disappear);
+    connect(m_pluginsController, &PluginsController::pluginAdded, this, &MainWidget::pluginAdded, Qt::QueuedConnection);
+    connect(m_pluginsController, &PluginsController::requestModulePage, this, &MainWidget::showSettingPage, Qt::QueuedConnection);
+    connect(m_quickSettingsPanel, &QuickControlPanel::requestDetailConfig, this, &MainWidget::showAllSettings);
+    connect(m_quickSettingsPanel, &QuickControlPanel::requestPage, this, &MainWidget::showSettingPage);
+    connect(this, &MainWidget::appear, m_quickSettingsPanel, &QuickControlPanel::appear);
+    connect(this, &MainWidget::disappear, m_quickSettingsPanel, &QuickControlPanel::disappear);
     connect(m_timeRefersh, &QTimer::timeout, this, &MainWidget::refershTimedate);
     connect(m_notifyToggleBtn, &DImageButton::clicked, this, &MainWidget::toggleNotify, Qt::QueuedConnection);
     connect(m_navWidget, &NavWidget::requestModule, this, [=] (const QString &moduleName) {
@@ -223,6 +228,7 @@ void MainWidget::refershTimedate()
 void MainWidget::SetNotifyWidget()
 {
     m_pluginsLayout->setCurrentWidget(m_notifyWidget);
+    m_quickSettingsPanel->setHidden(false);
     m_notifyToggleBtn->setHoverPic(":/frame/themes/dark/icons/notifications_toggle_checkedhover.svg");
     m_notifyToggleBtn->setNormalPic(":/frame/themes/dark/icons/notifications_toggle_checked.svg");
 }
@@ -230,6 +236,7 @@ void MainWidget::SetNotifyWidget()
 void MainWidget::SetNavWidget()
 {
     m_pluginsLayout->setCurrentWidget(m_navWidget);
+    m_quickSettingsPanel->setHidden(true);
     m_notifyToggleBtn->setHoverPic(":/frame/themes/dark/icons/notifications_toggle_hover.svg");
     m_notifyToggleBtn->setNormalPic(":/frame/themes/dark/icons/notifications_toggle_normal.svg");
 }

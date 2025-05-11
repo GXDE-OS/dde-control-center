@@ -51,6 +51,9 @@ BasicListView::BasicListView(QWidget *parent)
 QSize BasicListView::sizeHint() const
 {
     int height = 0;
+    if (!model()) {
+        return QSize();
+    }
     const int count = model()->rowCount();
     for (int i(0); i != count; ++i)
         height += sizeHintForRow(i);

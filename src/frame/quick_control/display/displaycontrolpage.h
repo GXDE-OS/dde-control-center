@@ -26,8 +26,8 @@
 #ifndef DISPLAYCONTROLPAGE_H
 #define DISPLAYCONTROLPAGE_H
 
-#include "display/displaymodel.h"
-#include "display/displayworker.h"
+#include "modules/display/displaymodel.h"
+#include "modules/display/displayworker.h"
 
 #include <QWidget>
 #include <QModelIndex>

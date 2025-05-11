@@ -24,7 +24,7 @@
  */
 
 #include "displaycontrolmodel.h"
-#include "display/displayworker.h"
+#include "modules/display/displayworker.h"
 
 #include <QSize>
 #include <QPixmap>

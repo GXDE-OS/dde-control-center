@@ -28,6 +28,7 @@
 
 #include <QDebug>
 #include <QPainter>
+#include <QPainterPath>
 
 namespace dcc {
 
@@ -54,12 +55,12 @@ void QuickSwitchButton::mouseReleaseEvent(QMouseEvent *e)
 {
     QLabel::mouseReleaseEvent(e);
 
-    emit clicked(m_index);
+    Q_EMIT clicked(m_index);
 
     if (m_checkable)
     {
         setChecked(!m_checked);
-        emit checkedChanged(m_checked);
+        Q_EMIT checkedChanged(m_checked);
     }
 }
 
@@ -67,7 +68,7 @@ void QuickSwitchButton::enterEvent(QEvent *e)
 {
     QLabel::enterEvent(e);
 
-    emit hovered(m_index);
+    Q_EMIT hovered(m_index);
 }
 
 void QuickSwitchButton::paintEvent(QPaintEvent *e)
