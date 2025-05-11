@@ -62,6 +62,14 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
 
       m_itemStack(new QStackedLayout)
 {
+    // 判断是否在 Chroot 下运行
+    QDBusMessage checkChrootDBus = QDBusMessage::createMethodCall(CHROOTCHECKDESTINATION,
+                                                                  CHROOTCHECKPATH,
+                                                                  CHROOTCHECKINTERFACE,
+                                                                  "IsInChroot");
+    QDBusMessage res = QDBusConnection::sessionBus().call(checkChrootDBus);
+    m_isInChroot = res.arguments().at(0).toBool();
+
     QHBoxLayout *btnsLayout = new QHBoxLayout;
     QGridLayout *controlBtnLayout = new QGridLayout;
     QVBoxLayout *mainLayout = new QVBoxLayout;
@@ -124,6 +132,12 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     m_powerBtn = new DImageButton(":/frame/quick_control/icons/dark/power.svg",
                                   ":/frame/quick_control/icons/dark/power.svg",
                                   ":/frame/quick_control/icons/dark/power.svg");
+    m_ocrBtn = new DImageButton(":/frame/quick_control/icons/dark/ocr.svg",
+                                ":/frame/quick_control/icons/dark/ocr.svg",
+                                ":/frame/quick_control/icons/dark/ocr.svg");
+    m_scrollBtn = new DImageButton(":/frame/quick_control/icons/dark/scrollShot.svg",
+                                ":/frame/quick_control/icons/dark/scrollShot.svg",
+                                ":/frame/quick_control/icons/dark/scrollShot.svg");
 
     m_detailSwitch = new QuickSwitchButton(0, "all_settings");
     QuickSwitchButton *displaySwitch = new QuickSwitchButton(4, "display");
@@ -168,16 +182,24 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     //btnsLayout->addWidget(m_detailSwitch);
     btnsLayout->setContentsMargins(0, 0, 0, 0);
 
+    controlBtnLayout->setContentsMargins(5, 5, 5, 5);
     controlBtnLayout->addWidget(m_btSwitch, 0, 0);
     controlBtnLayout->addWidget(m_vpnSwitch, 0, 1);
     controlBtnLayout->addWidget(m_wifiSwitch, 0, 2);
     controlBtnLayout->addWidget(displaySwitch, 0, 3);
-    controlBtnLayout->addWidget(m_screenShotBtn, 1, 0);
-    controlBtnLayout->addWidget(m_screenRecordBtn, 1, 1);
-    controlBtnLayout->addWidget(m_systemMonitorBtn, 1, 2);
-    controlBtnLayout->addWidget(m_grandSearchBtn, 1, 3);
-    controlBtnLayout->addWidget(m_detailSwitch, 2, 0);
-    controlBtnLayout->addWidget(m_powerBtn, 2, 3);
+    controlBtnLayout->addWidget(m_screenShotBtn, 2, 0);
+    controlBtnLayout->addWidget(m_screenRecordBtn, 2, 1);
+    controlBtnLayout->addWidget(m_ocrBtn, 2, 2);
+    controlBtnLayout->addWidget(m_scrollBtn, 2, 3);
+    controlBtnLayout->addWidget(new QLabel(), 3, 0);
+    controlBtnLayout->addWidget(m_systemMonitorBtn, 4, 0);
+    controlBtnLayout->addWidget(m_grandSearchBtn, 4, 1);
+    controlBtnLayout->addWidget(m_detailSwitch, 5, 0);
+    controlBtnLayout->addWidget(m_powerBtn, 5, 3);
+
+    if (m_isInChroot) {
+        m_powerBtn->setVisible(false);
+    }
 
 #ifndef DISABLE_BLUETOOTH
     //connect(m_btSwitch, &QuickSwitchButton::hovered, m_itemStack, &QStackedLayout::setCurrentIndex);
@@ -198,6 +220,12 @@ QuickControlPanel::QuickControlPanel(QWidget *parent)
     });
     connect(m_powerBtn, &DImageButton::clicked, this, [](){
         QProcess::startDetached("dde-shutdown");
+    });
+    connect(m_ocrBtn, &DImageButton::clicked, this, [](){
+        QProcess::startDetached("deepin-screen-recorder --ocr");
+    });
+    connect(m_scrollBtn, &DImageButton::clicked, this, [](){
+        QProcess::startDetached("deepin-screen-recorder --scroll");
     });
 
 

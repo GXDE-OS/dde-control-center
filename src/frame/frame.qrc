@@ -524,5 +524,7 @@
         <file>quick_control/icons/dark/deepin-system-monitor.svg</file>
         <file>quick_control/icons/dark/grand-search-light.svg</file>
         <file>quick_control/icons/dark/power.svg</file>
+        <file>quick_control/icons/dark/ocr.svg</file>
+        <file>quick_control/icons/dark/scrollShot.svg</file>
     </qresource>
 </RCC>

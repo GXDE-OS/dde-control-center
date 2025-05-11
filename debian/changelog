@@ -1,4 +1,4 @@
-dde-control-center (4.13.0) UNRELEASED; urgency=medium
+dde-control-center (4.13.1) UNRELEASED; urgency=medium
 
   * 修复屏幕缩放调整条不对准刻度的问题
   * 修复系统信息在时间异常时显示类似 ©2023-1970 等错误信息的问题
@@ -9,8 +9,9 @@ dde-control-center (4.13.0) UNRELEASED; urgency=medium
   * 支持启动任务栏Mac 模式
   * 修复 蓝牙无法连接 的问题
   * 新增快捷控制
+  * 调整快捷控制 ui
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 11 May 2025 14:02:14 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 11 May 2025 22:56:05 +0800
 
 dde-control-center (4.10.29.1) UNRELEASED; urgency=medium
 

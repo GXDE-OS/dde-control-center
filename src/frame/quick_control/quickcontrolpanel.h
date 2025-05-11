@@ -31,6 +31,10 @@
 #include <QPushButton>
 #include "dimagebutton.h"
 
+#define CHROOTCHECKDESTINATION "com.gxde.daemon.system.info"
+#define CHROOTCHECKPATH "/com/gxde/daemon/system/info"
+#define CHROOTCHECKINTERFACE "com.gxde.daemon.system.info"
+
 DWIDGET_USE_NAMESPACE
 
 namespace dcc {
@@ -119,11 +123,15 @@ private:
     dcc::QuickSwitchButton *m_detailSwitch;
     dcc::QuickSwitchButton *m_displaySwitch;
 
+    bool m_isInChroot;
+
     DImageButton *m_screenShotBtn;
     DImageButton *m_screenRecordBtn;
     DImageButton *m_systemMonitorBtn;
     DImageButton *m_grandSearchBtn;
     DImageButton *m_powerBtn;
+    DImageButton *m_ocrBtn;
+    DImageButton *m_scrollBtn;
 
     QList<dcc::QuickSwitchButton *> m_switchs;
 };

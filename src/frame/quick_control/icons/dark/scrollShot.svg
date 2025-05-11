@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="25px"
+   height="25px"
+   viewBox="0 0 36 36"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="scrollShot.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="8.3611111"
+     inkscape:cx="-2.1528239"
+     inkscape:cy="19.734219"
+     inkscape:window-width="1600"
+     inkscape:window-height="793"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <title
+     id="title1">滚动截图</title>
+  <g
+     id="icon"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     style="fill:#ffffff"
+     transform="matrix(1.4,0,0,1.4,-7.2,-7.2)">
+    <g
+       id="画板"
+       transform="translate(-391,-91)"
+       style="fill:#ffffff">
+      <g
+         id="滚动截图"
+         transform="translate(391,91)"
+         style="fill:#ffffff">
+        <rect
+           id="占位"
+           fill="#D8D8D8"
+           opacity="0"
+           x="0"
+           y="0"
+           width="36"
+           height="36"
+           rx="8"
+           style="fill:#ffffff" />
+        <path
+           d="M 13,14.500436 C 13,14.224053 13.227653,14 13.50965,14 h 8.980701 C 22.771822,14 23,14.230797 23,14.500436 v 6.999128 C 23,21.775947 22.772347,22 22.490351,22 H 13.50965 C 13.228178,22 13,21.769203 13,21.499564 Z M 12.560626,12.53847 12.283397,12.025376 c -0.125981,-0.233166 -0.04815,-0.524127 0.177426,-0.663249 L 18,7.9458426 v 0 l 5.54789,3.4089774 c 0.231036,0.141963 0.306803,0.442211 0.170789,0.676798 L 23.4134,12.558142 c -0.13851,0.238892 -0.444455,0.320268 -0.683347,0.181758 -0.0011,-6.15e-4 -0.0021,-0.0012 -0.0032,-0.0019 L 18,9.9507502 v 0 l -4.746694,2.7814328 c -0.238251,0.139609 -0.544568,0.05964 -0.684177,-0.178608 -0.0029,-0.005 -0.0058,-0.01002 -0.0085,-0.01511 z m 0,10.910831 -0.277229,0.513093 c -0.125981,0.233167 -0.04815,0.524128 0.177426,0.66325 L 18,28.041928 v 0 l 5.54789,-3.408977 c 0.231036,-0.141963 0.306803,-0.442211 0.170789,-0.676799 L 23.4134,23.429629 c -0.13851,-0.238892 -0.444455,-0.320268 -0.683347,-0.181758 -0.0011,6.14e-4 -0.0021,0.0012 -0.0032,0.0019 L 18,26.03702 v 0 l -4.746694,-2.781433 c -0.238251,-0.139609 -0.544568,-0.05964 -0.684177,0.178609 -0.0029,0.005 -0.0058,0.01002 -0.0085,0.0151 z"
+           id="形状结合"
+           fill="#000000"
+           fill-rule="nonzero"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+  </g>
+</svg>

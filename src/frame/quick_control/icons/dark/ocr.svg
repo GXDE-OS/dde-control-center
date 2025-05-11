@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="25px"
+   height="25px"
+   viewBox="0 0 36 36"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="ocr.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="12.04"
+     inkscape:cx="30.89701"
+     inkscape:cy="12.707641"
+     inkscape:window-width="1600"
+     inkscape:window-height="793"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="画板" />
+  <title
+     id="title1">识别文字</title>
+  <g
+     id="icon"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="画板"
+       transform="translate(-427.000000, -91.000000)">
+      <g
+         id="识别文字"
+         transform="matrix(1.5880399,0,0,1.5880399,416.68678,80.686777)">
+        <rect
+           id="占位"
+           fill="#d8d8d8"
+           opacity="0"
+           x="0"
+           y="0"
+           width="36"
+           height="36"
+           rx="8" />
+        <path
+           d="m 11,21 v 4 h 4 v 2 H 10 C 9.4477153,27 9,26.552285 9,26 v 0 -5 z m 16,0 v 5 c 0,0.552285 -0.447715,1 -1,1 h -5 v -2 h 4 v -4 z m -8.556012,-8 c 0.21759,0 0.410198,0.14072 0.47634,0.348014 v 0 l 2.871642,8.999999 c 0.01568,0.04914 0.02366,0.100408 0.02366,0.151987 0,0.276142 -0.223857,0.5 -0.5,0.5 v 0 h -0.697212 c -0.219681,0 -0.413629,-0.14339 -0.478031,-0.353419 v 0 L 19.55224,20.728513 h -3.18408 l -0.55231,1.910356 C 15.75401,22.852767 15.558181,23 15.335522,23 v 0 h -0.656758 c -0.05026,0 -0.10024,-0.0076 -0.148244,-0.02248 -0.263726,-0.08187 -0.411147,-0.362036 -0.329274,-0.625762 v 0 l 2.79403,-9 C 17.060218,13.142566 17.253756,13 17.472794,13 v 0 z M 17.993902,16 17,19 h 2 z M 15,9 v 2 h -4 v 4 H 9 V 10 C 9,9.4477153 9.4477153,9 10,9 Z m 11,0 c 0.552285,0 1,0.4477153 1,1 v 0 5 H 25 V 11 H 21 V 9 Z"
+           id="形状结合"
+           fill="#000000"
+           fill-rule="nonzero"
+           style="fill:#ffffff" />
+      </g>
+    </g>
+  </g>
+</svg>
