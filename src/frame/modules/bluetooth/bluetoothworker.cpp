@@ -161,7 +161,7 @@ void BluetoothWorker::connectDevice(const Device *device)
     }
 
     QDBusObjectPath path(device->id());
-    //m_bluetoothInter->ConnectDevice(path);
+    m_bluetoothInter->ConnectDevice(path);
     qDebug() << "connect to device: " << device->name();
 }
 
