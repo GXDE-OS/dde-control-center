@@ -165,7 +165,7 @@ void ModifyPasswordPage::hideAlert()
 
 bool ModifyPasswordPage::validatePassword(const QString &password)
 {
-    QSettings setting("/etc/deepin/dde-control-center.conf", QSettings::IniFormat);
+    QSettings setting("/etc/deepin/gxde-control-center.conf", QSettings::IniFormat);
     setting.beginGroup("Password");
     bool strong_password_check = setting.value("STRONG_PASSWORD", false).toBool();
 
@@ -205,7 +205,7 @@ bool ModifyPasswordPage::ContainsChar(const QString &password, const QString &va
 template <typename T>
 void ModifyPasswordPage::onEditFinished(T t)
 {
-    QSettings setting("/etc/deepin/dde-control-center.conf", QSettings::IniFormat);
+    QSettings setting("/etc/deepin/gxde-control-center.conf", QSettings::IniFormat);
     setting.beginGroup("Password");
     if (!setting.value("STRONG_PASSWORD", false).toBool()) return t->hideAlertMessage();
 

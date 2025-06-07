@@ -67,7 +67,7 @@ UpdateView::UpdateView()
 
     m_addTestingSource = new Dtk::Widget::DPushButton;
     m_addTestingSource->setText(tr("Internal Testing Group Settings"));
-    if (QFile::exists("/usr/share/dde-control-center/join-testing-group.sh")) {
+    if (QFile::exists("/usr/share/gxde-control-center/join-testing-group.sh")) {
         // 需要保证脚本存在才会显示按钮
         m_centralLayout->addWidget(m_addTestingSource);
     }
@@ -113,7 +113,7 @@ void UpdateView::ExecUpgrader()
 void UpdateView::ShowTesingDialog()
 {
     QProcess process;
-    process.start("bash", QStringList() << "/usr/share/dde-control-center/join-testing-group.sh");
+    process.start("bash", QStringList() << "/usr/share/gxde-control-center/join-testing-group.sh");
     process.waitForStarted();
     process.waitForFinished(-1);
 }

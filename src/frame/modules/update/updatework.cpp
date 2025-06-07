@@ -608,7 +608,7 @@ void UpdateWorker::onUpgradeStatusChanged(const QString &status)
 
         m_model->setStatus(UpdatesStatus::UpdateSucceeded);
 
-        QProcess::startDetached("/usr/lib/dde-control-center/reboot-reminder-dialog");
+        QProcess::startDetached("/usr/lib/gxde-control-center/reboot-reminder-dialog");
 
         QFile file("/tmp/.dcc-update-successd");
         if (file.exists())

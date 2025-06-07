@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.7)
 
-project(dde-control-center)
+project(gxde-control-center)
 
 find_package(DtkCMake REQUIRED)
 
@@ -32,7 +32,7 @@ set(STRONG_PASSWORD false)
 set(AllowEnableMultiScaleRatio false)
 set(AllowCloudSync false)
 
-configure_file(files/dde-control-center.conf.in files/dde-control-center.conf @ONLY)
+configure_file(files/gxde-control-center.conf.in files/gxde-control-center.conf @ONLY)
 
 add_subdirectory("src/frame")
 add_subdirectory("src/dialogs")
@@ -41,26 +41,26 @@ file(GLOB DOCS_FILES "docs/*")
 
 ## qm files
 file(GLOB QM_FILES "translations/*.qm")
-install(FILES ${QM_FILES} DESTINATION share/dde-control-center/translations)
+install(FILES ${QM_FILES} DESTINATION share/gxde-control-center/translations)
 
 #desktop
-install(FILES dde-control-center.desktop DESTINATION share/applications)
+install(FILES gxde-control-center.desktop DESTINATION share/applications)
 
 #service
 install(FILES com.deepin.dde.ControlCenter.service DESTINATION share/dbus-1/services)
 
 #docs
-install(FILES ${DOCS_FILES} DESTINATION share/dman/dde-control-center)
+install(FILES ${DOCS_FILES} DESTINATION share/dman/gxde-control-center)
 
 #datebases
-install(FILES data/timezone.db DESTINATION share/dde-control-center)
+install(FILES data/timezone.db DESTINATION share/gxde-control-center)
 
 #internal testing group
-install(DIRECTORY tools/dde-control-center DESTINATION share/)
+install(DIRECTORY tools/gxde-control-center DESTINATION share/)
 
 
 # conf file
-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/files/dde-control-center.conf DESTINATION share/dde-control-center)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/files/gxde-control-center.conf DESTINATION share/gxde-control-center)
 
 # polkit policy file
 if (OS_DEEPIN_PROFESSIONAL)

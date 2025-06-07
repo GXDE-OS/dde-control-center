@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     a.setQuitOnLastWindowClosed(false);
 
     QTranslator translator;
-    translator.load("/usr/share/dde-control-center/translations/dialogs_" + QLocale::system().name());
+    translator.load("/usr/share/gxde-control-center/translations/dialogs_" + QLocale::system().name());
     a.installTranslator(&translator);
 
     bool res = QDBusConnection::sessionBus().registerService(Service);

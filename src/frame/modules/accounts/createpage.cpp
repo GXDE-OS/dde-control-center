@@ -227,7 +227,7 @@ bool CreatePage::eventFilter(QObject *watched, QEvent *event)
 
 bool CreatePage::validatePassword(const QString &password)
 {
-    QSettings setting("/etc/deepin/dde-control-center.conf", QSettings::IniFormat);
+    QSettings setting("/etc/deepin/gxde-control-center.conf", QSettings::IniFormat);
     setting.beginGroup("Password");
     bool strong_password_check = setting.value("STRONG_PASSWORD", false).toBool();
 
@@ -256,7 +256,7 @@ bool CreatePage::validatePassword(const QString &password)
 template <typename T>
 void CreatePage::onEditFinished(T t)
 {
-    QSettings setting("/etc/deepin/dde-control-center.conf", QSettings::IniFormat);
+    QSettings setting("/etc/deepin/gxde-control-center.conf", QSettings::IniFormat);
     setting.beginGroup("Password");
     if (!setting.value("STRONG_PASSWORD", false).toBool()) return m_errorTip->hide();
 

@@ -39,5 +39,5 @@ SOURCES += \
 RESOURCES += \
     weather.qrc
 
-target.path = $${PREFIX}/lib/dde-control-center/plugins/
+target.path = $${PREFIX}/lib/gxde-control-center/plugins/
 INSTALLS += target

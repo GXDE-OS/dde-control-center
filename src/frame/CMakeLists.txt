@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.7)
 
 set(VERSION 4.0)
 
-set(BIN_NAME dde-control-center)
+set(BIN_NAME gxde-control-center)
 
 # set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_STANDARD 14)

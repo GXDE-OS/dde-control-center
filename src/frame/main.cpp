@@ -149,7 +149,7 @@ int main(int argc, char *argv[])
 
     DApplication app(argc, argv);
     app.setOrganizationName("GXDE");
-    app.setApplicationName("dde-control-center");
+    app.setApplicationName("gxde-control-center");
     app.setApplicationVersion("4.0");
     app.setAttribute(Qt::AA_UseHighDpiPixmaps);
     app.loadTranslator();

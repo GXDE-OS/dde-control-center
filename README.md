@@ -54,7 +54,7 @@ GXDE has forked and maintained DCC V4.x and used as control panel of GXDE. You s
 
 2. Build:
 ```
-$ cd dde-control-center
+$ cd gxde-control-center
 $ mkdir Build
 $ cd Build
 $ cmake ..
@@ -66,11 +66,11 @@ $ make
 $ sudo make install
 ```
 
-The executable binary file could be found at `/usr/bin/dde-control-center` after the installation is finished, and plugins will be placed into `/usr/lib/dde-control-center/modules/`.
+The executable binary file could be found at `/usr/bin/gxde-control-center` after the installation is finished, and plugins will be placed into `/usr/lib/gxde-control-center/modules/`.
 
 ## Usage
 
-Execute `dde-control-center -h` to get more details.
+Execute `gxde-control-center -h` to get more details.
 
 ## Getting help
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DESKTOP_TEMP_FILE=dde-control-center.desktop.tmp
-DESKTOP_SOURCE_FILE=dde-control-center.desktop
+DESKTOP_TEMP_FILE=gxde-control-center.desktop.tmp
+DESKTOP_SOURCE_FILE=gxde-control-center.desktop
 
 DESKTOP_TS_DIR=translations/desktop/
 

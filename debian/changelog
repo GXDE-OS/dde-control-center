@@ -1,4 +1,4 @@
-dde-control-center (4.13.1) UNRELEASED; urgency=medium
+gxde-control-center (5.0.0) UNRELEASED; urgency=medium
 
   * 修复屏幕缩放调整条不对准刻度的问题
   * 修复系统信息在时间异常时显示类似 ©2023-1970 等错误信息的问题
@@ -10,17 +10,18 @@ dde-control-center (4.13.1) UNRELEASED; urgency=medium
   * 修复 蓝牙无法连接 的问题
   * 新增快捷控制
   * 调整快捷控制 ui
+  * 修改名称 dde-control-center 为 gxde-control-center
 
- -- gfdgd_xi <3025613752@qq.com>  Sun, 11 May 2025 22:56:05 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sat, 07 Jun 2025 15:01:21 +0800
 
-dde-control-center (4.10.29.1) UNRELEASED; urgency=medium
+gxde-control-center (4.10.29.1) UNRELEASED; urgency=medium
 
   * 支持设置 live 镜像
   * 国际化 Compact Mode设置
 
  -- gfdgd_xi <3025613752@qq.com>  Sun, 10 Nov 2024 17:11:31 +0800
 
-dde-control-center (4.10.20) unstable; urgency=low
+gxde-control-center (4.10.20) unstable; urgency=low
 
   * ['Autobuild release-candidate: 1690cac0bc4b40aa0f7a11b63e6c110fb6b151d3']
 

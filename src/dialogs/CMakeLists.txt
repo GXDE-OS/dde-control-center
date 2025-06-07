@@ -52,6 +52,6 @@ target_link_libraries(${BIN_NAME} PRIVATE
 )
 
 # bin
-install(TARGETS ${BIN_NAME} DESTINATION lib/dde-control-center/)
+install(TARGETS ${BIN_NAME} DESTINATION lib/gxde-control-center/)
 
 endif()

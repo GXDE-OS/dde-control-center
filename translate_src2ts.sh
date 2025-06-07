@@ -1,3 +1,3 @@
 #!/bin/bash
 cd `dirname $0`
-lupdate -recursive src/frame/ -ts translations/dde-control-center_*.ts
+lupdate -recursive src/frame/ -ts translations/gxde-control-center_*.ts

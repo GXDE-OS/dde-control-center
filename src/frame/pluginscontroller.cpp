@@ -45,7 +45,7 @@ void PluginsController::loadPlugins()
 #ifdef QT_DEBUG
     pluginsDir.cd("plugins");
 #else
-    pluginsDir.cd("../lib/dde-control-center/plugins");
+    pluginsDir.cd("../lib/gxde-control-center/plugins");
 #endif
 
     QStringList plugins = pluginsDir.entryList(QDir::Files);

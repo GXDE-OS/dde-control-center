@@ -7,8 +7,8 @@
 #include <QSettings>
 
 static const QStringList DCC_CONFIG_FILES {
-    "/etc/deepin/dde-control-center.conf",
-    "/usr/share/dde-control-center.conf"
+    "/etc/deepin/gxde-control-center.conf",
+    "/usr/share/gxde-control-center.conf"
 };
 
 static const QMap<QString, QString> SYSTEM_LOCAL_MAP {
