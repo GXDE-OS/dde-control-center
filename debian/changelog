@@ -1,4 +1,4 @@
-gxde-control-center (5.0.0) UNRELEASED; urgency=medium
+gxde-control-center (5.0.1) UNRELEASED; urgency=medium
 
   * 修复屏幕缩放调整条不对准刻度的问题
   * 修复系统信息在时间异常时显示类似 ©2023-1970 等错误信息的问题
@@ -11,8 +11,9 @@ gxde-control-center (5.0.0) UNRELEASED; urgency=medium
   * 新增快捷控制
   * 调整快捷控制 ui
   * 修改名称 dde-control-center 为 gxde-control-center
+  * dde-api=>gxde-api
 
- -- gfdgd_xi <3025613752@qq.com>  Sat, 07 Jun 2025 15:01:21 +0800
+ -- gfdgd_xi <3025613752@qq.com>  Sun, 08 Jun 2025 11:22:49 +0800
 
 gxde-control-center (4.10.29.1) UNRELEASED; urgency=medium
 
