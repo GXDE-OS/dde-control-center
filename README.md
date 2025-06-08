@@ -34,7 +34,7 @@ GXDE has forked and maintained DCC V4.x and used as control panel of GXDE. You s
 ### Runtime dependencies
 
 * [deepin-tool-kit](https://github.com/linuxdeepin/deepin-tool-kit)
-* [dde-api](https://github.com/linuxdeepin/dde-api)
+* [gxde-api](https://github.com/linuxdeepin/gxde-api)
 * [dde-daemon](https://github.com/linuxdeepin/dde-daemon)
 * [startdde](https://github.com/linuxdeepin/startdde)
 * [dde-qt-dbus-factory](https://github.com/linuxdeepin/dde-qt-dbus-factory)
