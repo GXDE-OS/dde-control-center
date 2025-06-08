@@ -157,9 +157,9 @@ int main(int argc, char *argv[])
     app.setQuitOnLastWindowClosed(false);
     app.setTheme("light");
 
-    // load dde-network-utils translator
+    // load gxde-network-utils translator
     QTranslator translator;
-    translator.load("/usr/share/dde-network-utils/translations/dde-network-utils_" + QLocale::system().name());
+    translator.load("/usr/share/gxde-network-utils/translations/gxde-network-utils_" + QLocale::system().name());
     app.installTranslator(&translator);
 
     DLogManager::registerConsoleAppender();

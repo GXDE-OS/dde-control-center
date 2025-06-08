@@ -1,8 +1,8 @@
-# DDE Control Center
+# GXDE Control Center
 
-DDE Control Center is the control panel of Deepin Desktop Environment.
+GXDE Control Center is the control panel of GXDE Desktop Environment.
 
-GXDE has forked and maintained DCC V4.x and used as control panel of GXDE. You should NOT install this package on Deepin.
+GXDE has forked and maintained GCC V4.x and used as control panel of GXDE. You should NOT install this package on Deepin.
 
 ## Dependencies
 
@@ -22,7 +22,7 @@ GXDE has forked and maintained DCC V4.x and used as control panel of GXDE. You s
 * geoip-dev
 * dde-qt-dbus-factory
 * gsettings-qt-dev
-* dde-network-utils-dev
+* gxde-network-utils-dev
 * kf5networkmanagerqt-dev
 * xrandr-dev
 * mtdev-dev
