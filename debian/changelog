@@ -1,4 +1,4 @@
-gxde-control-center (5.0.3) UNRELEASED; urgency=medium
+gxde-control-center (5.0.3-1) UNRELEASED; urgency=medium
 
   * 修复屏幕缩放调整条不对准刻度的问题
   * 修复系统信息在时间异常时显示类似 ©2023-1970 等错误信息的问题
