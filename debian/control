@@ -11,7 +11,7 @@ Build-Depends: debhelper (>= 9),
  libqt5svg5-dev,
  libdtkcore-dev,
  libdtkwidget2-dev,
- libdframeworkdbus-dev(>=6.1.0~gxde1),
+ libgxframeworkdbus-dev(>=6.1.0~gxde1),
  libgsettings-qt-dev,
  qttools5-dev-tools,
  clang [amd64],
@@ -46,8 +46,8 @@ Depends: ${shlibs:Depends},
  libkf5networkmanagerqt6,
  libgxde-network-utils,
  garma,
+ gxde-app-installer,gxde-app-upgrader,gxde-app-uninstaller,
  gxde-shell-tools,
- gxde-app-uninstaller(>=1.2.0),
  transhell,
  wireplumber,
  libspa-0.2-bluetooth,
@@ -58,12 +58,12 @@ Recommends:
  fantascene-dynamic-wallpaper | fantascene-gxde,
 Suggests: redshift
 Conflicts:
- gxde-control-center-plugin-weather,
- gxde-control-center-plugin-notify,
+ dde-control-center-plugin-weather,
+ dde-control-center-plugin-notify,
  dde-control-center
 Replaces:
- gxde-control-center-plugin-weather,
- gxde-control-center-plugin-notify,
+ dde-control-center-plugin-weather,
+ dede-control-center-plugin-notify,
  dde-control-center
 Description: New control center for GXDE Desktop Environment
  GXDE Control Center is the control panel of GXDE Desktop Environment.
