@@ -104,6 +104,10 @@ Frame::Frame(QWidget *parent)
     setMaximumWidth(FRAME_WIDTH);
     setMaskColor(DBlurEffectWidget::DarkColor);
 
+    if (DApplication::isWayland()) {
+        setWindowFlag(Qt::FramelessWindowHint, true);
+    }
+
     resize(0, height());
 
     auto setOpacity = [=] (double opacity) {
